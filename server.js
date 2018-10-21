@@ -38,11 +38,11 @@ app.all('*', function(req, res, next) {
     res.sendFile(path.join(__dirname + '/dist/my-app/index.html'));
   });
 
-app.use('/api/Room',RoomRouter);
-app.use('/api/User',UserRouter);
-app.use('/api/Auth', AuthRouter);
-app.use('/api/History',HistoryRouter);
-app.use('/api/Contact',ContactRouter);
+app.use('api/Room',RoomRouter);
+app.use('api/User',UserRouter);
+app.use('api/Auth', AuthRouter);
+app.use('api/History',HistoryRouter);
+app.use('api/Contact',ContactRouter);
 // mongoose.connect('mongodb://localhost:27017/Broading_House',(err)=>{
 mongoose.connect('mongodb://havanduy:duy123@ds139370.mlab.com:39370/quanlythuenha',(err)=>{
     if(err){
