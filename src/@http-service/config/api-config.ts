@@ -1,5 +1,5 @@
 export const APICONFIG = {
-    BASEPOINT: 'http://localhost:8088',
+    BASEPOINT: 'https://cuongpham.herokuapp.com/',
     USER:{
         CREATE_USER:'/api/User/CreateUser',
         UPDATE_USER:'/api/User/UpdateUser',
