@@ -29,9 +29,9 @@ const port = process.env.PORT || 8088;
 
 
   app.use(express.static('public'))
-  app.use(express.static(__dirname + '/dist/cuongpham'));
+  app.use(express.static(__dirname + '/dist'));
   app.get('/*', function(req, res) {
-    res.sendFile(path.join(__dirname, '/dist/cuongpham/index.html'));
+    res.sendFile(path.join(__dirname, '/dist/index.html'));
   });
 
 app.use('/api/Room',RoomRouter);
