@@ -28,23 +28,10 @@ app.use(bodyParser.json());
 //PORT ĐỂ TRUY CẬP APPLICATION
 const port = process.env.PORT || 8088;
 
-const forceSSL = function() {
-    return function (req, res, next) {
-      if (req.headers['x-forwarded-proto'] !== 'https') {
-        return res.redirect(
-         ['https://', req.get('Host'), req.url].join('')
-        );
-      }
-      next();
-    }
-  }
-  // Instruct the app
-  // to use the forceSSL
-  // middleware
-  app.use(forceSSL());
-  app.use(express.static('build'));
-  app.get('*', function (req, res) {
-    res.sendFile('index.html');
+
+  app.use(express.static('public'))
+  app.get('/*', function(req, res) {
+    res.sendFile(path.join(__dirname + '/dist/my-app/index.html'));
   });
 
 app.use('/api/Room',RoomRouter);
