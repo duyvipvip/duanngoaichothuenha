@@ -26,7 +26,12 @@ app.use(bodyParser.json());
 
 //PORT ĐỂ TRUY CẬP APPLICATION
 const port = process.env.PORT || 8088;
-
+app.all('*', function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    next();
+});
 
   app.use(express.static(__dirname + '/dist'));
   app.get('/*', function(req, res) {
