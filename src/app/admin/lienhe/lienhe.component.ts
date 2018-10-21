@@ -8,8 +8,8 @@ import { ContactService } from 'src/@http-service/contact.service';
   styleUrls: ['./lienhe.component.scss']
 })
 export class LienheComponent implements OnInit {
-  private contact: any = [];
-  private stt: any = [];
+  public contact: any = [];
+  public stt: any = [];
   constructor(private contactservice: ContactService) { }
 
   ngOnInit() {
@@ -22,6 +22,10 @@ export class LienheComponent implements OnInit {
         this.contact = data;
         console.log(data, 'test');
       })
+  }
+
+  deleteUser(){
+    
   }
 
 }

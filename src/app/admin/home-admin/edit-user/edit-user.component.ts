@@ -12,6 +12,7 @@ export class EditUserComponent implements OnInit {
     public user: IUser;
     public formEditUser: FormGroup;
     public type: string = 'password';
+    public isDisable: boolean = true;
     constructor(private fb: FormBuilder,
         public bsModalRef: BsModalRef,) { }
 
@@ -28,6 +29,14 @@ export class EditUserComponent implements OnInit {
     /** ẨN HIỆN PASSWORD */
     toggleShow() {
         this.type = this.type === 'text' ? 'password' : 'text';
+    }
+
+    onFileSelected(event){
+
+    }
+
+    editUser(){
+        
     }
 
 }

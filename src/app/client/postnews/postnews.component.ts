@@ -28,6 +28,7 @@ export class PostnewsComponent implements OnInit {
     public longitude: number;
     public zoom: number;
     public srcFileUpload: Array<any> = [];
+    public editorValue: string = "";
     @ViewChild("search")
     public searchElementRef: ElementRef;
     constructor(private fb: FormBuilder,
@@ -115,7 +116,7 @@ export class PostnewsComponent implements OnInit {
     }
 
     /** THAY ĐỔI HÌNH ẢNH */
-    selectImage(event: any, input: any) {
+    selectImage(event: any) {
         debugger;
         if (event.target.files && event.target.files[0]) {
             var reader = new FileReader();

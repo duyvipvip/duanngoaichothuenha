@@ -28,8 +28,12 @@ export class MangermentPostnewsComponent implements OnInit {
 
     displayedColumns: string[] = ['position', 'name', 'weight', 'symbol', 'chucnang'];
 
-    goDetail(id){
-        this.router.navigate(['/client/detailroom/'+id]);
+    goDetail(){
+        // this.router.navigate(['/client/detailroom/'+id]);
+    }
+
+    deleteUser(){
+        
     }
 
 }

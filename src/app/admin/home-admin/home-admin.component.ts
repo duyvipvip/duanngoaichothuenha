@@ -8,11 +8,11 @@ import { EditUserComponent } from './edit-user/edit-user.component';
     styleUrls: ['./home-admin.component.scss']
 })
 export class HomeAdminComponent implements OnInit {
-    private dataSource: any = [];
-    private username: string;
-    private email: string;
-    private phone: string;
-    private selectUser:any;
+    public dataSource: any = [];
+    public username: string;
+    public email: string;
+    public phone: string;
+    public selectUser:any;
     constructor(private modalService: BsModalService,
         private userservice: UserService
     ) { }

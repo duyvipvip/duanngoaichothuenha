@@ -9,8 +9,8 @@ import { HistoryService } from 'src/@http-service/history.service';
 export class LichsuComponent implements OnInit {
 
   constructor(private historyservice: HistoryService) { }
-  private history:any = [];
-  private stt:any =[];
+  public history:any = [];
+  public stt:any =[];
   ngOnInit() {
       this.historyservice.GetHistoryByAdmin()
         .then((data:any)=>{ 

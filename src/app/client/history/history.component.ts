@@ -9,8 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class HistoryComponent implements OnInit {
 
   constructor(private historyservice: HistoryService) { }
-  private history:any = [];
-  private stt:any =[];
+  public history:any = [];
+  public stt:any =[];
   ngOnInit() {
       this.historyservice.GetHistoryByAdmin()
         .then((data:any)=>{ 
