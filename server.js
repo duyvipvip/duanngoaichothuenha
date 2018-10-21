@@ -34,9 +34,9 @@ app.all('*', function(req, res, next) {
 });
 
   app.use(express.static(__dirname + '/dist/my-app'));
-  app.get('/*', function(req, res) {
-    res.sendFile(path.join(__dirname + '/dist/my-app/index.html'));
-  });
+//   app.get('/*', function(req, res) {
+//     res.sendFile(path.join(__dirname + '/dist/my-app/index.html'));
+//   });
 
 app.use('/api/Room',RoomRouter);
 app.use('/api/User',UserRouter);
@@ -53,5 +53,5 @@ mongoose.connect('mongodb://havanduy:duy123@ds139370.mlab.com:39370/quanlythuenh
 })
 app.use(errorHandler.errorHandler());
 app.listen(port,(err)=>{
-        console.log('server run port 8088 http://localhost:8088');
+        console.log('server run port 8088 http://localhost:', port);
 })
