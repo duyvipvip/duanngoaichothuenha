@@ -1,9 +1,9 @@
-var express = require('express');
-var app = express();
-var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
+var express      = require('express');
+var app          = express();
+var bodyParser   = require('body-parser');
+var mongoose     = require('mongoose');
 var fileUpload = require('express-fileupload');
-const path = require('path');
+const path  = require('path');
 
 var errorHandler = require(path.join(__dirname, "/server/middle-ware/error-handler"));
 var RoomRouter = require(path.join(__dirname, "/server/routers/room.router"));
@@ -29,25 +29,25 @@ app.use(bodyParser.json());
 const port = process.env.PORT || 8088;
 
 
-app.get('*', function (req, res) {
-    const index = path.join(__dirname, 'build', 'index.html');
-    res.sendFile(index);
-});
+  app.use(express.static('public'))
+  app.get('/*', function(req, res) {
+    res.sendFile(path.join(__dirname + '/cuongpham/index.html'));
+  });
 
-app.use('/api/Room', RoomRouter);
-app.use('/api/User', UserRouter);
+app.use('/api/Room',RoomRouter);
+app.use('/api/User',UserRouter);
 app.use('/api/Auth', AuthRouter);
-app.use('/api/History', HistoryRouter);
-app.use('/api/Contact', ContactRouter);
+app.use('/api/History',HistoryRouter);
+app.use('/api/Contact',ContactRouter);
 // mongoose.connect('mongodb://localhost:27017/Broading_House',(err)=>{
-mongoose.connect('mongodb://havanduy:duy123@ds139370.mlab.com:39370/quanlythuenha', (err) => {
-    if (err) {
+mongoose.connect('mongodb://havanduy:duy123@ds139370.mlab.com:39370/quanlythuenha',(err)=>{
+    if(err){
         console.log('not connect to the database');
     } else {
         console.log('Successfully connected to MongoDB')
     }
 })
 app.use(errorHandler.errorHandler());
-app.listen(port, (err) => {
-    console.log('server run port 8088 http://localhost:8088');
+app.listen(port,(err)=>{
+        console.log('server run port 8088 http://localhost:8088');
 })
