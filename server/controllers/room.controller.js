@@ -34,7 +34,7 @@ function getRoomByUser(id){
         .then((data)=>{
            for(let i = 0;i<data.length;i++){
                 for(let j = 0 ;j<data[i].image.length;j++){
-                    data[i].image[j]= 'http://localhost:8088/image/'+ data[i].image[j];
+                    data[i].image[j]= 'https://cuongpham.herokuapp.com/image/'+ data[i].image[j];
                 }
             }
             return Promise.resolve(data)
@@ -164,7 +164,7 @@ function getsRoom(page) {
             .then((res) => {
                 res.forEach(element => {
                   for(let i = 0;i<element.image.length;i++){
-                    element.image[i]='http://localhost:8088/image/'+element.image[i];
+                    element.image[i]='https://cuongpham.herokuapp.com/image/'+element.image[i];
                   }
                 });
                 return Room.find()
@@ -190,7 +190,7 @@ function getsRoom(page) {
             .then((res) => {
                 res.forEach(element => {
                     for(let i = 0;i<element.image.length;i++){
-                      element.image[i]='http://localhost:8088/image/'+element.image[i];
+                      element.image[i]='https://cuongpham.herokuapp.com/image/'+element.image[i];
                     }
                   });
                 return Room.find()
@@ -225,7 +225,7 @@ function getRoomById(id){
     .populate('id_user',{password:0,_id:0,role:0,address:0,avatar:0})
     .then((room) => {
         for(let i = 0 ;i<room.image.length;i++){
-            room.image[i]= 'http://localhost:8088/image/'+room.image[i];
+            room.image[i]= 'https://cuongpham.herokuapp.com/image/'+room.image[i];
         }
         return Promise.resolve(room);
     })
