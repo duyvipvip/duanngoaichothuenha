@@ -19,7 +19,6 @@ var allowCrossDomain = function (req, res, next) {
     next();
 };
 app.use(allowCrossDomain);
-app.use(express.static(__dirname + '/dist'));
 app.use(express.static('public')); // de public cho client co the su dung duoc file trong thu muc do
 app.use(fileUpload());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -30,8 +29,9 @@ const port = process.env.PORT || 8088;
 
 
   app.use(express.static('public'))
+  app.use(express.static(__dirname + '/dist'));
   app.get('/*', function(req, res) {
-    res.sendFile(path.join(__dirname + '/cuongpham/index.html'));
+    res.sendFile(path.join(__dirname + '/dist/duanngoaichothuenha/index.html'));
   });
 
 app.use('/api/Room',RoomRouter);
