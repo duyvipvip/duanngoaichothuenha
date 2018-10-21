@@ -19,7 +19,7 @@ var allowCrossDomain = function (req, res, next) {
     next();
 };
 app.use(allowCrossDomain);
-app.use(express.static('public')); // de public cho client co the su dung duoc file trong thu muc do
+app.use(express.static(path.join(__dirname, "/server/public"))); // de public cho client co the su dung duoc file trong thu muc do
 app.use(fileUpload());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
