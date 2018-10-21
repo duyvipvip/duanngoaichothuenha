@@ -30,7 +30,9 @@ const port = process.env.PORT || 8088;
 
   app.use(express.static('public'))
   app.use(express.static(__dirname + '/dist'));
-  
+  app.get('/*', function(req, res) {
+    res.redirect(__dirname + '/dist/index.html')
+  });
 
 app.use('/api/Room',RoomRouter);
 app.use('/api/User',UserRouter);
