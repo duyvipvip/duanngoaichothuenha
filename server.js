@@ -34,7 +34,7 @@ app.all('*', function(req, res, next) {
 });
 
   app.use(express.static(__dirname + '/dist/my-app'));
-  app.get('/', function(req, res) {
+  app.get('/*', function(req, res) {
     res.sendFile(__dirname + '/index.html');
   });
 
