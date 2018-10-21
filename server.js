@@ -42,10 +42,9 @@ const forceSSL = function() {
   // to use the forceSSL
   // middleware
   app.use(forceSSL());
-
+  app.use(express.static('build'));
   app.get('*', function (req, res) {
-    const index = path.join(__dirname, 'build', 'index.html');
-    res.sendFile(index);
+    res.sendFile('index.html');
   });
 
 app.use('/api/Room',RoomRouter);
