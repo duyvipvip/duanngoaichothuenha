@@ -34,9 +34,9 @@ app.all('*', function(req, res, next) {
 });
 
   app.use(express.static(__dirname + '/dist/my-app'));
-//   app.get('/*', function(req, res) {
-//     res.sendFile(path.join(__dirname + '/dist/my-app/index.html'));
-//   });
+  app.get('/*', function(req, res) {
+    res.sendFile(path.join(__dirname + '/dist/my-app/index.html'));
+  });
 
 app.use('/api/Room',RoomRouter);
 app.use('/api/User',UserRouter);
