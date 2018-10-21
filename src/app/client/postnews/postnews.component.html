@@ -1,0 +1,235 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="info">
+                <div class="info-basic">
+                    <h4>Thông tin cơ bản</h4>
+                </div>
+                <div class="info-enter">
+                    <form class="col-md-12" style="border: 1px solid #aaa; box-shadow: 1px 1px 50px 0 rgba(0,0,0,.29);" [formGroup]="formAddPostNew">
+                        <div class="form-group">
+                            <label>Tiêu đề tin
+                                <span class="require"> (*)</span>
+                            </label>
+                            <input type="text" formControlName="title" class="form-control" placeholder="Tiêu đề tin" id="myInput">
+                            <div *ngIf="formAddPostNew.get('title').errors  && (formAddPostNew.get('title').dirty || formAddPostNew.get('title').touched)">
+                                <p *ngIf="formAddPostNew.get('title').errors.required" class="text-danger">Tên không được bỏ trống!</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Loại chuyên mục
+                                    <span class="require"> (*)</span>
+                                </label>
+                                <select class="form-control" formControlName="category" id="sel1">
+                                    <option value="false">Nhà thuê nguyên căn</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Giá cho thuê
+                                    <span class="require"> (*)</span>
+                                </label>
+                                <input type="number" formControlName="price" class="form-control" placeholder="Giá cho thuê" id="myInput">
+                                <div *ngIf="formAddPostNew.get('price').errors  && (formAddPostNew.get('price').dirty || formAddPostNew.get('price').touched)">
+                                    <p *ngIf="formAddPostNew.get('price').errors.required" class="text-danger">Giá không được bỏ trống!</p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Diện tích
+                                    <span class="require"> (*)</span>
+                                </label>
+                                <input type="number" formControlName="acreage" class="form-control" placeholder="Diện tích" id="myInput">
+                                <div *ngIf="formAddPostNew.get('acreage').errors  && (formAddPostNew.get('acreage').dirty || formAddPostNew.get('acreage').touched)">
+                                    <p *ngIf="formAddPostNew.get('acreage').errors.required" class="text-danger">Diện tích không được bỏ trống!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6" style="float: right;">
+                            <div class="form-group">
+                                <label>Số điện thoại
+                                    <span class="require"> (*)</span>
+                                </label>
+                                <input type="number" formControlName="phone" class="form-control" placeholder="Số Điện Thoại" id="myInput">
+                                <div *ngIf="formAddPostNew.get('phone').errors  && (formAddPostNew.get('phone').dirty || formAddPostNew.get('phone').touched)">
+                                    <p *ngIf="formAddPostNew.get('phone').errors.required" class="text-danger">Diện tích không được bỏ trống!</p>
+                                </div>
+                            </div>
+                            <div class="clr"></div>
+                            <div class="form-group">
+                                <label>Đơn vị</label>
+                                <select class="form-control" formControlName="unit" id="sel1">
+                                    <option value="Triệu/tháng">Triệu/tháng</option>
+                                    <option value="Ngìn/tháng">Ngìn/tháng</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Đối tượng cho thuê</label>
+                                <select class="form-control" formControlName="sex" id="sel1">
+                                    <option value="Tất cả">Tất cả</option>
+                                    <option value="Nam">Nam</option>
+                                    <option value="Nữ">Nữ</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-4">
+            <div class="tutorial-postnew">
+                <h4>Hướng dẫn đang tin</h4>
+            </div>
+            <div class="info-tutorial">
+                <ul>
+                    <li>
+                        <b>Thông tin có dấu
+                            <span> (*) </span>là bắt buộc.</b>
+                    </li>
+                    <li>
+                        <b>Nội dung phải viết bằng tiếng Việt có dấu</b>
+                    </li>
+                    <li>
+                        <b>Tiêu đề tin không dài quá 100 kí tự</b>
+                    </li>
+                    <li>
+                        Các bạn nên điền đầy đủ thông tin vào các mục để tin đăng có hiệu quả hơn.
+                    </li>
+                    <li>
+                        Để tăng độ tin cậy và tin rao được nhiều người quan tâm hơn, hãy sửa vị trí tin rao của bạn trên bản đồ bằng cách kéo icon
+                        tới đúng vị trí của tin rao.
+                    </li>
+                    <li>
+                        Tin đăng có hình ảnh rõ ràng sẽ được xem và gọi gấp nhiều lần so với tin rao không có ảnh. Hãy đăng ảnh để được giao dịch
+                        nhanh chóng!
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8" style="margin-top: 20px;">
+            <div class="info">
+                <div class="info-basic">
+                    <h4>Địa chỉ</h4>
+                </div>
+                <div class="info-enter">
+                    <form class="col-md-12" style="border: 1px solid #aaa; box-shadow: 1px 1px 50px 0 rgba(0,0,0,.29);" [formGroup]="formAddPostNew">
+                        <!-- <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Tỉnh / Thành phố
+                                    <span class="require"> (*)</span>
+                                </label>
+                                <select class="form-control" formControlName="category" (change)="selectTp($event.target.value)" id="sel1">
+                                    <option *ngFor="let tp of tp ; let i = index" [value]="i">{{tp.name}}</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Phường</label>
+                                <select class="form-control" *ngIf="Ward" id="sel3" (change)="selectW($event.target.value)">
+                                    <option *ngFor="let w of Ward; let i = index" [value]="i">{{w.NameWard}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6" style="float: right;">
+                            <div class="form-group">
+                                <label>Quận</label>
+                                <select class="form-control" *ngIf="Quans" (change)="selectQ($event.target.value)" id="sel2">
+                                    <option *ngFor="let q of Quans; let e = index" [value]="e">{{q.name}}</option>
+                                </select>
+                            </div>
+                            <!-- <div class="clr"></div> -->
+                            <!-- <div class="form-group">
+                                <label>Đường</label>
+                                <select class="form-control" *ngIf="Street" (change)="selectS($event.target.value)" id="sel4">
+                                    <option *ngFor="let s of Street; let e = index" [value]="e">{{s.Namestreet}}</option>
+                                </select>
+                            </div>
+                        </div> --> 
+                        <div class="form-group">
+                            <label>Địa chỉ chỉnh xác
+                                <span class="require"> (*)</span>
+                            </label>
+                            <input placeholder="search for location" formControlName="address" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control"
+                                #search [(ngModel)]=formAddPostNew.value.address>
+                            <small class="form-text error" *ngIf="formAddPostNew.get('address').errors?.required && formAddPostNew.get('address').touched">
+                                Nhập địa điểm
+                            </small>
+                        </div>
+                        <div class="form-group">
+                            <label>Bản đồ
+                                <span class="require"> (*)</span>
+                                <div class="col-md-12">
+                                    <agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom">
+                                        <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+                                    </agm-map>
+                                </div>
+                            </label>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8" style="margin-top: 20px;">
+            <div class="info">
+                <div class="info-basic">
+                    <h4>Thông tin mô tả</h4>
+                </div>
+
+                <form class="col-md-12" style="border: 1px solid #aaa; box-shadow: 1px 1px 50px 0 rgba(0,0,0,.29);" [formGroup]="formAddPostNew">
+                    <div class="show-notication">
+                        Giới thiệu mô tả về tin đăng của bạn. Ví dụ: Khu nhà có vị trí thuận lợi: Gần công viên, gần trường học ... Tổng diện tích
+                        52m2, đường đi ô tô vào tận cửa.
+                    </div>
+                    <div class="form-group">
+                        <label>mô tả
+                            <span class="require"> (*)</span>
+                        </label>
+                        <!-- <textarea formControlName="description" name="" id="" rows="5"></textarea> -->
+                        <ck-editor name="editor1" [(ngModel)]="editorValue" formControlName="description" skin="moono-lisa" language="en" [fullPage]="true"></ck-editor>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8" style="margin-top: 20px;">
+            <div class="info">
+                <div class="info-basic">
+                    <h4>Hình ảnh</h4>
+                </div>
+
+                <form class="col-md-12" style="border: 1px solid #aaa; box-shadow: 1px 1px 50px 0 rgba(0,0,0,.29);" [formGroup]="formAddPostNew">
+                    <div class="show-notication">
+                        Tin đăng có hình ảnh rõ ràng sẽ được xem và gọi gấp nhiều lần so với tin rao không có ảnh. Hãy đăng ảnh để được giao dịch
+                        nhanh chóng!
+                    </div>
+                    <div class="title-image">
+                        <b>Chọn hoặc kéo thả hình ảnh vào đây để đăng ảnh</b>
+                    </div>
+                    <div class="title-image">
+                        <p>Định dạng ảnh hỗ trợ: .jpg .png .jpeg .gif - Dung lượng ảnh không quá 5MB</p>
+                    </div>
+
+                    <div class="form-group">
+                            <input id="file" type="file" name="file"  (change)="selectImage($event)" class="input-file"/>
+                        <!-- <input type="file" (change)="selectImage($event)" class="input-file" id="file" data-id="1" > -->
+                    </div>
+                    <div *ngFor="let img of srcFileUpload" style="padding: 10px 10px; display: inline-block;">
+                        <img width="200" height="200" [src]="img" *ngIf="img" >
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8" style="margin-top: 30px;">
+            <button type="button" (click)="postRoom()" class="btn btn-danger btn-post">Đăng tin ngay</button>
+        </div>
+    </div>
+</div>

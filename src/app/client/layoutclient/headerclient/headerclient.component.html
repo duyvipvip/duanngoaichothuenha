@@ -1,0 +1,51 @@
+<div id="header-login-register">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+            </div>
+            <div class="col-md-5">
+                <!-- <div class="auth">
+                    <button type="button" class="btn btn-danger login" (click)="login()">Đăng nhập</button>
+                    <button type="button" class="btn btn-danger" (click)="register()">Đăng kí</button>
+                </div> -->
+                <div class="mangement-account">
+                    <div class="col-md-8">
+                        Xin chào,
+                        <b>{{user.username}}</b>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="dropdown">
+                            <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown">Quản lý tài khoản
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#" [routerLink]="['/client/postnews']">
+                                        <i class="fa fa-plus"></i> Đăng tin cho thuê</a>
+                                </li>
+                                <!-- <li>
+                                    <a href="#" [routerLink]="['/client/mangermentPostnew']">
+                                        <i class="fa fa-list-alt"></i> Quản lý Nhà</a>
+                                </li> -->
+                                <li>
+                                    <a href="#" [routerLink]="['/client/history']">
+                                        <i class="fa fa-history"></i> Lịch sử giao dịch</a>
+                                </li>
+                                <li>
+                                    <a href="#" (click)="goInfoUser()" [routerLink]="['/client/infouser']">
+                                        <i class="fa fa-user"></i> Thông tin cá nhân</a>
+                                </li>
+                                <li>
+                                    <a href="#"  (click)="logout()">
+                                        <i class="fa fa-user"></i> Thoát</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

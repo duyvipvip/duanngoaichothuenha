@@ -1,0 +1,4251 @@
+{
+	"Tp": [
+		{
+			"name": "Hồ Chí Minh",
+			"states": [
+				{
+					"name": "Quận 1",
+					"code": "Q1",
+					"Ward": [
+						{
+							"NameWard": "Bến Nghé",
+							"street": [
+								{
+									"Namestreet": "Đường Cao Bá Quát"
+								},
+								{
+									"Namestreet": "Đường Chợ Tôn Thất Đạm"
+								},
+								{
+									"Namestreet": "Đường Chợ Tôn Thất Đạm"
+								},
+								{
+									"Namestreet": "Đường Chợ Tôn Thất Đạm"
+								},
+								{
+									"Namestreet": "Đường Chu Mạnh Trinh"
+								},
+								{
+									"Namestreet": "Đường Công Trường Lam Sơn"
+								},
+								{
+									"Namestreet": "Đường Công Trường Mê Linh"
+								},
+								{
+									"Namestreet": "Đường Công Xã Paris1"
+								},
+								{
+									"Namestreet": "Đường Đinh Tiên Hoàng"
+								},
+								{
+									"Namestreet": "Đường Đông Du"
+								}
+							]
+						},
+						{
+							"NameWard": "Bến Thành",
+							"street": [
+								{
+									"Namestreet": "Đường Chợ Tôn Thất Đạm"
+								},
+								{
+									"Namestreet": "Đường Chợ Tôn Thất Đạm"
+								},
+								{
+									"Namestreet": "Đường Chu Mạnh Trinh"
+								},
+								{
+									"Namestreet": "Đường Công Trường Lam Sơn"
+								},
+								{
+									"Namestreet": "Đường Công Trường Mê Linh"
+								},
+								{
+									"Namestreet": "Đường Công Xã Paris1"
+								},
+								{
+									"Namestreet": "Đường Đinh Tiên Hoàng"
+								},
+								{
+									"Namestreet": "Đường Đông Du"
+								}
+							]
+						},
+						{
+							"NameWard": "Cô Giang",
+							"street": [
+								{
+									"Namestreet": "Đường Alexandre"
+								},
+								{
+									"Namestreet": "Đường Chợ Tôn Thất Đạm"
+								},
+								{
+									"Namestreet": "Đường Chu Mạnh Trinh"
+								},
+								{
+									"Namestreet": "Đường Công Trường Lam Sơn"
+								},
+								{
+									"Namestreet": "Đường Công Trường Mê Linh"
+								},
+								{
+									"Namestreet": "Đường Công Xã Paris1"
+								},
+								{
+									"Namestreet": "Đường Đinh Tiên Hoàng"
+								},
+								{
+									"Namestreet": "Đường Đông Du"
+								}
+							]
+						},
+						{
+							"NameWard": "Cầu Kho",
+							"street": [
+								{
+									"Namestreet": "Đường Alexandre"
+								},
+								{
+									"Namestreet": "Đường Chợ Tôn Thất Đạm"
+								},
+								{
+									"Namestreet": "Đường Chu Mạnh Trinh"
+								},
+								{
+									"Namestreet": "Đường Công Trường Lam Sơn"
+								},
+								{
+									"Namestreet": "Đường Công Trường Mê Linh"
+								},
+								{
+									"Namestreet": "Đường Công Xã Paris1"
+								},
+								{
+									"Namestreet": "Đường Đinh Tiên Hoàng"
+								},
+								{
+									"Namestreet": "Đường Đông Du"
+								}
+							]
+						},
+						{
+							"NameWard": "Cầu Ông Lãnh",
+							"street": [
+								{
+									"Namestreet": "Đường Alexandre"
+								},
+								{
+									"Namestreet": "Đường Chợ Tôn Thất Đạm"
+								},
+								{
+									"Namestreet": "Đường Chu Mạnh Trinh"
+								},
+								{
+									"Namestreet": "Đường Công Trường Lam Sơn"
+								},
+								{
+									"Namestreet": "Đường Công Trường Mê Linh"
+								},
+								{
+									"Namestreet": "Đường Công Xã Paris1"
+								},
+								{
+									"Namestreet": "Đường Đinh Tiên Hoàng"
+								},
+								{
+									"Namestreet": "Đường Đông Du"
+								}
+							]
+						},
+						{
+							"NameWard": " Đa Kao",
+							"street": [
+								{
+									"Namestreet": "Đường Alexandre"
+								},
+								{
+									"Namestreet": "Đường Chợ Tôn Thất Đạm"
+								},
+								{
+									"Namestreet": "Đường Chu Mạnh Trinh"
+								},
+								{
+									"Namestreet": "Đường Công Trường Lam Sơn"
+								},
+								{
+									"Namestreet": "Đường Công Trường Mê Linh"
+								},
+								{
+									"Namestreet": "Đường Công Xã Paris1"
+								},
+								{
+									"Namestreet": "Đường Đinh Tiên Hoàng"
+								},
+								{
+									"Namestreet": "Đường Đông Du"
+								}
+							]
+						},
+						{
+							"NameWard": "Nguyễn Cư Trinh",
+							"street": [
+								{
+									"Namestreet": "Đường Alexandre"
+								},
+								{
+									"Namestreet": "Đường Chợ Tôn Thất Đạm"
+								},
+								{
+									"Namestreet": "Đường Chu Mạnh Trinh"
+								},
+								{
+									"Namestreet": "Đường Công Trường Lam Sơn"
+								},
+								{
+									"Namestreet": "Đường Công Trường Mê Linh"
+								},
+								{
+									"Namestreet": "Đường Công Xã Paris1"
+								},
+								{
+									"Namestreet": "Đường Đinh Tiên Hoàng"
+								},
+								{
+									"Namestreet": "Đường Đông Du"
+								}
+							]
+						},
+						{
+							"NameWard": "Nguyễn Thái Bình",
+							"street": [
+								{
+									"Namestreet": "Đường Alexandre"
+								},
+								{
+									"Namestreet": "Đường Chợ Tôn Thất Đạm"
+								},
+								{
+									"Namestreet": "Đường Chu Mạnh Trinh"
+								},
+								{
+									"Namestreet": "Đường Công Trường Lam Sơn"
+								},
+								{
+									"Namestreet": "Đường Công Trường Mê Linh"
+								},
+								{
+									"Namestreet": "Đường Công Xã Paris1"
+								},
+								{
+									"Namestreet": "Đường Đinh Tiên Hoàng"
+								},
+								{
+									"Namestreet": "Đường Đông Du"
+								}
+							]
+						},
+						{
+							"NameWard": "Phạm Ngũ Lão",
+							"street": [
+								{
+									"Namestreet": "Đường Alexandre"
+								},
+								{
+									"Namestreet": "Đường Chợ Tôn Thất Đạm"
+								},
+								{
+									"Namestreet": "Đường Chu Mạnh Trinh"
+								},
+								{
+									"Namestreet": "Đường Công Trường Lam Sơn"
+								},
+								{
+									"Namestreet": "Đường Công Trường Mê Linh"
+								},
+								{
+									"Namestreet": "Đường Công Xã Paris1"
+								},
+								{
+									"Namestreet": "Đường Đinh Tiên Hoàng"
+								},
+								{
+									"Namestreet": "Đường Đông Du"
+								}
+							]
+						},
+						{
+							"NameWard": "Tân Định",
+							"street": [
+								{
+									"Namestreet": "Đường Alexandre"
+								},
+								{
+									"Namestreet": "Đường Chợ Tôn Thất Đạm"
+								},
+								{
+									"Namestreet": "Đường Chu Mạnh Trinh"
+								},
+								{
+									"Namestreet": "Đường Công Trường Lam Sơn"
+								},
+								{
+									"Namestreet": "Đường Công Trường Mê Linh"
+								},
+								{
+									"Namestreet": "Đường Công Xã Paris1"
+								},
+								{
+									"Namestreet": "Đường Đinh Tiên Hoàng"
+								},
+								{
+									"Namestreet": "Đường Đông Du"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Quận 2",
+					"code": "Q2",
+					"Ward": [
+						{
+							"NameWard": "An Khánh",
+							"street": [
+								{
+									"Namestreet": "Đường 1"
+								},
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 10F"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 14"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								},
+								{
+									"Namestreet": "Đường 17"
+								}
+							]
+						},
+						{
+							"NameWard": "An Lợi Đông",
+							"street": [
+								{
+									"Namestreet": "Đường 1"
+								},
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 10F"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 14"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								},
+								{
+									"Namestreet": "Đường 17"
+								}
+							]
+						},
+						{
+							"NameWard": "An Phú",
+							"street": [
+								{
+									"Namestreet": "Đường 1"
+								},
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 10F"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 14"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								},
+								{
+									"Namestreet": "Đường 17"
+								}
+							]
+						},
+						{
+							"NameWard": "Bình An",
+							"street": [
+								{
+									"Namestreet": "Đường 1"
+								},
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 10F"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 14"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								},
+								{
+									"Namestreet": "Đường 17"
+								}
+							]
+						},
+						{
+							"NameWard": "Bình Khánh",
+							"street": [
+								{
+									"Namestreet": "Đường 1"
+								},
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 10F"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 14"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								},
+								{
+									"Namestreet": "Đường 17"
+								}
+							]
+						},
+						{
+							"NameWard": "Bình Trưng Đông",
+							"street": [
+								{
+									"Namestreet": "Đường 1"
+								},
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 10F"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 14"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								},
+								{
+									"Namestreet": "Đường 17"
+								}
+							]
+						},
+						{
+							"NameWard": "Bình Trưng Tây",
+							"street": [
+								{
+									"Namestreet": "Đường 1"
+								},
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 10F"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 14"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								},
+								{
+									"Namestreet": "Đường 17"
+								}
+							]
+						},
+						{
+							"NameWard": "Cát Lái",
+							"street": [
+								{
+									"Namestreet": "Đường 1"
+								},
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 10F"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 14"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								},
+								{
+									"Namestreet": "Đường 17"
+								}
+							]
+						},
+						{
+							"NameWard": "Thạnh Mỹ Lợi",
+							"street": [
+								{
+									"Namestreet": "Đường 1"
+								},
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 10F"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 14"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								},
+								{
+									"Namestreet": "Đường 17"
+								}
+							]
+						},
+						{
+							"NameWard": "Thảo Điền",
+							"street": [
+								{
+									"Namestreet": "Đường 1"
+								},
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 10F"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 14"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								},
+								{
+									"Namestreet": "Đường 17"
+								}
+							]
+						},
+						{
+							"NameWard": "Thủ Thiêm",
+							"street": [
+								{
+									"Namestreet": "Đường 1"
+								},
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 10F"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 14"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								},
+								{
+									"Namestreet": "Đường 17"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Quận 3",
+					"code": "Q3",
+					"Ward": [
+						{
+							"NameWard": "Phường 1",
+							"street": [
+								{
+									"Namestreet": "Đường 1 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 2"
+								},
+								{
+									"Namestreet": "Đường 2 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 3 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 4 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 5 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 6"
+								},
+								{
+									"Namestreet": "Đường 7 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường Huyện Thanh Quan"
+								},
+								{
+									"Namestreet": "Đường Cờ Bắc"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 2",
+							"street": [
+								{
+									"Namestreet": "Đường 1 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 2"
+								},
+								{
+									"Namestreet": "Đường 2 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 3 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 4 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 5 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 6"
+								},
+								{
+									"Namestreet": "Đường 7 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường Huyện Thanh Quan"
+								},
+								{
+									"Namestreet": "Đường Cờ Bắc"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 3",
+							"street": [
+								{
+									"Namestreet": "Đường 1 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 2"
+								},
+								{
+									"Namestreet": "Đường 2 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 3 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 4 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 5 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 6"
+								},
+								{
+									"Namestreet": "Đường 7 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường Huyện Thanh Quan"
+								},
+								{
+									"Namestreet": "Đường Cờ Bắc"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 4",
+							"street": [
+								{
+									"Namestreet": "Đường 1 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 2"
+								},
+								{
+									"Namestreet": "Đường 2 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 3 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 4 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 5 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 6"
+								},
+								{
+									"Namestreet": "Đường 7 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường Huyện Thanh Quan"
+								},
+								{
+									"Namestreet": "Đường Cờ Bắc"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 5",
+							"street": [
+								{
+									"Namestreet": "Đường 1 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 2"
+								},
+								{
+									"Namestreet": "Đường 2 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 3 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 4 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 5 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 6"
+								},
+								{
+									"Namestreet": "Đường 7 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường Huyện Thanh Quan"
+								},
+								{
+									"Namestreet": "Đường Cờ Bắc"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 6",
+							"street": [
+								{
+									"Namestreet": "Đường 1 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 2"
+								},
+								{
+									"Namestreet": "Đường 2 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 3 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 4 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 5 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 6"
+								},
+								{
+									"Namestreet": "Đường 7 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường Huyện Thanh Quan"
+								},
+								{
+									"Namestreet": "Đường Cờ Bắc"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 7",
+							"street": [
+								{
+									"Namestreet": "Đường 1 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 2"
+								},
+								{
+									"Namestreet": "Đường 2 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 3 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 4 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 5 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 6"
+								},
+								{
+									"Namestreet": "Đường 7 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường Huyện Thanh Quan"
+								},
+								{
+									"Namestreet": "Đường Cờ Bắc"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 8",
+							"street": [
+								{
+									"Namestreet": "Đường 1 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 2"
+								},
+								{
+									"Namestreet": "Đường 2 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 3 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 4 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 5 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 6"
+								},
+								{
+									"Namestreet": "Đường 7 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường Huyện Thanh Quan"
+								},
+								{
+									"Namestreet": "Đường Cờ Bắc"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 9",
+							"street": [
+								{
+									"Namestreet": "Đường 1 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 2"
+								},
+								{
+									"Namestreet": "Đường 2 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 3 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 4 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 5 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 6"
+								},
+								{
+									"Namestreet": "Đường 7 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường Huyện Thanh Quan"
+								},
+								{
+									"Namestreet": "Đường Cờ Bắc"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 10",
+							"street": [
+								{
+									"Namestreet": "Đường 1 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 2"
+								},
+								{
+									"Namestreet": "Đường 2 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 3 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 4 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 5 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 6"
+								},
+								{
+									"Namestreet": "Đường 7 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường Huyện Thanh Quan"
+								},
+								{
+									"Namestreet": "Đường Cờ Bắc"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 11",
+							"street": [
+								{
+									"Namestreet": "Đường 1 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 2"
+								},
+								{
+									"Namestreet": "Đường 2 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 3 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 4 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 5 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 6"
+								},
+								{
+									"Namestreet": "Đường 7 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường Huyện Thanh Quan"
+								},
+								{
+									"Namestreet": "Đường Cờ Bắc"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 12",
+							"street": [
+								{
+									"Namestreet": "Đường 1 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 2"
+								},
+								{
+									"Namestreet": "Đường 2 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 3 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 4 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 5 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 6"
+								},
+								{
+									"Namestreet": "Đường 7 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường Huyện Thanh Quan"
+								},
+								{
+									"Namestreet": "Đường Cờ Bắc"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 13",
+							"street": [
+								{
+									"Namestreet": "Đường 1 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 2"
+								},
+								{
+									"Namestreet": "Đường 2 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 3 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 4 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 5 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 6"
+								},
+								{
+									"Namestreet": "Đường 7 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường Huyện Thanh Quan"
+								},
+								{
+									"Namestreet": "Đường Cờ Bắc"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 14",
+							"street": [
+								{
+									"Namestreet": "Đường 1 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 2"
+								},
+								{
+									"Namestreet": "Đường 2 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 3 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 4 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 5 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường 6"
+								},
+								{
+									"Namestreet": "Đường 7 Cư Xá Đô Thành"
+								},
+								{
+									"Namestreet": "Đường Huyện Thanh Quan"
+								},
+								{
+									"Namestreet": "Đường Cờ Bắc"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Quận 4",
+					"code": "Q4",
+					"Ward": [
+						{
+							"NameWard": "Phường 1",
+							"street": [
+								{
+									"Namestreet": "Đường 10C"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 12C"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								},
+								{
+									"Namestreet": "Đường 17"
+								},
+								{
+									"Namestreet": "Đường 18"
+								},
+								{
+									"Namestreet": "Đường 19"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 2",
+							"street": [
+								{
+									"Namestreet": "Đường 10C"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 12C"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								},
+								{
+									"Namestreet": "Đường 17"
+								},
+								{
+									"Namestreet": "Đường 18"
+								},
+								{
+									"Namestreet": "Đường 19"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 3",
+							"street": [
+								{
+									"Namestreet": "Đường 10C"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 12C"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								},
+								{
+									"Namestreet": "Đường 17"
+								},
+								{
+									"Namestreet": "Đường 18"
+								},
+								{
+									"Namestreet": "Đường 19"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 4",
+							"street": [
+								{
+									"Namestreet": "Đường 10C"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 12C"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								},
+								{
+									"Namestreet": "Đường 17"
+								},
+								{
+									"Namestreet": "Đường 18"
+								},
+								{
+									"Namestreet": "Đường 19"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 5",
+							"street": [
+								{
+									"Namestreet": "Đường 10C"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 12C"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								},
+								{
+									"Namestreet": "Đường 17"
+								},
+								{
+									"Namestreet": "Đường 18"
+								},
+								{
+									"Namestreet": "Đường 19"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 6",
+							"street": [
+								{
+									"Namestreet": "Đường 10C"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 12C"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								},
+								{
+									"Namestreet": "Đường 17"
+								},
+								{
+									"Namestreet": "Đường 18"
+								},
+								{
+									"Namestreet": "Đường 19"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 7",
+							"street": [
+								{
+									"Namestreet": "Đường 10C"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 12C"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								},
+								{
+									"Namestreet": "Đường 17"
+								},
+								{
+									"Namestreet": "Đường 18"
+								},
+								{
+									"Namestreet": "Đường 19"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 8",
+							"street": [
+								{
+									"Namestreet": "Đường 10C"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 12C"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								},
+								{
+									"Namestreet": "Đường 17"
+								},
+								{
+									"Namestreet": "Đường 18"
+								},
+								{
+									"Namestreet": "Đường 19"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 9",
+							"street": [
+								{
+									"Namestreet": "Đường 10C"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 12C"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								},
+								{
+									"Namestreet": "Đường 17"
+								},
+								{
+									"Namestreet": "Đường 18"
+								},
+								{
+									"Namestreet": "Đường 19"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 10",
+							"street": [
+								{
+									"Namestreet": "Đường 10C"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 12C"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								},
+								{
+									"Namestreet": "Đường 17"
+								},
+								{
+									"Namestreet": "Đường 18"
+								},
+								{
+									"Namestreet": "Đường 19"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 11",
+							"street": [
+								{
+									"Namestreet": "Đường 10C"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 12C"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								},
+								{
+									"Namestreet": "Đường 17"
+								},
+								{
+									"Namestreet": "Đường 18"
+								},
+								{
+									"Namestreet": "Đường 19"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 12",
+							"street": [
+								{
+									"Namestreet": "Đường 10C"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 12C"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								},
+								{
+									"Namestreet": "Đường 17"
+								},
+								{
+									"Namestreet": "Đường 18"
+								},
+								{
+									"Namestreet": "Đường 19"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 13",
+							"street": [
+								{
+									"Namestreet": "Đường 10C"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 12C"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								},
+								{
+									"Namestreet": "Đường 17"
+								},
+								{
+									"Namestreet": "Đường 18"
+								},
+								{
+									"Namestreet": "Đường 19"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 14",
+							"street": [
+								{
+									"Namestreet": "Đường 10C"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 12C"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								},
+								{
+									"Namestreet": "Đường 17"
+								},
+								{
+									"Namestreet": "Đường 18"
+								},
+								{
+									"Namestreet": "Đường 19"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 15",
+							"street": [
+								{
+									"Namestreet": "Đường 10C"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 12C"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								},
+								{
+									"Namestreet": "Đường 17"
+								},
+								{
+									"Namestreet": "Đường 18"
+								},
+								{
+									"Namestreet": "Đường 19"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 16",
+							"street": [
+								{
+									"Namestreet": "Đường 10C"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 12C"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								},
+								{
+									"Namestreet": "Đường 17"
+								},
+								{
+									"Namestreet": "Đường 18"
+								},
+								{
+									"Namestreet": "Đường 19"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 17",
+							"street": [
+								{
+									"Namestreet": "Đường 10C"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 12C"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								},
+								{
+									"Namestreet": "Đường 17"
+								},
+								{
+									"Namestreet": "Đường 18"
+								},
+								{
+									"Namestreet": "Đường 19"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 18",
+							"street": [
+								{
+									"Namestreet": "Đường 10C"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 12C"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								},
+								{
+									"Namestreet": "Đường 17"
+								},
+								{
+									"Namestreet": "Đường 18"
+								},
+								{
+									"Namestreet": "Đường 19"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Quận 5",
+					"code": "Q5",
+					"Ward": [
+						{
+							"NameWard": "Phường 1",
+							"street": [
+								{
+									"Namestreet": "Đường An Bình"
+								},
+								{
+									"Namestreet": "Đường An Điềm"
+								},
+								{
+									"Namestreet": "Đường An Dương Vương"
+								},
+								{
+									"Namestreet": "Phố Bà Triệu"
+								},
+								{
+									"Namestreet": "Đường Bạch Vân"
+								},
+								{
+									"Namestreet": "Đường Bãi Sậy"
+								},
+								{
+									"Namestreet": "Đường Bừi Hữu Nghĩa"
+								},
+								{
+									"Namestreet": "Đường Cao Đạt"
+								},
+								{
+									"Namestreet": "Đường Châu Văn Liêm"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 2",
+							"street": [
+								{
+									"Namestreet": "Đường An Bình"
+								},
+								{
+									"Namestreet": "Đường An Điềm"
+								},
+								{
+									"Namestreet": "Đường An Dương Vương"
+								},
+								{
+									"Namestreet": "Phố Bà Triệu"
+								},
+								{
+									"Namestreet": "Đường Bạch Vân"
+								},
+								{
+									"Namestreet": "Đường Bãi Sậy"
+								},
+								{
+									"Namestreet": "Đường Bừi Hữu Nghĩa"
+								},
+								{
+									"Namestreet": "Đường Cao Đạt"
+								},
+								{
+									"Namestreet": "Đường Châu Văn Liêm"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 3",
+							"street": [
+								{
+									"Namestreet": "Đường An Bình"
+								},
+								{
+									"Namestreet": "Đường An Điềm"
+								},
+								{
+									"Namestreet": "Đường An Dương Vương"
+								},
+								{
+									"Namestreet": "Phố Bà Triệu"
+								},
+								{
+									"Namestreet": "Đường Bạch Vân"
+								},
+								{
+									"Namestreet": "Đường Bãi Sậy"
+								},
+								{
+									"Namestreet": "Đường Bừi Hữu Nghĩa"
+								},
+								{
+									"Namestreet": "Đường Cao Đạt"
+								},
+								{
+									"Namestreet": "Đường Châu Văn Liêm"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 4",
+							"street": [
+								{
+									"Namestreet": "Đường An Bình"
+								},
+								{
+									"Namestreet": "Đường An Điềm"
+								},
+								{
+									"Namestreet": "Đường An Dương Vương"
+								},
+								{
+									"Namestreet": "Phố Bà Triệu"
+								},
+								{
+									"Namestreet": "Đường Bạch Vân"
+								},
+								{
+									"Namestreet": "Đường Bãi Sậy"
+								},
+								{
+									"Namestreet": "Đường Bừi Hữu Nghĩa"
+								},
+								{
+									"Namestreet": "Đường Cao Đạt"
+								},
+								{
+									"Namestreet": "Đường Châu Văn Liêm"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 5",
+							"street": [
+								{
+									"Namestreet": "Đường An Bình"
+								},
+								{
+									"Namestreet": "Đường An Điềm"
+								},
+								{
+									"Namestreet": "Đường An Dương Vương"
+								},
+								{
+									"Namestreet": "Phố Bà Triệu"
+								},
+								{
+									"Namestreet": "Đường Bạch Vân"
+								},
+								{
+									"Namestreet": "Đường Bãi Sậy"
+								},
+								{
+									"Namestreet": "Đường Bừi Hữu Nghĩa"
+								},
+								{
+									"Namestreet": "Đường Cao Đạt"
+								},
+								{
+									"Namestreet": "Đường Châu Văn Liêm"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 6",
+							"street": [
+								{
+									"Namestreet": "Đường An Bình"
+								},
+								{
+									"Namestreet": "Đường An Điềm"
+								},
+								{
+									"Namestreet": "Đường An Dương Vương"
+								},
+								{
+									"Namestreet": "Phố Bà Triệu"
+								},
+								{
+									"Namestreet": "Đường Bạch Vân"
+								},
+								{
+									"Namestreet": "Đường Bãi Sậy"
+								},
+								{
+									"Namestreet": "Đường Bừi Hữu Nghĩa"
+								},
+								{
+									"Namestreet": "Đường Cao Đạt"
+								},
+								{
+									"Namestreet": "Đường Châu Văn Liêm"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 7",
+							"street": [
+								{
+									"Namestreet": "Đường An Bình"
+								},
+								{
+									"Namestreet": "Đường An Điềm"
+								},
+								{
+									"Namestreet": "Đường An Dương Vương"
+								},
+								{
+									"Namestreet": "Phố Bà Triệu"
+								},
+								{
+									"Namestreet": "Đường Bạch Vân"
+								},
+								{
+									"Namestreet": "Đường Bãi Sậy"
+								},
+								{
+									"Namestreet": "Đường Bừi Hữu Nghĩa"
+								},
+								{
+									"Namestreet": "Đường Cao Đạt"
+								},
+								{
+									"Namestreet": "Đường Châu Văn Liêm"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 8",
+							"street": [
+								{
+									"Namestreet": "Đường An Bình"
+								},
+								{
+									"Namestreet": "Đường An Điềm"
+								},
+								{
+									"Namestreet": "Đường An Dương Vương"
+								},
+								{
+									"Namestreet": "Phố Bà Triệu"
+								},
+								{
+									"Namestreet": "Đường Bạch Vân"
+								},
+								{
+									"Namestreet": "Đường Bãi Sậy"
+								},
+								{
+									"Namestreet": "Đường Bừi Hữu Nghĩa"
+								},
+								{
+									"Namestreet": "Đường Cao Đạt"
+								},
+								{
+									"Namestreet": "Đường Châu Văn Liêm"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 9",
+							"street": [
+								{
+									"Namestreet": "Đường An Bình"
+								},
+								{
+									"Namestreet": "Đường An Điềm"
+								},
+								{
+									"Namestreet": "Đường An Dương Vương"
+								},
+								{
+									"Namestreet": "Phố Bà Triệu"
+								},
+								{
+									"Namestreet": "Đường Bạch Vân"
+								},
+								{
+									"Namestreet": "Đường Bãi Sậy"
+								},
+								{
+									"Namestreet": "Đường Bừi Hữu Nghĩa"
+								},
+								{
+									"Namestreet": "Đường Cao Đạt"
+								},
+								{
+									"Namestreet": "Đường Châu Văn Liêm"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 10",
+							"street": [
+								{
+									"Namestreet": "Đường An Bình"
+								},
+								{
+									"Namestreet": "Đường An Điềm"
+								},
+								{
+									"Namestreet": "Đường An Dương Vương"
+								},
+								{
+									"Namestreet": "Phố Bà Triệu"
+								},
+								{
+									"Namestreet": "Đường Bạch Vân"
+								},
+								{
+									"Namestreet": "Đường Bãi Sậy"
+								},
+								{
+									"Namestreet": "Đường Bừi Hữu Nghĩa"
+								},
+								{
+									"Namestreet": "Đường Cao Đạt"
+								},
+								{
+									"Namestreet": "Đường Châu Văn Liêm"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 11",
+							"street": [
+								{
+									"Namestreet": "Đường An Bình"
+								},
+								{
+									"Namestreet": "Đường An Điềm"
+								},
+								{
+									"Namestreet": "Đường An Dương Vương"
+								},
+								{
+									"Namestreet": "Phố Bà Triệu"
+								},
+								{
+									"Namestreet": "Đường Bạch Vân"
+								},
+								{
+									"Namestreet": "Đường Bãi Sậy"
+								},
+								{
+									"Namestreet": "Đường Bừi Hữu Nghĩa"
+								},
+								{
+									"Namestreet": "Đường Cao Đạt"
+								},
+								{
+									"Namestreet": "Đường Châu Văn Liêm"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 12",
+							"street": [
+								{
+									"Namestreet": "Đường An Bình"
+								},
+								{
+									"Namestreet": "Đường An Điềm"
+								},
+								{
+									"Namestreet": "Đường An Dương Vương"
+								},
+								{
+									"Namestreet": "Phố Bà Triệu"
+								},
+								{
+									"Namestreet": "Đường Bạch Vân"
+								},
+								{
+									"Namestreet": "Đường Bãi Sậy"
+								},
+								{
+									"Namestreet": "Đường Bừi Hữu Nghĩa"
+								},
+								{
+									"Namestreet": "Đường Cao Đạt"
+								},
+								{
+									"Namestreet": "Đường Châu Văn Liêm"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 13",
+							"street": [
+								{
+									"Namestreet": "Đường An Bình"
+								},
+								{
+									"Namestreet": "Đường An Điềm"
+								},
+								{
+									"Namestreet": "Đường An Dương Vương"
+								},
+								{
+									"Namestreet": "Phố Bà Triệu"
+								},
+								{
+									"Namestreet": "Đường Bạch Vân"
+								},
+								{
+									"Namestreet": "Đường Bãi Sậy"
+								},
+								{
+									"Namestreet": "Đường Bừi Hữu Nghĩa"
+								},
+								{
+									"Namestreet": "Đường Cao Đạt"
+								},
+								{
+									"Namestreet": "Đường Châu Văn Liêm"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 14",
+							"street": [
+								{
+									"Namestreet": "Đường An Bình"
+								},
+								{
+									"Namestreet": "Đường An Điềm"
+								},
+								{
+									"Namestreet": "Đường An Dương Vương"
+								},
+								{
+									"Namestreet": "Phố Bà Triệu"
+								},
+								{
+									"Namestreet": "Đường Bạch Vân"
+								},
+								{
+									"Namestreet": "Đường Bãi Sậy"
+								},
+								{
+									"Namestreet": "Đường Bừi Hữu Nghĩa"
+								},
+								{
+									"Namestreet": "Đường Cao Đạt"
+								},
+								{
+									"Namestreet": "Đường Châu Văn Liêm"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 15",
+							"street": [
+								{
+									"Namestreet": "Đường An Bình"
+								},
+								{
+									"Namestreet": "Đường An Điềm"
+								},
+								{
+									"Namestreet": "Đường An Dương Vương"
+								},
+								{
+									"Namestreet": "Phố Bà Triệu"
+								},
+								{
+									"Namestreet": "Đường Bạch Vân"
+								},
+								{
+									"Namestreet": "Đường Bãi Sậy"
+								},
+								{
+									"Namestreet": "Đường Bừi Hữu Nghĩa"
+								},
+								{
+									"Namestreet": "Đường Cao Đạt"
+								},
+								{
+									"Namestreet": "Đường Châu Văn Liêm"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Quận 6",
+					"code": "Q6",
+					"Ward": [
+						{
+							"NameWard": "Phường 1",
+							"street": [
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 14"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								},
+								{
+									"Namestreet": "Đường 17"
+								},
+								{
+									"Namestreet": "Đường 18"
+								},
+								{
+									"Namestreet": "Đường 19"
+								},
+								{
+									"Namestreet": "Đường 1A"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 2",
+							"street": [
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 14"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								},
+								{
+									"Namestreet": "Đường 17"
+								},
+								{
+									"Namestreet": "Đường 18"
+								},
+								{
+									"Namestreet": "Đường 19"
+								},
+								{
+									"Namestreet": "Đường 1A"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 3",
+							"street": [
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 14"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								},
+								{
+									"Namestreet": "Đường 17"
+								},
+								{
+									"Namestreet": "Đường 18"
+								},
+								{
+									"Namestreet": "Đường 19"
+								},
+								{
+									"Namestreet": "Đường 1A"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 4",
+							"street": [
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 14"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								},
+								{
+									"Namestreet": "Đường 17"
+								},
+								{
+									"Namestreet": "Đường 18"
+								},
+								{
+									"Namestreet": "Đường 19"
+								},
+								{
+									"Namestreet": "Đường 1A"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 5",
+							"street": [
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 14"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								},
+								{
+									"Namestreet": "Đường 17"
+								},
+								{
+									"Namestreet": "Đường 18"
+								},
+								{
+									"Namestreet": "Đường 19"
+								},
+								{
+									"Namestreet": "Đường 1A"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 6",
+							"street": [
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 14"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								},
+								{
+									"Namestreet": "Đường 17"
+								},
+								{
+									"Namestreet": "Đường 18"
+								},
+								{
+									"Namestreet": "Đường 19"
+								},
+								{
+									"Namestreet": "Đường 1A"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 7",
+							"street": [
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 14"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								},
+								{
+									"Namestreet": "Đường 17"
+								},
+								{
+									"Namestreet": "Đường 18"
+								},
+								{
+									"Namestreet": "Đường 19"
+								},
+								{
+									"Namestreet": "Đường 1A"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 8",
+							"street": [
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 14"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								},
+								{
+									"Namestreet": "Đường 17"
+								},
+								{
+									"Namestreet": "Đường 18"
+								},
+								{
+									"Namestreet": "Đường 19"
+								},
+								{
+									"Namestreet": "Đường 1A"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 9",
+							"street": [
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 14"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								},
+								{
+									"Namestreet": "Đường 17"
+								},
+								{
+									"Namestreet": "Đường 18"
+								},
+								{
+									"Namestreet": "Đường 19"
+								},
+								{
+									"Namestreet": "Đường 1A"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 10",
+							"street": [
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 14"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								},
+								{
+									"Namestreet": "Đường 17"
+								},
+								{
+									"Namestreet": "Đường 18"
+								},
+								{
+									"Namestreet": "Đường 19"
+								},
+								{
+									"Namestreet": "Đường 1A"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 11",
+							"street": [
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 14"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								},
+								{
+									"Namestreet": "Đường 17"
+								},
+								{
+									"Namestreet": "Đường 18"
+								},
+								{
+									"Namestreet": "Đường 19"
+								},
+								{
+									"Namestreet": "Đường 1A"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 12",
+							"street": [
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 14"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								},
+								{
+									"Namestreet": "Đường 17"
+								},
+								{
+									"Namestreet": "Đường 18"
+								},
+								{
+									"Namestreet": "Đường 19"
+								},
+								{
+									"Namestreet": "Đường 1A"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 13",
+							"street": [
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 14"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								},
+								{
+									"Namestreet": "Đường 17"
+								},
+								{
+									"Namestreet": "Đường 18"
+								},
+								{
+									"Namestreet": "Đường 19"
+								},
+								{
+									"Namestreet": "Đường 1A"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 14",
+							"street": [
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 14"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								},
+								{
+									"Namestreet": "Đường 17"
+								},
+								{
+									"Namestreet": "Đường 18"
+								},
+								{
+									"Namestreet": "Đường 19"
+								},
+								{
+									"Namestreet": "Đường 1A"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Quận 7",
+					"code": "Q7",
+					"Ward": [
+						{
+							"NameWard": "Phường Bình Thuận",
+							"street": [
+								{
+									"Namestreet": "Đường 1"
+								},
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 11N"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 12B"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 14"
+								},
+								{
+									"Namestreet": "Đường 14A"
+								},
+								{
+									"Namestreet": "Đường 15"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường Phú Mỹ",
+							"street": [
+								{
+									"Namestreet": "Đường 1"
+								},
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 11N"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 12B"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 14"
+								},
+								{
+									"Namestreet": "Đường 14A"
+								},
+								{
+									"Namestreet": "Đường 15"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường Phú Nhuận",
+							"street": [
+								{
+									"Namestreet": "Đường 1"
+								},
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 11N"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 12B"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 14"
+								},
+								{
+									"Namestreet": "Đường 14A"
+								},
+								{
+									"Namestreet": "Đường 15"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường Tân Kiểng",
+							"street": [
+								{
+									"Namestreet": "Đường 1"
+								},
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 11N"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 12B"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 14"
+								},
+								{
+									"Namestreet": "Đường 14A"
+								},
+								{
+									"Namestreet": "Đường 15"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường Tân Phong",
+							"street": [
+								{
+									"Namestreet": "Đường 1"
+								},
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 11N"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 12B"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 14"
+								},
+								{
+									"Namestreet": "Đường 14A"
+								},
+								{
+									"Namestreet": "Đường 15"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường Tân Phú",
+							"street": [
+								{
+									"Namestreet": "Đường 1"
+								},
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 11N"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 12B"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 14"
+								},
+								{
+									"Namestreet": "Đường 14A"
+								},
+								{
+									"Namestreet": "Đường 15"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường Tân Quy",
+							"street": [
+								{
+									"Namestreet": "Đường 1"
+								},
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 11N"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 12B"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 14"
+								},
+								{
+									"Namestreet": "Đường 14A"
+								},
+								{
+									"Namestreet": "Đường 15"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường Tân Thuận Đông",
+							"street": [
+								{
+									"Namestreet": "Đường 1"
+								},
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 11N"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 12B"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 14"
+								},
+								{
+									"Namestreet": "Đường 14A"
+								},
+								{
+									"Namestreet": "Đường 15"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường Tân Thuận Tây",
+							"street": [
+								{
+									"Namestreet": "Đường 1"
+								},
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 11N"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 12B"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 14"
+								},
+								{
+									"Namestreet": "Đường 14A"
+								},
+								{
+									"Namestreet": "Đường 15"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Quận 8",
+					"code": "Q8",
+					"Ward": [
+						{
+							"NameWard": "Phường 1",
+							"street": [
+								{
+									"Namestreet": "Đường 1"
+								},
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 1011"
+								},
+								{
+									"Namestreet": "Đường 102"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 14"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 2",
+							"street": [
+								{
+									"Namestreet": "Đường 1"
+								},
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 1011"
+								},
+								{
+									"Namestreet": "Đường 102"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 14"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 3",
+							"street": [
+								{
+									"Namestreet": "Đường 1"
+								},
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 1011"
+								},
+								{
+									"Namestreet": "Đường 102"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 14"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 4",
+							"street": [
+								{
+									"Namestreet": "Đường 1"
+								},
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 1011"
+								},
+								{
+									"Namestreet": "Đường 102"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 14"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 5",
+							"street": [
+								{
+									"Namestreet": "Đường 1"
+								},
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 1011"
+								},
+								{
+									"Namestreet": "Đường 102"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 14"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 6",
+							"street": [
+								{
+									"Namestreet": "Đường 1"
+								},
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 1011"
+								},
+								{
+									"Namestreet": "Đường 102"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 14"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 7",
+							"street": [
+								{
+									"Namestreet": "Đường 1"
+								},
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 1011"
+								},
+								{
+									"Namestreet": "Đường 102"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 14"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 8",
+							"street": [
+								{
+									"Namestreet": "Đường 1"
+								},
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 1011"
+								},
+								{
+									"Namestreet": "Đường 102"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 14"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 9",
+							"street": [
+								{
+									"Namestreet": "Đường 1"
+								},
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 1011"
+								},
+								{
+									"Namestreet": "Đường 102"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 14"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 10",
+							"street": [
+								{
+									"Namestreet": "Đường 1"
+								},
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 1011"
+								},
+								{
+									"Namestreet": "Đường 102"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 14"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 11",
+							"street": [
+								{
+									"Namestreet": "Đường 1"
+								},
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 1011"
+								},
+								{
+									"Namestreet": "Đường 102"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 14"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 12",
+							"street": [
+								{
+									"Namestreet": "Đường 1"
+								},
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 1011"
+								},
+								{
+									"Namestreet": "Đường 102"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 14"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 13",
+							"street": [
+								{
+									"Namestreet": "Đường 1"
+								},
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 1011"
+								},
+								{
+									"Namestreet": "Đường 102"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 14"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 14",
+							"street": [
+								{
+									"Namestreet": "Đường 1"
+								},
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 1011"
+								},
+								{
+									"Namestreet": "Đường 102"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 14"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 15",
+							"street": [
+								{
+									"Namestreet": "Đường 1"
+								},
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 1011"
+								},
+								{
+									"Namestreet": "Đường 102"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 14"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường 16",
+							"street": [
+								{
+									"Namestreet": "Đường 1"
+								},
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 1011"
+								},
+								{
+									"Namestreet": "Đường 102"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 13"
+								},
+								{
+									"Namestreet": "Đường 14"
+								},
+								{
+									"Namestreet": "Đường 15"
+								},
+								{
+									"Namestreet": "Đường 16"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Quận 9",
+					"code": "Q9",
+					"Ward": [
+						{
+							"NameWard": "Phường Hiệp Phú",
+							"street": [
+								{
+									"Namestreet": "Đường 1"
+								},
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 100A"
+								},
+								{
+									"Namestreet": "Đường 102"
+								},
+								{
+									"Namestreet": "Đường 104"
+								},
+								{
+									"Namestreet": "Đường 106"
+								},
+								{
+									"Namestreet": "Đường 109"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 120"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường Long Bình",
+							"street": [
+								{
+									"Namestreet": "Đường 1"
+								},
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 100A"
+								},
+								{
+									"Namestreet": "Đường 102"
+								},
+								{
+									"Namestreet": "Đường 104"
+								},
+								{
+									"Namestreet": "Đường 106"
+								},
+								{
+									"Namestreet": "Đường 109"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 120"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường Long Phước",
+							"street": [
+								{
+									"Namestreet": "Đường 1"
+								},
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 100A"
+								},
+								{
+									"Namestreet": "Đường 102"
+								},
+								{
+									"Namestreet": "Đường 104"
+								},
+								{
+									"Namestreet": "Đường 106"
+								},
+								{
+									"Namestreet": "Đường 109"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 120"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường Long Thạnh Mỹ",
+							"street": [
+								{
+									"Namestreet": "Đường 1"
+								},
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 100A"
+								},
+								{
+									"Namestreet": "Đường 102"
+								},
+								{
+									"Namestreet": "Đường 104"
+								},
+								{
+									"Namestreet": "Đường 106"
+								},
+								{
+									"Namestreet": "Đường 109"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 120"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường Long Trường",
+							"street": [
+								{
+									"Namestreet": "Đường 1"
+								},
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 100A"
+								},
+								{
+									"Namestreet": "Đường 102"
+								},
+								{
+									"Namestreet": "Đường 104"
+								},
+								{
+									"Namestreet": "Đường 106"
+								},
+								{
+									"Namestreet": "Đường 109"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 120"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường Phú Hữu",
+							"street": [
+								{
+									"Namestreet": "Đường 1"
+								},
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 100A"
+								},
+								{
+									"Namestreet": "Đường 102"
+								},
+								{
+									"Namestreet": "Đường 104"
+								},
+								{
+									"Namestreet": "Đường 106"
+								},
+								{
+									"Namestreet": "Đường 109"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 120"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường Phước Bình",
+							"street": [
+								{
+									"Namestreet": "Đường 1"
+								},
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 100A"
+								},
+								{
+									"Namestreet": "Đường 102"
+								},
+								{
+									"Namestreet": "Đường 104"
+								},
+								{
+									"Namestreet": "Đường 106"
+								},
+								{
+									"Namestreet": "Đường 109"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 120"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường Phước Long A",
+							"street": [
+								{
+									"Namestreet": "Đường 1"
+								},
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 100A"
+								},
+								{
+									"Namestreet": "Đường 102"
+								},
+								{
+									"Namestreet": "Đường 104"
+								},
+								{
+									"Namestreet": "Đường 106"
+								},
+								{
+									"Namestreet": "Đường 109"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 120"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường Phước Long B",
+							"street": [
+								{
+									"Namestreet": "Đường 1"
+								},
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 100A"
+								},
+								{
+									"Namestreet": "Đường 102"
+								},
+								{
+									"Namestreet": "Đường 104"
+								},
+								{
+									"Namestreet": "Đường 106"
+								},
+								{
+									"Namestreet": "Đường 109"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 120"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường Tăng Nhơn Phú A",
+							"street": [
+								{
+									"Namestreet": "Đường 1"
+								},
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 100A"
+								},
+								{
+									"Namestreet": "Đường 102"
+								},
+								{
+									"Namestreet": "Đường 104"
+								},
+								{
+									"Namestreet": "Đường 106"
+								},
+								{
+									"Namestreet": "Đường 109"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 120"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường Tăng Nhơn Phú B",
+							"street": [
+								{
+									"Namestreet": "Đường 1"
+								},
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 100A"
+								},
+								{
+									"Namestreet": "Đường 102"
+								},
+								{
+									"Namestreet": "Đường 104"
+								},
+								{
+									"Namestreet": "Đường 106"
+								},
+								{
+									"Namestreet": "Đường 109"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 120"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường Tân Phú",
+							"street": [
+								{
+									"Namestreet": "Đường 1"
+								},
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 100A"
+								},
+								{
+									"Namestreet": "Đường 102"
+								},
+								{
+									"Namestreet": "Đường 104"
+								},
+								{
+									"Namestreet": "Đường 106"
+								},
+								{
+									"Namestreet": "Đường 109"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 120"
+								}
+							]
+						},
+						{
+							"NameWard": "Phường Trường Thạnh",
+							"street": [
+								{
+									"Namestreet": "Đường 1"
+								},
+								{
+									"Namestreet": "Đường 10"
+								},
+								{
+									"Namestreet": "Đường 100A"
+								},
+								{
+									"Namestreet": "Đường 102"
+								},
+								{
+									"Namestreet": "Đường 104"
+								},
+								{
+									"Namestreet": "Đường 106"
+								},
+								{
+									"Namestreet": "Đường 109"
+								},
+								{
+									"Namestreet": "Đường 11"
+								},
+								{
+									"Namestreet": "Đường 12"
+								},
+								{
+									"Namestreet": "Đường 120"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Ha Noi",
+			"states": [
+				{
+					"name": "Ba Đình",
+					"code": "A1"
+				},
+				{
+					"name": "Hoàn Kiếm",
+					"code": "A2"
+				},
+				{
+					"name": "Hai Bà Trưng",
+					"code": "A3"
+				},
+				{
+					"name": "Đống Đa",
+					"code": "A4"
+				},
+				{
+					"name": "Tây Hồ",
+					"code": "A5"
+				},
+				{
+					"name": "Cầu Giấy",
+					"code": "A6"
+				},
+				{
+					"name": "Thanh Xuân",
+					"code": "A7"
+				},
+				{
+					"name": "Hoàng Mai",
+					"code": "A8"
+				},
+				{
+					"name": "Long Biên",
+					"code": "A9"
+				},
+				{
+					"name": "Từ Liêm",
+					"code": "A10"
+				}
+			]
+		}
+	]
+}

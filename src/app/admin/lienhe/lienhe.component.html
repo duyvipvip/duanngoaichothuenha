@@ -1,0 +1,42 @@
+<div class="hehe">
+    <h3 style="text-align: center">Quản lí liên hệ</h3>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Stt</th>
+        <th>Email</th>
+        <th>Nội Dung</th>
+        <th>Ngày tạo</th>
+        <th>Xóa</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cont of contact">
+          <td>{{cont.stt}}</td>
+            <td >{{cont.email}}</td>
+            <td >{{cont.message}}</td>
+            <td>{{cont.dateCreat| date: 'dd/MM/yyyy'}}</td>
+            <td><a href="javascript:void(0)" (click)="trash()">
+              <i class="fa fa-trash" data-toggle="modal" data-target="#deleteModal"></i>
+          </a></td>
+          </tr>   
+    </tbody>
+  </table>
+  </div>
+<!-- delete -->
+  <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Bạn Có Chắn Chắn Xóa</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="deleteUser()"> Xóa</button>
+            </div>
+        </div>
+    </div>
+</div>

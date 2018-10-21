@@ -1,0 +1,87 @@
+<div class="container">
+    <h4>Cho thuê nhà, Tìm nhà cho thuê</h4>
+    <p>Cho thuê nhà, nhà số 1 Việt Nam - Website đăng tin cho thuê nhà, tìm nhà nhanh, hiệu quả với hơn
+        70.000+ tin đăng và 2.000.000 lượt xem mõi tháng.</p>
+</div>
+<!-- VÙNG LỌC TIN -->
+<div class="container">
+    <div class="loctinnhan">
+        <div class="row">
+            <div class="col-md-6">
+                <h4>Nhập địa chỉ</h4>
+                <input type="text" [(ngModel)]="search" class="form-control" id="usr">
+            </div>
+           <div class="col-md-2">
+                <h4>Khoảng giá</h4>
+                <mat-form-field>
+                    <mat-select placeholder="Chọn giá" [(ngModel)]="value" (ngModelChange)="select()">
+                        <mat-option *ngFor="let food of foods" [value]="food.value" >
+                            {{food.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <div class="col-md-2">
+                <button type="button" class="btn btn-warning btnloctin btn-block" (click)="Search()">Lọc tin</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- TIN NOI BAT -->
+<div class="tinnoibat">
+    <div class="container">
+        <h4 class="title">Tin nổi bật</h4>
+        <a href="#"> Hiện thị tên của bạn ở đây?</a>
+        <div class="showroom space-box"  >
+            <div style="width: 45%" *ngFor="let room of rooms">
+                <div class="box">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="img">
+                                <img [src]="room.image[0]" alt="" width="20px">
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <a [routerLink]="['detailroom',room._id]" class="title">
+                                        {{room.title}}
+                                    </a>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="img-hot">
+                                        <img src="../../../assets/image/hot.gif" alt="">
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="space-line"></div>
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <button type="button" class="btn btn-success">{{room.price}} {{room.unit}}</button>
+                                </div>
+                                <div class="col-md-7">
+                                    <b>{{room.address}}</b>
+                                </div>
+
+                            </div>
+                            <div class="space-line"></div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                        <div style="text-transform: uppercase;" class="overflow: hidden;" [innerHTML]=room.description></div>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <div class="col-md-12">
+    <div id="map" style="height:365px;background:yellow"></div>
+</div> -->

@@ -1,0 +1,51 @@
+<div class="modal-header">
+    <h4 class="modal-title pull-left">Chỉnh sửa user</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+        <div class="avatar">
+            <!-- <img *ngIf="user.avatar" [src]="getUrl()" class="profileImg"> -->
+            <!-- <img *ngIf="!user.avatar" src="assets/user.jpg" class="profileImg"> -->
+            <label class="btn btn-file mt-4" [ngClass]="{ 'btn-success': !isDisable }">
+                Chọn
+                <input type="file" style="display: none;" accept=".png, .jpg, .jpeg" [disabled]="isDisable" (change)="onFileSelected($event)">
+            </label>
+        </div>
+        <form [formGroup]="formEditUser">
+            <div class="form-group">
+                <label>Tên Tài Khoản</label>
+                <input type="text" formControlName="username" class="form-control" placeholder="Tên Tài Khoản" id="myInput" disabled>
+                <div *ngIf="formEditUser.get('username').errors  && (formEditUser.get('username').dirty || formEditUser.get('username').touched)">
+                    <p *ngIf="formEditUser.get('username').errors.required" class="text-danger">Tên không được bỏ trống!</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="text" formControlName="email" class="form-control" placeholder="Email">
+                <div *ngIf="formEditUser.get('email').errors  && (formEditUser.get('email').dirty || formEditUser.get('email').touched)">
+                    <p *ngIf="formEditUser.get('email').errors.required" class="text-danger">Email không được bỏ trống</p>
+                    <p *ngIf="formEditUser.get('email').errors.email" class="text-danger">Email không hợp lệ</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Mật Khẩu mới</label>
+                <div class="input-group">
+                    <span class="input-group-addon d-flex align-items-center" (click)="toggleShow()">
+                        <i *ngIf="type === 'password'" class="fa fa-eye"></i>
+                        <i *ngIf="type !== 'password'" class="fa fa-eye-slash"></i>
+                    </span>
+                    <input type="{{type}}" formControlName="password" class="form-control" placeholder="Mật Khẩu">
+                </div>
+                <div *ngIf="formEditUser.get('password').errors  && (formEditUser.get('password').dirty || formEditUser.get('password').touched)">
+                    <p *ngIf="formEditUser.get('password').errors.required" class="text-danger">Password không được bỏ trống!</p>
+                </div>
+
+            </div>
+        </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">Thoát</button>
+    <button type="button" [disabled]="formEditUser.invalid" class="btn btn-primary" data-dismiss="modal" (click)="editUser()">Lưu Thay Đổi</button>
+</div>

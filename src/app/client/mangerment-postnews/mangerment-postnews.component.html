@@ -1,0 +1,100 @@
+<div class="container">
+    <div id="table">
+        <table style="width: 100%" mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+            <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+
+            <!-- Position Column -->
+            <ng-container matColumnDef="position">
+                <th mat-header-cell *matHeaderCellDef> Stt </th>
+                <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Username </th>
+                <td mat-cell *matCellDef="let element"> {{element.username}} </td>
+            </ng-container>
+
+            <!-- Weight Column -->
+            <ng-container matColumnDef="weight">
+                <th mat-header-cell *matHeaderCellDef> Email </th>
+                <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="symbol">
+                <th mat-header-cell *matHeaderCellDef> Số điện thoại </th>
+                <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="chucnang">
+                <th mat-header-cell *matHeaderCellDef> Chức năng </th>
+                <td mat-cell *matCellDef="let element">
+                    <a href="javascript:void(0)" (click)="getUser(element)">
+                        <i class="fa fa-edit" data-toggle="modal" data-target="#updateModal"></i>&#160;&#160;&#160;
+                    </a>
+                    <a href="javascript:void(0)" (click)="trash()">
+                        <i class="fa fa-trash" data-toggle="modal" data-target="#deleteModal"></i>
+                    </a>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </div>
+</div>
+
+<!-- Modal update -->
+<div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Danh sách phòng</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="body-modal">
+                <form>
+                    <div class="list-type5">
+                        <ol>
+                            <li>
+                                <a href="#" (click)="goDetail()">Formget Online Form Builder Create Online </a>
+                                <img src="../../../assets//image/tick.png" alt="">
+                            </li>
+                            <li>
+                                <a href="#" (click)="goDetail()">Formget Online Form Builder Create Online </a>
+                                <img src="../../../assets//image/publish_y.png" alt="">
+                            </li>
+                            <li>
+                                <a href="#" (click)="goDetail()">Formget Online Form Builder Create Online </a>
+                                <img src="../../../assets//image/tick.png" alt="">
+                            </li>
+                        </ol>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Delete -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Bạn Có Chắn Chắn Xóa</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="deleteUser()"> Xóa</button>
+            </div>
+        </div>
+    </div>
+</div>

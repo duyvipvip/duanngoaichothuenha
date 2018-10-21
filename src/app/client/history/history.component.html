@@ -1,0 +1,27 @@
+<div class="hehe">
+  <h3 style="text-align: center">Quản lí lịch sử</h3>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Stt</th>
+      <th>Tên người giao dịch</th>
+      <th>Số điện thoại</th>
+      <th>Địa chỉ</th>
+      <th>Ngày giao dich</th>
+      <th>Giá tiền</th>
+  
+      
+    </tr>
+  </thead>
+  <tbody >
+    <tr *ngFor="let his of history" >
+      <td >{{his.stt}}</td>
+      <td >{{his.idUser.username}}</td>
+      <td >{{his.idUser.phone}}</td>
+      <td >{{his.room.address}}</td>
+      <td >{{his.dateTransaction| date: 'dd/MM/yyyy'}}</td>
+      <td >{{his.room.price}} {{his.room.unit}}</td>
+    </tr>   
+  </tbody>
+</table>
+</div>
