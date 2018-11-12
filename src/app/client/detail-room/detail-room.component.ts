@@ -77,4 +77,9 @@ export class DetailRoomComponent implements OnInit {
         }
     }
 
+    // 
+    guiyeucauthuenha() {
+        
+    }
+
 }

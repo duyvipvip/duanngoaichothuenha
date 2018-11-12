@@ -34,7 +34,7 @@ function getRoomByUser(id){
         .then((data)=>{
            for(let i = 0;i<data.length;i++){
                 for(let j = 0 ;j<data[i].image.length;j++){
-                    data[i].image[j]= 'https://cuongpham.herokuapp.com/image/'+ data[i].image[j];
+                    data[i].image[j]= 'https://localhost:8088/'+ data[i].image[j];
                 }
             }
             return Promise.resolve(data)

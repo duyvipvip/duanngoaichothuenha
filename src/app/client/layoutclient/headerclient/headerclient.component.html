@@ -35,6 +35,10 @@
                                     <a href="#" (click)="goInfoUser()" [routerLink]="['/client/infouser']">
                                         <i class="fa fa-user"></i> Thông tin cá nhân</a>
                                 </li>
+                                <li *ngIf="this.user.role == 'admin'">
+                                    <a href="#" (click)="goInfoAdmin()" [routerLink]="['/admin']">
+                                        <i class="fa fa-user"></i> Trang Quản Trị</a>
+                                </li>
                                 <li>
                                     <a href="#"  (click)="logout()">
                                         <i class="fa fa-user"></i> Thoát</a>

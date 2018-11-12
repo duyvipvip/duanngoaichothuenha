@@ -1,5 +1,5 @@
 export const APICONFIG = {
-    BASEPOINT: 'https://cuongpham.herokuapp.com',
+    BASEPOINT: 'http://localhost:8088',
     USER:{
         CREATE_USER:'/api/User/CreateUser',
         UPDATE_USER:'/api/User/UpdateUser',
@@ -11,6 +11,10 @@ export const APICONFIG = {
         UPDATE_USER_BY_ADMIN:'/api/User/UpdateUserByAdmin',
         DELETE_USER:'/api/User/DeleteUser/'
 
+    },
+    RENTHOUSE: {
+        CREATE_RENTHOUSE: '/api/RentHouse/create',
+        GETID_RENTHOUSE: (id) => `/api/RentHouse/getOneRentHouse/${id}`
     },
     AUTH: {
       LOGIN: '/api/auth/login',
