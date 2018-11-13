@@ -7,13 +7,20 @@ var rentHouseSchema = new Schema({
     iduserRented:{
         type:String
     },
+    idhouse: {
+        type: String
+    },
     price:{
         type: String,
         default:'0'
-     },
-     checkHouse: {
-         type: Number
-     }
+    },
+    checkHouse: {
+        type: Number,
+        default: 0
+    },
+    unit: {
+        type: String
+    }
 })
 var rentHouse = mongoose.model('house',rentHouseSchema);
 module.exports = rentHouse;

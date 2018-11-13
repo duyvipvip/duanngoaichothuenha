@@ -4,6 +4,7 @@ import { RoomService } from './../../../@http-service/room.service';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MapsAPILoader } from '../../../../node_modules/@agm/core';
+import { RentHouseService } from 'src/@http-service/rentHouse.service';
 
 @Component({
     selector: 'app-detail-room',
@@ -21,6 +22,7 @@ export class DetailRoomComponent implements OnInit {
     public lengh: any;
     constructor(private router: Router,
         private room: RoomService,
+        private rentHouseService: RentHouseService,
         private mapsAPILoader: MapsAPILoader,
         private route: ActivatedRoute,
         private toastr: ToastrService
@@ -79,7 +81,20 @@ export class DetailRoomComponent implements OnInit {
 
     // 
     guiyeucauthuenha() {
-        
+        let body = {
+            iduserRent: this.getRoom.id_user._id,
+            idhouse: this.getRoom._id,
+            iduserRented: JSON.parse(localStorage.getItem('data')).user._id,
+            price: this.getRoom.price,
+            unit: this.getRoom.unit,
+        }
+        this.rentHouseService.CreateRentHouse(body)
+            .then((data) => {
+                this.toastr.success('success','Gửi yêu cầu thuê nhà thành công')
+            })
+            .catch((err) => {
+                this.toastr.error('error', err.error.message);
+            })
     }
 
 }

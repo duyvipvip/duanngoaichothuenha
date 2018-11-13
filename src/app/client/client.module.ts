@@ -18,6 +18,7 @@ import { DetailRoomComponent } from './detail-room/detail-room.component';
 import { MangermentPostnewsComponent } from './mangerment-postnews/mangerment-postnews.component';
 import { BaidangComponent } from './tabuser/baidang/baidang.component';
 import { HistoryComponent } from './history/history.component'; 
+import { RentHouseService } from 'src/@http-service/rentHouse.service';
 @NgModule({
     imports: [
         ClientRoutingModule,
@@ -43,6 +44,6 @@ import { HistoryComponent } from './history/history.component';
         BaidangComponent,
         HistoryComponent
     ],
-    providers: [ContactService,HistoryService],
+    providers: [ContactService,HistoryService, RentHouseService],
 })
 export class ClientModule { }

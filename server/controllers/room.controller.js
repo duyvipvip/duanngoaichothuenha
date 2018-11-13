@@ -222,7 +222,7 @@ function createRoom(data) {
 }
 function getRoomById(id){
     return Room.findById(id)
-    .populate('id_user',{password:0,_id:0,role:0,address:0,avatar:0})
+    .populate('id_user',{password:0,role:0,address:0,avatar:0})
     .then((room) => {
         for(let i = 0 ;i<room.image.length;i++){
             room.image[i]= 'https://cuongpham.herokuapp.com/image/'+room.image[i];
