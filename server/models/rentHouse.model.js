@@ -22,5 +22,5 @@ var rentHouseSchema = new Schema({
         type: String
     }
 })
-var rentHouse = mongoose.model('house',rentHouseSchema);
+var rentHouse = mongoose.model('renthouse',rentHouseSchema);
 module.exports = rentHouse;

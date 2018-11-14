@@ -58,6 +58,10 @@ var roomSchema = new Schema({
         type:Schema.Types.ObjectId,
         ref:'house'
     },
+    iduserRentHouse: [{
+        type: String,
+        default: 0
+    }],
     location:{
         lat: {
             type: Number,
