@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HistoryService } from 'src/@http-service/history.service';
+import { RoomService } from 'src/@http-service/room.service';
 
 @Component({
   selector: 'app-lichsu',
@@ -8,19 +9,19 @@ import { HistoryService } from 'src/@http-service/history.service';
 })
 export class LichsuComponent implements OnInit {
 
-  constructor(private historyservice: HistoryService) { }
+  constructor(private historyservice: HistoryService, private roomsv: RoomService) { }
   public history:any = [];
   public stt:any =[];
+  public iduser = JSON.parse(localStorage.getItem('data')).user._id;
   ngOnInit() {
-      this.historyservice.GetHistoryByAdmin()
+      this.roomsv.laylichsuyeucauthuenha(this.iduser)
         .then((data:any)=>{ 
           for(let i = 0;i <data.length;i++){
             data[i].stt = (i+1);
           }
+          console.log(data);
           this.history = data; 
-          console.log(this.history,'sasa');
           
         })
   }
-
 }

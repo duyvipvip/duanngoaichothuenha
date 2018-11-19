@@ -38,10 +38,9 @@ export class HomeAdminComponent implements OnInit {
     /** CHỈNH SỬA */
     updateUser(){
         console.log('dsds');
-        
+        console.log(this.selectUser);
         this.userservice.UpdateByAdmin(this.selectUser)
             .then((res)=>{
-                console.log("success");
             })
             .catch((err)=>{
                 console.log(err);

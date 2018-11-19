@@ -21,7 +21,9 @@ Router.get('/GetRoom', getsRoom);
 Router.get('/getRoomById/:id',getRoomById);
 Router.get('/GetRoomByUser',auth.auth(),getRoomByUser);
 Router.put('/Transaction/:id',Transaction);
-
+Router.post('/changestatususer', changestatususer);
+Router.get('/laycacbaidangcuauser/:iduser', laycacbaidangcuauser);
+Router.get('/laylichsuyeucauthuenha/:iduser', laylichsuyeucauthuenha);
 module.exports = Router;
 function Transaction(req,res,next){
     var id = req.params.id;
@@ -167,6 +169,36 @@ function creatRoom(req, res, next) {
         .then((data) => {
 
             return res.json({ message: 'success' });
+        })
+        .catch((err) => {
+            return next(err);
+        })
+}
+
+function changestatususer(req, res, next){
+    RoomController.changestatususer(req.body.idhouse, req.body.iduser, req.body.status, req.body.idusercreate)
+    .then((data) => {
+        return res.json({message: 'success'});
+    })
+    .catch((err) => {
+        return next(err);
+    })
+}
+
+function laycacbaidangcuauser(req, res, next){
+    RoomController.laycacbaidangcuauser(req.params.iduser)
+        .then((data) => {
+            return res.json(data);
+        })
+        .catch((err) => {
+            return next(err);
+        })
+}
+
+function laylichsuyeucauthuenha(req, res, next){
+    RoomController.laylichsuyeucauthuenha(req.params.iduser)
+        .then((data) => {
+            return res.json(data);
         })
         .catch((err) => {
             return next(err);

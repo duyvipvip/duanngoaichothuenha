@@ -10,7 +10,8 @@ var rentHouseController = require('./../controllers/rentHouse.controller');
 
 Router.post('/create', createRentHouse);
 Router.get('/GetHouseById/:id',GetHouseById);
-
+Router.post('/deleteRentHouse', deleteRentHouse);
+Router.get('/quanlyhoahong/:iduser', quanlyhoahong);
 module.exports = Router;
 function GetHouseById(){
     let id = req.params.id;
@@ -32,4 +33,25 @@ function createRentHouse(req,res, next){
         .catch((err)=>{
             return next(err);
         })
+}
+
+function deleteRentHouse(req, res, next){
+    rentHouseController.deleteRentHouse(req.body.idhouse, req.body.iduser)
+        .then((data) => {
+            return res.send(data)
+        })
+        .catch((err) => {
+            return next(err);
+        })
+}
+
+function quanlyhoahong(req, res, next){
+    let id_user = req.params.iduser;
+    rentHouseController.quanlyhoahong(id_user)
+    .then((data) => {
+        return res.send(data);
+    })
+    .catch((err) => {
+        return next(err);
+    })
 }

@@ -4,23 +4,30 @@
     <thead>
       <tr>
         <th>Stt</th>
-        <th>Tên người giao dịch</th>
-        <th>Số điện thoại</th>
         <th>Địa chỉ</th>
-        <th>Ngày giao dich</th>
+        <th>Tiêu để tin</th>
+        <th>Ngày gửi yêu cầu</th>
         <th>Giá tiền</th>
-    
+        <th>Trạng thái</th>
         
       </tr>
     </thead>
     <tbody >
       <tr *ngFor="let his of history" >
         <td >{{his.stt}}</td>
-        <td >{{his.idUser.username}}</td>
-        <td >{{his.idUser.phone}}</td>
-        <td >{{his.room.address}}</td>
-        <td >{{his.dateTransaction| date: 'dd/MM/yyyy'}}</td>
-        <td >{{his.room.price}} {{his.room.unit}}</td>
+        <td >{{his.address}}</td>
+        <td >{{his.title}}</td>
+        <td >
+          <div *ngFor="let user of his.iduserRentHouse" >
+              <span *ngIf="user.iduser == iduser">{{user.createdate| date: 'dd/MM/yyyy hh:mm'}}</span>
+          </div>
+        </td>
+        <td >{{his.price}} {{his.unit}}</td>
+        <td>
+            <div *ngFor="let user of his.iduserRentHouse" >
+                <span *ngIf="user.iduser == iduser">{{user.status | status}}</span>
+            </div>
+        </td>
       </tr>   
     </tbody>
   </table>

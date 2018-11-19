@@ -1,31 +1,36 @@
 <div class="hehe">
-  <h3 style="text-align: center">Quản lí Bài Đăng</h3>
-<table class="table">
-  <thead>
-    <tr>
-      <th>Số TT</th>
-      <th>Tên Đề Tin</th>
-      <th>Số Điện Thoại</th>
-      <th>Diện tích</th>
-      <th>Đối tượng cho thuê</th>
-      <th>Giá</th>
-      <th>Xóa</th>
+    <h3 style="text-align: center">Quản lí Bài Đăng</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Số TT</th>
+                <th>Tên Đề Tin</th>
+                <th>Số Điện Thoại</th>
+                <th>Diện tích</th>
+                <th>Đối tượng cho thuê</th>
+                <th>Ngày Tạo</th>
+                <th>Email người tạo</th>
+                <th>Giá</th>
+                <th>Xóa</th>
 
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor = "let room of rooms">
-      <td>{{room.stt}}</td>
-      <td>{{room.title}}</td>
-      <td>{{room.phone}}</td>
-      <td>{{room.acreage}} m2</td>
-      <td>{{room.sex}}</td>
-      <td>{{room.price}} {{room.unit}}</td>
-      <td><button type="button" (click)="getRoom(room)" class="btn btn-warning" data-toggle="modal" data-target="#deleteModal" >Xóa</button></td>
-    </tr>
-  
-  </tbody>
-</table>
+            </tr>
+        </thead>
+        <tbody *ngIf="rooms">
+            <tr *ngFor="let room of rooms; let i = index">
+                <td>{{i}}</td>
+                <td>{{room.title}}</td>
+                <td>{{room.phone}}</td>
+                <td>{{room.acreage}} m2</td>
+                <td>{{room.sex}}</td>
+                <td>{{room.createDate | date: 'dd/mm/yyyy'}}</td>
+                <td>{{room.id_user.email}}</td>
+                <td>{{room.price}} {{room.unit}}</td>
+                <td><button type="button" (click)="getRoom(room)" class="btn btn-warning" data-toggle="modal"
+                        data-target="#deleteModal">Xóa</button></td>
+            </tr>
+
+        </tbody>
+    </table>
 </div>
 <!-- model xóa -->
 <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

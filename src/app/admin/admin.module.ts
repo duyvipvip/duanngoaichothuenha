@@ -11,21 +11,29 @@ import { MenuleftComponent } from './layoutadmin/menuleft/menuleft.component';
 import { BaidangComponent } from './baidang/baidang.component';
 import { LienheComponent } from './lienhe/lienhe.component';
 import { LichsuComponent } from './lichsu/lichsu.component';
+import { YeucauthuenhaComponent } from './yeucauthuenha/yeucauthuenha.component';
+import { QuanlyhoahongComponent } from './quanlyhoahong/quanlyhoahong.component';
+import { RentHouseService } from 'src/@http-service/rentHouse.service';
+import { ThanhToanService } from 'src/@http-service/thanhtoan.service';
+import { StatusPipe } from 'src/@shared/pipe/pipeStatus';
 
 
 @NgModule({
     imports: [AdiminRoutingModule, SharedModule,ToastrModule.forRoot()],
     exports: [],
     declarations: [
+        StatusPipe,
         AdminComponent,
         HomeAdminComponent,
         EditUserComponent,
         MenuleftComponent,
         BaidangComponent,
         LienheComponent,
-        LichsuComponent
+        LichsuComponent,
+        YeucauthuenhaComponent,
+        QuanlyhoahongComponent
     ],
     entryComponents: [EditUserComponent],
-    providers: [HistoryService,ContactService,ToastrService],
+    providers: [HistoryService,ContactService,ToastrService, RentHouseService, ThanhToanService],
 })
 export class AdminModule { }

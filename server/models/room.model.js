@@ -58,10 +58,20 @@ var roomSchema = new Schema({
         type:Schema.Types.ObjectId,
         ref:'house'
     },
-    iduserRentHouse: [{
-        type: String,
-        default: 0
-    }],
+    iduserRentHouse: [
+        {
+            iduser:{
+                type: Schema.Types.ObjectId,
+                ref: 'user'
+            },
+            status: {
+                type: Number
+            },
+            createdate: {
+                type: Date
+            }
+        }
+    ],
     location:{
         lat: {
             type: Number,
@@ -69,6 +79,10 @@ var roomSchema = new Schema({
         lng:{
             type: Number,
         }
+    },
+    deleted: {
+        type: Boolean,
+        default: false
     }
 
 })

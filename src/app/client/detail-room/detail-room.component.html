@@ -22,13 +22,31 @@
         </ul>
         <div class="clr"></div>
     </div>
-    <!-- <button type="button" (click)="Transection()" class="btn btn-success">Giao Dịch</button> -->
-    <div class="xemduong">
-        <button type="button" (click)="directAddress()" class="btn btn-success">Xem Đường</button>
+    <div class="row" *ngIf="!(iduserlogin == getRoom.id_user._id)">
+        <div class="col-md-2">
+            <div class="xemduong">
+                <button type="button" (click)="directAddress()" class="btn btn-success">Xem Đường</button>
+            </div>
+        </div>
+        <div class="col-md-3" *ngIf="objectTrangthai.disablebutton">
+            <div class="guiyeucauthuenha">
+                <div class="xoa" (click)="xoayeucau()">
+                    Xoá
+                </div>
+                <button type="button" (click)="guiyeucauthuenha()" class={{classguiyeucauthuenha}} [disabled]="objectTrangthai.disablebutton">
+                    {{nameguiyeucauthuenha}}
+                </button>
+            </div>
+        </div>
+        <div class="col-md-3" *ngIf="!objectTrangthai.disablebutton">
+                <div class="guiyeucauthuenha">
+                    <button type="button" (click)="guiyeucauthuenha()" class={{classguiyeucauthuenha}} [disabled]="objectTrangthai.disablebutton">
+                        {{nameguiyeucauthuenha}}
+                    </button>
+                </div>
+            </div>
     </div>
-    <div class="guiyeucauthuenha">
-        <button type="button" (click)="guiyeucauthuenha()" class="btn btn-success">Gửi Yêu Cầu Thuê Nhà</button>
-    </div>
+    
     <div class="row">
         <div class="col-md-8">
             <div class="table">

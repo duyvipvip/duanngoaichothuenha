@@ -6,17 +6,22 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AdminComponent } from './admin.component';
 import { HomeAdminComponent } from './home-admin/home-admin.component';
+import { YeucauthuenhaComponent } from './yeucauthuenha/yeucauthuenha.component';
+import { QuanlyhoahongComponent } from './quanlyhoahong/quanlyhoahong.component';
 
 
 const routes: Routes = [
-    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: '', redirectTo: 'baidang', pathMatch: 'full' },
     {
         path: '', component: AdminComponent,
         children: [
             { path: 'home', component: HomeAdminComponent },
             { path: 'baidang', component: BaidangComponent},
             {path: 'contact', component: LienheComponent},
-            {path: 'lichsu', component: LichsuComponent}
+            {path: 'lichsu', component: LichsuComponent},
+            {path: 'quanlynguoithuenha', component: YeucauthuenhaComponent},
+            {path: 'quanlyhoahong', component: QuanlyhoahongComponent}
+
         ]
     }
 ];

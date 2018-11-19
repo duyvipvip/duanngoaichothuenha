@@ -2,13 +2,25 @@ agm-map{
     height: 600px;
     width: 700px;
 }
-.xemduong{
+.xemduong, .guiyeucauthuenha{
     margin: 10px 10px 10px 0px;
 }
 .hot{
     color: red;
     font-weight: 900;
     font-size: 16px;
+}
+.xoa{
+    display: inline-block;
+    background: red;
+    color: #fff;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    top: -5px;
+    right: -30px;
+    z-index: 1;
 }
 .tab{
     background: #f3f3f3;
