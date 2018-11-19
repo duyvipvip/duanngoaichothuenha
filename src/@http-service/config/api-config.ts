@@ -38,6 +38,7 @@ export const APICONFIG = {
         CHANGESTATUSUSER: '/api/Room/changestatususer',
         LAYCACBAIDANGCUAUSER: (id) => `/api/Room/laycacbaidangcuauser/${id}`,
         LAYLICHSUYEUCAUTHUENHA: (iduser) => `/api/Room/laylichsuyeucauthuenha/${iduser}`,
+        LAYMANGTOADOLOCATION: '/api/Room/laymangtoadolocation'
     },
     HISTORY:{
         GET_HISTORY:'/api/History/GetHistory',

@@ -18,7 +18,8 @@ module.exports = {
     Transaction: Transaction,
     changestatususer: changestatususer,
     laycacbaidangcuauser: laycacbaidangcuauser,
-    laylichsuyeucauthuenha: laylichsuyeucauthuenha
+    laylichsuyeucauthuenha: laylichsuyeucauthuenha,
+    laymangtoadolocation: laymangtoadolocation
 }
 function Transaction(id) {
     return Room.findByIdAndUpdate(id, { status_room: paramater.ROOM_FULL }, { new: true })
@@ -288,4 +289,22 @@ function laylichsuyeucauthuenha(iduser){
         .then((data) => {
             return Promise.resolve(data);
         })
+}
+
+function laymangtoadolocation(){
+    return Room.find()
+        .then((data) => {
+            let arrTemp = [];
+            for(let i = 0; i< data.length; i++){
+                let object = {
+                    lat: data[i].location.lat,
+                    lng: data[i].location.lng,
+                    label: data[i].address,
+                    draggable: true
+                }
+                arrTemp.push(object);
+            }
+            return Promise.resolve(arrTemp);
+        })
+
 }

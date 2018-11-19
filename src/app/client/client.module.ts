@@ -19,6 +19,8 @@ import { MangermentPostnewsComponent } from './mangerment-postnews/mangerment-po
 import { BaidangComponent } from './tabuser/baidang/baidang.component';
 import { HistoryComponent } from './history/history.component'; 
 import { RentHouseService } from 'src/@http-service/rentHouse.service';
+import { GoogleMapComponent } from './google-map/google-map.component';
+import { AgmDirectionModule } from 'agm-direction';
 @NgModule({
     imports: [
         ClientRoutingModule,
@@ -27,6 +29,7 @@ import { RentHouseService } from 'src/@http-service/rentHouse.service';
             apiKey: 'AIzaSyBBnwLr1x3XC6YbJXlSHQAkR1xZ88jqNWE',
             libraries: ["places"]
           }),
+          AgmDirectionModule,
           ToastrModule.forRoot() // ToastrModule added
     ],
     exports: [],
@@ -42,7 +45,8 @@ import { RentHouseService } from 'src/@http-service/rentHouse.service';
         DetailRoomComponent,
         MangermentPostnewsComponent,
         BaidangComponent,
-        HistoryComponent
+        HistoryComponent,
+        GoogleMapComponent
     ],
     providers: [ContactService,HistoryService, RentHouseService],
 })

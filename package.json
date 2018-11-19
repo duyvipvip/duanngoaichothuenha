@@ -26,6 +26,7 @@
     "@angular/router": "^6.0.3",
     "@google/maps": "^0.5.5",
     "@ionic-native/geolocation": "^4.11.0",
+    "agm-direction": "^0.7.4",
     "body-parser": "^1.18.2",
     "cookie-parser": "^1.4.3",
     "core-js": "^2.5.4",

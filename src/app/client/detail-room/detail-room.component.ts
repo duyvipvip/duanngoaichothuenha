@@ -116,7 +116,8 @@ export class DetailRoomComponent implements OnInit {
     directAddress() {
         if ("geolocation" in navigator) {
             navigator.geolocation.getCurrentPosition((position) => {
-                window.open(`https://www.google.com/maps/dir/${position.coords.latitude},${position.coords.longitude}/${this.latitude},${this.longitude}`, "_blank");
+                // window.open(`https://www.google.com/maps/dir/${position.coords.latitude},${position.coords.longitude}/${this.latitude},${this.longitude}`, "_blank");
+                this.router.navigate(['/client/googlemap'], { queryParams: { lat1: position.coords.latitude, lng1: position.coords.longitude, lat2: this.latitude, lng2: this.longitude} });
             });
         }
     }

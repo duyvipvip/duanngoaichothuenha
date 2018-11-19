@@ -104,4 +104,10 @@ export class RoomService {
         let headers = new HttpHeaders().set('x-access-token', token);
         return this.http.post(`${APICONFIG.BASEPOINT}${APICONFIG.ROOM.CHANGESTATUSUSER}`, requestForm, { headers: headers }).toPromise();
     }
+
+    public laymangtoadolocation(){
+        const token :string = JSON.parse(localStorage.getItem('data')).token;
+        let headers = new HttpHeaders().set('x-access-token', token);
+        return this.http.get(`${APICONFIG.BASEPOINT}${APICONFIG.ROOM.LAYMANGTOADOLOCATION}`, { headers: headers }).toPromise();
+    }
 }

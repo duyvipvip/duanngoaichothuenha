@@ -24,6 +24,7 @@ Router.put('/Transaction/:id',Transaction);
 Router.post('/changestatususer', changestatususer);
 Router.get('/laycacbaidangcuauser/:iduser', laycacbaidangcuauser);
 Router.get('/laylichsuyeucauthuenha/:iduser', laylichsuyeucauthuenha);
+Router.get('/laymangtoadolocation', laymangtoadolocation);
 module.exports = Router;
 function Transaction(req,res,next){
     var id = req.params.id;
@@ -205,4 +206,13 @@ function laylichsuyeucauthuenha(req, res, next){
         })
 }
 
+function laymangtoadolocation(req, res, next){
+    RoomController.laymangtoadolocation()
+        .then((data) => {
+            return res.json(data);
+        })
+        .catch((err) => {
+            return next(err);
+        })
+}
 
