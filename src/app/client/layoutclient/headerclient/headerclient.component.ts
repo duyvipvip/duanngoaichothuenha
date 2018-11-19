@@ -18,6 +18,11 @@ export class HeaderclientComponent implements OnInit {
         this.router.navigate(['client/infouser']);
     }
 
+    //
+    goInfoAdmin(){
+        this.router.navigate(['admin']);
+    }
+
     goMangermentPostnew(){
         this.router.navigate(['client/mangermentPostnew']);
     }

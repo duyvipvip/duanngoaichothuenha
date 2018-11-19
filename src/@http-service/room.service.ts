@@ -25,6 +25,16 @@ export class RoomService {
         return this.http.get(`${APICONFIG.BASEPOINT}${APICONFIG.ROOM.GET_ROOMS}`).toPromise()
            
     }
+
+    public laylichsuyeucauthuenha(iduser){
+        return this.http.get(`${APICONFIG.BASEPOINT}${APICONFIG.ROOM.LAYLICHSUYEUCAUTHUENHA(iduser)}`).toPromise()
+        
+    }
+
+    public laycacbaidangcuauser(){
+        const iduser :string = JSON.parse(localStorage.getItem('data')).user._id;
+        return this.http.get(`${APICONFIG.BASEPOINT}${APICONFIG.ROOM.LAYCACBAIDANGCUAUSER(iduser)}`).toPromise()
+    }
     public Search(search?:string) {
         return this.http.get(`${APICONFIG.BASEPOINT}${APICONFIG.ROOM.GET_ROOMS}`+'?search='+search).toPromise()
            
@@ -78,5 +88,26 @@ export class RoomService {
         .catch(err => {
             return err;
         });
+    }
+
+    //
+    public changestatususer(idhouse, status, iduser){
+        const idusercreate :string = JSON.parse(localStorage.getItem('data')).user._id;
+        let requestForm = {
+            idhouse: idhouse,
+            status: status,
+            iduser: iduser,
+            idusercreate: idusercreate
+        }
+        console.log(requestForm);
+        const token :string = JSON.parse(localStorage.getItem('data')).token;
+        let headers = new HttpHeaders().set('x-access-token', token);
+        return this.http.post(`${APICONFIG.BASEPOINT}${APICONFIG.ROOM.CHANGESTATUSUSER}`, requestForm, { headers: headers }).toPromise();
+    }
+
+    public laymangtoadolocation(){
+        const token :string = JSON.parse(localStorage.getItem('data')).token;
+        let headers = new HttpHeaders().set('x-access-token', token);
+        return this.http.get(`${APICONFIG.BASEPOINT}${APICONFIG.ROOM.LAYMANGTOADOLOCATION}`, { headers: headers }).toPromise();
     }
 }

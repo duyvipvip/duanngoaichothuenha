@@ -18,6 +18,9 @@ import { DetailRoomComponent } from './detail-room/detail-room.component';
 import { MangermentPostnewsComponent } from './mangerment-postnews/mangerment-postnews.component';
 import { BaidangComponent } from './tabuser/baidang/baidang.component';
 import { HistoryComponent } from './history/history.component'; 
+import { RentHouseService } from 'src/@http-service/rentHouse.service';
+import { GoogleMapComponent } from './google-map/google-map.component';
+import { AgmDirectionModule } from 'agm-direction';
 @NgModule({
     imports: [
         ClientRoutingModule,
@@ -26,6 +29,7 @@ import { HistoryComponent } from './history/history.component';
             apiKey: 'AIzaSyBBnwLr1x3XC6YbJXlSHQAkR1xZ88jqNWE',
             libraries: ["places"]
           }),
+          AgmDirectionModule,
           ToastrModule.forRoot() // ToastrModule added
     ],
     exports: [],
@@ -41,8 +45,9 @@ import { HistoryComponent } from './history/history.component';
         DetailRoomComponent,
         MangermentPostnewsComponent,
         BaidangComponent,
-        HistoryComponent
+        HistoryComponent,
+        GoogleMapComponent
     ],
-    providers: [ContactService,HistoryService],
+    providers: [ContactService,HistoryService, RentHouseService],
 })
 export class ClientModule { }

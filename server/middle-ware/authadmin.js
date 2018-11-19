@@ -17,7 +17,7 @@ exports.authadmin = function () {
                         email: decodedData.email
                     })
                         .then(function (user) {
-                            if (user.role == 'admin') {
+                            if (user.role == 'supperadmin') {
                                 req.user = user;
                                 next();
                             }

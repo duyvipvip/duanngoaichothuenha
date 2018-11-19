@@ -7,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuleftComponent implements OnInit {
 
-  constructor() { }
+  public checksupperadmin: string = "";
+  constructor() {
+    this.checksupperadmin = JSON.parse(localStorage.getItem('data')).user.role;
+  }
 
   ngOnInit() {
   }

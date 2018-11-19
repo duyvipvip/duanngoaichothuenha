@@ -7,37 +7,60 @@
                     <span>Dashboard</span>
                 </a>
             </li>
-            <li class="sub-menu">
+            <li class="sub-menu" *ngIf="checksupperadmin == 'supperadmin'">
                 <a [routerLink]="['/admin']" href="javascript:void(0);">
                     <i class="fa fa-user"></i>
                     <span>Quản lý tài khoản</span>
                 </a>
             </li>
             <li class="sub-menu">
-                <a [routerLink]="['baidang']" href="javascript:void(0);" >
+                <a [routerLink]="['baidang']" href="javascript:void(0);">
                     <i class="fa fa-table"></i>
                     <span>Bài Đăng</span>
                 </a>
                 <ul>
                 </ul>
             </li>
-            <li class="sub-menu">
-                    <a [routerLink]="['lichsu']" href="javascript:void(0);" >
+            <li class="sub-menu" *ngIf="checksupperadmin == 'supperadmin'">
+                    <a [routerLink]="['home']" href="javascript:void(0);">
                         <i class="fa fa-table"></i>
-                        <span>Lịch sử</span>
+                        <span>Quản Lý Tài Khoản</span>
+                    </a>
+                    <ul>
+                    </ul>
+                </li>
+            <li class="sub-menu" *ngIf="checksupperadmin == 'admin' || checksupperadmin == 'user'">
+                <a [routerLink]="['lichsu']" href="javascript:void(0);">
+                    <i class="fa fa-table"></i>
+                    <span>Lịch sử thuê nhà</span>
+                </a>
+                <ul>
+                </ul>
+            </li>
+            <li class="sub-menu" *ngIf="checksupperadmin == 'admin' || checksupperadmin == 'user'">
+                <a [routerLink]="['quanlynguoithuenha']" href="javascript:void(0);">
+                    <i class="fa fa-table"></i>
+                    <span>Quản lý người thuê nhà</span>
+                </a>
+                <ul>
+                </ul>
+            </li>
+            <li class="sub-menu">
+                    <a [routerLink]="['quanlyhoahong']" href="javascript:void(0);">
+                        <i class="fa fa-table"></i>
+                        <span>Quản lý hoa hồng</span>
                     </a>
                     <ul>
                     </ul>
                 </li>
             <li class="sub-menu">
-                <a [routerLink]="['contact']" href="javascript:void(0);" >
+                <a [routerLink]="['contact']" href="javascript:void(0);">
                     <i class="fa fa-table"></i>
                     <span>Liên hệ</span>
                 </a>
                 <ul>
                 </ul>
             </li>
-           
         </ul>
     </div>
 </div>

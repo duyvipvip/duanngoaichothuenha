@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { PostnewsComponent } from './postnews/postnews.component';
 import { TabuserComponent } from './tabuser/tabuser.component';
 import { MangermentPostnewsComponent } from './mangerment-postnews/mangerment-postnews.component';
+import { GoogleMapComponent } from './google-map/google-map.component';
 
 const routes: Routes = [
     {
@@ -18,7 +19,8 @@ const routes: Routes = [
             { path: 'detailroom/:id', component: DetailRoomComponent },
             { path: 'infouser', component: TabuserComponent },
             { path: 'mangermentPostnew', component: MangermentPostnewsComponent },
-            {path: 'history',component:HistoryComponent}
+            {path: 'history',component:HistoryComponent},
+            {path: 'googlemap',component:GoogleMapComponent}
         ]
     }
 ];

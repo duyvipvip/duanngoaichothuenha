@@ -12,6 +12,17 @@ export const APICONFIG = {
         DELETE_USER:'/api/User/DeleteUser/'
 
     },
+    THANHTOAN: {
+        GETALL: '/api/thanhtoan/getallthanhtoan',
+        EDITTHANHTOAN: '/api/thanhtoan/editthanhtoan',
+        GETALLBYUSER: (iduser) => `/api/thanhtoan/getallthanhtoanbyuser/${iduser}`
+    },
+    RENTHOUSE: {
+        CREATE_RENTHOUSE: '/api/RentHouse/create',
+        GETID_RENTHOUSE: (id) => `/api/RentHouse/getOneRentHouse/${id}`,
+        DELETERENTHOUSE: '/api/RentHouse/deleteRentHouse',
+        QUANLYHOAHONG: (id) => `/api/RentHouse/quanlyhoahong/${id}`
+    },
     AUTH: {
       LOGIN: '/api/auth/login',
       LOGOUT: '/api/auth/logout'
@@ -23,7 +34,11 @@ export const APICONFIG = {
         DELETE_ROOM:'/api/Room/DeleteRoom/',
         GET_ROOM_BY_USER:'/api/Room/GetRoomByUser/',
         GET_ROOM_BY_ID:'/api/Room/getRoomById',
-        TRANSACTION:'/api/Room/Transaction/' 
+        TRANSACTION:'/api/Room/Transaction/' ,
+        CHANGESTATUSUSER: '/api/Room/changestatususer',
+        LAYCACBAIDANGCUAUSER: (id) => `/api/Room/laycacbaidangcuauser/${id}`,
+        LAYLICHSUYEUCAUTHUENHA: (iduser) => `/api/Room/laylichsuyeucauthuenha/${iduser}`,
+        LAYMANGTOADOLOCATION: '/api/Room/laymangtoadolocation'
     },
     HISTORY:{
         GET_HISTORY:'/api/History/GetHistory',
