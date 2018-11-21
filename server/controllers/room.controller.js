@@ -1,7 +1,7 @@
 var History = require('../models/history.model');
 var Room = require('../models/room.model');
 var thanhtoan = require('../models/thanhtoan.model');
-
+var rentHouse = require('../models/rentHouse.model');
 var path = require('path');
 const uuid = require('uuid');
 var fs = require("fs");
@@ -100,7 +100,10 @@ function deleteRoom(id) {
                         );
                         return Room.findByIdAndRemove({ _id: id })
                             .then(() => {
-                                return resolve();
+                                return rentHouse.remove({idhouse: id})
+                                    .then(() => {
+                                        return resolve();
+                                    })
                             })
                             .catch((err) => {
                                 return reject(err);
