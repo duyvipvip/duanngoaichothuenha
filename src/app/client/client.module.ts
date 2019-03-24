@@ -21,6 +21,7 @@ import { HistoryComponent } from './history/history.component';
 import { RentHouseService } from 'src/@http-service/rentHouse.service';
 import { GoogleMapComponent } from './google-map/google-map.component';
 import { AgmDirectionModule } from 'agm-direction';
+import { RatingComponent } from './rating/rating.component';
 @NgModule({
     imports: [
         ClientRoutingModule,
@@ -46,7 +47,8 @@ import { AgmDirectionModule } from 'agm-direction';
         MangermentPostnewsComponent,
         BaidangComponent,
         HistoryComponent,
-        GoogleMapComponent
+        GoogleMapComponent,
+        RatingComponent
     ],
     providers: [ContactService,HistoryService, RentHouseService],
 })

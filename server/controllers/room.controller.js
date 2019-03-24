@@ -13,6 +13,7 @@ module.exports = {
     updateImageRoom: updateImageRoom,
     getsRoom: getsRoom,
     updateRoom: updateRoom,
+    updateRoomRate: updateRoomRate,
     getRoomByUser: getRoomByUser,
     getRoomById: getRoomById,
     Transaction: Transaction,
@@ -100,7 +101,7 @@ function deleteRoom(id) {
                         );
                         return Room.findByIdAndRemove({ _id: id })
                             .then(() => {
-                                return rentHouse.remove({idhouse: id})
+                                return rentHouse.remove({ idhouse: id })
                                     .then(() => {
                                         return resolve();
                                     })
@@ -150,6 +151,41 @@ function updateImageRoom(id, file) {
             return Promise.reject(err);
         })
 }
+
+function updateRoomRate(id, data) {
+    let idUser = data.idUser;
+    let star = data.star;
+    let rateUser = `rate.${idUser}`;
+    let objRemove = {
+        $pull: {
+            rate: {
+                idUser: idUser
+            }
+        }
+    }
+    let objInsert = {
+        $push: {
+            rate: {
+                idUser: idUser,
+                star: star
+            }
+        }
+    }
+    return Room.findByIdAndUpdate({ _id: id }, objRemove)
+        .then((room) => {
+            return Room.findByIdAndUpdate({ _id: id }, objInsert)
+                .then((room1) => {
+                    return Promise.resolve(room1);
+                })
+                .catch((err) => {
+                    return Promise.reject(err);
+                })
+        })
+        .catch((err) => {
+            return Promise.reject(err);
+        })
+}
+
 function updateRoom(id, data) {
 
     return Room.findByIdAndUpdate({ _id: id }, data)
@@ -267,7 +303,7 @@ function changestatususer(idhouse, iduser, status, idusercreate) {
     } else {
         return Room.update({ "_id": idhouse, "iduserRentHouse.iduser": iduser }, { $set: { "iduserRentHouse.$.status": status, "deleted": false } })
             .then((room) => {
-                return thanhtoan.findOneAndRemove({idhouse: idhouse, iduser: iduser})
+                return thanhtoan.findOneAndRemove({ idhouse: idhouse, iduser: iduser })
                     .then(() => {
                         return Promise.resolve(room);
                     })
@@ -287,18 +323,18 @@ function laycacbaidangcuauser(iduser) {
         })
 }
 
-function laylichsuyeucauthuenha(iduser){
-    return Room.find({"iduserRentHouse.iduser": iduser})
+function laylichsuyeucauthuenha(iduser) {
+    return Room.find({ "iduserRentHouse.iduser": iduser })
         .then((data) => {
             return Promise.resolve(data);
         })
 }
 
-function laymangtoadolocation(){
+function laymangtoadolocation() {
     return Room.find()
         .then((data) => {
             let arrTemp = [];
-            for(let i = 0; i< data.length; i++){
+            for (let i = 0; i < data.length; i++) {
                 let object = {
                     lat: data[i].location.lat,
                     lng: data[i].location.lng,

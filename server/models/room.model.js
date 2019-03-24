@@ -10,9 +10,9 @@ var roomSchema = new Schema({
     Type: {
         type: String
     },
-    createDate:{
-        type:Date,
-        default:Date.now()
+    createDate: {
+        type: Date,
+        default: Date.now()
     },
     acreage: { //diện tích
         index: true,
@@ -54,13 +54,13 @@ var roomSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'user'
     },
-    house:{
-        type:Schema.Types.ObjectId,
-        ref:'house'
+    house: {
+        type: Schema.Types.ObjectId,
+        ref: 'house'
     },
     iduserRentHouse: [
         {
-            iduser:{
+            iduser: {
                 type: Schema.Types.ObjectId,
                 ref: 'user'
             },
@@ -72,18 +72,28 @@ var roomSchema = new Schema({
             }
         }
     ],
-    location:{
+    location: {
         lat: {
             type: Number,
         },
-        lng:{
+        lng: {
             type: Number,
         }
     },
     deleted: {
         type: Boolean,
         default: false
-    }
+    },
+    rate: [
+        {
+            idUser:{
+                type: String
+            },
+            star:{
+                type: Number
+            }
+        }
+    ]
 
 })
 var room = mongoose.model('room', roomSchema);

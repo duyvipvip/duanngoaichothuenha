@@ -33,20 +33,22 @@
                 <div class="xoa" (click)="xoayeucau()">
                     Xoá
                 </div>
-                <button type="button" (click)="guiyeucauthuenha()" class={{classguiyeucauthuenha}} [disabled]="objectTrangthai.disablebutton">
+                <button type="button" (click)="guiyeucauthuenha()" class={{classguiyeucauthuenha}}
+                    [disabled]="objectTrangthai.disablebutton">
                     {{nameguiyeucauthuenha}}
                 </button>
             </div>
         </div>
         <div class="col-md-3" *ngIf="!objectTrangthai.disablebutton">
-                <div class="guiyeucauthuenha">
-                    <button type="button" (click)="guiyeucauthuenha()" class={{classguiyeucauthuenha}} [disabled]="objectTrangthai.disablebutton">
-                        {{nameguiyeucauthuenha}}
-                    </button>
-                </div>
+            <div class="guiyeucauthuenha">
+                <button type="button" (click)="guiyeucauthuenha()" class={{classguiyeucauthuenha}}
+                    [disabled]="objectTrangthai.disablebutton">
+                    {{nameguiyeucauthuenha}}
+                </button>
             </div>
+        </div>
     </div>
-    
+
     <div class="row">
         <div class="col-md-8">
             <div class="table">
@@ -170,4 +172,30 @@
 
         </div>
     </div>
-</div>
+    <div class="">
+        <span class="name_binhluan">Bình Luận Phim</span>
+        
+        <script>
+                window.fbAsyncInit = function () {
+                    FB.init({
+                        appId: '113869198637480',
+                        xfbml: true,
+                        version: 'v3.2'
+                    });
+                    FB.AppEvents.logPageView();
+                };
+
+                (function (d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) { return; }
+                    js = d.createElement(s); js.id = id;
+                    js.src = "//connect.facebook.net/en_US/sdk.js";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+            </script>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v3.2&appId=113869198637480&autoLogAppEvents=1"></script>
+<div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-width="600" data-numposts="5"></div>
+           
+
+    </div>

@@ -13,49 +13,64 @@ var RoomError = require('../Error/errorRoom');
 var paramater = require('../constants/paramater');
 
 Router.put('/deleteImage/:id', deleteImage);
-Router.post('/CreateRoom',auth.auth(), creatRoom);
+Router.post('/CreateRoom', auth.auth(), creatRoom);
 Router.delete('/DeleteRoom/:id', deleteRoom);
 Router.post('/UpLoadImageRoom/:id', updateImageRoom);
 Router.put('/UpdateRoom/:id', updateRoom);
 Router.get('/GetRoom', getsRoom);
-Router.get('/getRoomById/:id',getRoomById);
-Router.get('/GetRoomByUser',auth.auth(),getRoomByUser);
-Router.put('/Transaction/:id',Transaction);
+Router.get('/getRoomById/:id', getRoomById);
+Router.get('/GetRoomByUser', auth.auth(), getRoomByUser);
+Router.put('/Transaction/:id', Transaction);
 Router.post('/changestatususer', changestatususer);
 Router.get('/laycacbaidangcuauser/:iduser', laycacbaidangcuauser);
 Router.get('/laylichsuyeucauthuenha/:iduser', laylichsuyeucauthuenha);
 Router.get('/laymangtoadolocation', laymangtoadolocation);
+Router.put('/UpdateRoomRate/:id', updateRoomRate);
+
 module.exports = Router;
-function Transaction(req,res,next){
+
+function updateRoomRate(req, res, next) {
+    var id = req.params.id;
+    var data = req.body;
+    return RoomController.updateRoomRate(id, data)
+        .then((Room) => {
+            return res.send({ message: "success" });
+        })
+        .catch((err) => {
+            return res.send({ message: "fail" });
+        })
+}
+
+function Transaction(req, res, next) {
     var id = req.params.id;
     RoomController.Transaction(id)
-        .then((data)=>{
-            return res.send({message:"success"});
+        .then((data) => {
+            return res.send({ message: "success" });
         })
-        .catch((err)=>{
+        .catch((err) => {
             return next(err);
         })
 
 }
-function getRoomById(req,res,next){
+function getRoomById(req, res, next) {
     var id = req.params.id;
     RoomController.getRoomById(id)
-    .then((data)=>{
-        return res.send(data)
-    })
-    .catch((err)=>{
-        return next((err))
-    })
-}
-function getRoomByUser(req,res,next){ 
-    var id = req.user._id;
-
-    
-    RoomController.getRoomByUser(id)
-        .then((data)=>{
+        .then((data) => {
             return res.send(data)
         })
-        .catch((err)=>{
+        .catch((err) => {
+            return next((err))
+        })
+}
+function getRoomByUser(req, res, next) {
+    var id = req.user._id;
+
+
+    RoomController.getRoomByUser(id)
+        .then((data) => {
+            return res.send(data)
+        })
+        .catch((err) => {
             return next((err))
         })
 }
@@ -113,14 +128,14 @@ function updateRoom(req, res, next) {
 
 }
 function getsRoom(req, res, next) {
-    let page={
-        search:req.query["search"]||'',
-        amount:req.query["amount"]||30,
-        page:req.query["page"]||1,
-        sort:req.query["sort"]||'name',
-        type:req.query["type"]||1
+    let page = {
+        search: req.query["search"] || '',
+        amount: req.query["amount"] || 30,
+        page: req.query["page"] || 1,
+        sort: req.query["sort"] || 'name',
+        type: req.query["type"] || 1
     }
-    
+
     RoomController.getsRoom(page)
         .then((data) => {
             return res.send(data);
@@ -141,13 +156,13 @@ function creatRoom(req, res, next) {
         next({
             message: RoomError.ERROR_TITLE
         })
-    } 
+    }
     else if (!data.address) {
         next({
             message: RoomError.ERROR_ADDREST
-    
-     })
-    } 
+
+        })
+    }
     else if (!data.price) {
         next({
             message: RoomError.ERROR_PRICE
@@ -161,11 +176,12 @@ function creatRoom(req, res, next) {
     }
     let file = req.files.files;
     data.image.push('room_' + uuid.v4() + '.png');
-        file.mv(path.join(__dirname, '../public/image/' + data.image[0]), (err) => {
-            if (err) {
-                return next(err);
-            }
-        })
+    file.mv(path.join(__dirname, '../public/image/' + data.image[0]), (err) => {
+        if (err) {
+            return next(err);
+        }
+    })
+    data.rate = [];
     RoomController.createRoom(data)
         .then((data) => {
 
@@ -176,17 +192,17 @@ function creatRoom(req, res, next) {
         })
 }
 
-function changestatususer(req, res, next){
+function changestatususer(req, res, next) {
     RoomController.changestatususer(req.body.idhouse, req.body.iduser, req.body.status, req.body.idusercreate)
-    .then((data) => {
-        return res.json({message: 'success'});
-    })
-    .catch((err) => {
-        return next(err);
-    })
+        .then((data) => {
+            return res.json({ message: 'success' });
+        })
+        .catch((err) => {
+            return next(err);
+        })
 }
 
-function laycacbaidangcuauser(req, res, next){
+function laycacbaidangcuauser(req, res, next) {
     RoomController.laycacbaidangcuauser(req.params.iduser)
         .then((data) => {
             return res.json(data);
@@ -196,7 +212,7 @@ function laycacbaidangcuauser(req, res, next){
         })
 }
 
-function laylichsuyeucauthuenha(req, res, next){
+function laylichsuyeucauthuenha(req, res, next) {
     RoomController.laylichsuyeucauthuenha(req.params.iduser)
         .then((data) => {
             return res.json(data);
@@ -206,7 +222,7 @@ function laylichsuyeucauthuenha(req, res, next){
         })
 }
 
-function laymangtoadolocation(req, res, next){
+function laymangtoadolocation(req, res, next) {
     RoomController.laymangtoadolocation()
         .then((data) => {
             return res.json(data);

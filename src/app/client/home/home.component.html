@@ -68,6 +68,7 @@
                                 </div>
                             </div>
                             <div class="row">
+                                <br>
                                 <div class="col-md-7">
                                     <b>By: </b>{{room.id_user.email}}
                                 </div>
@@ -76,8 +77,10 @@
                             <div class="row">
                                 <div class="col-md-12">
                                         <div style="text-transform: uppercase;" class="overflow: hidden;" [innerHTML]=room.description></div>
-                                   
                                 </div>
+                            </div>
+                            <div class="row">
+                                <app-rating [rating]='5' [itemId]='1' (ratingClick)='ratingComponentClick($event)'></app-rating>
                             </div>
                         </div>
                     </div>

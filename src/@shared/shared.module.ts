@@ -8,6 +8,7 @@ import { CommonModule } from '../../node_modules/@angular/common';
 import { CdkTableModule } from '@angular/cdk/table'
 import { ModalModule } from '../../node_modules/ngx-bootstrap/modal';
 import { CKEditorModule } from 'ngx-ckeditor';
+import { RatingService } from 'src/@http-service/rating.service';
 @NgModule({
     imports: [
         CommonModule,
@@ -34,7 +35,7 @@ import { CKEditorModule } from 'ngx-ckeditor';
         MatIconModule
     ],
     declarations: [],
-    providers: [RoomService, UserService],
+    providers: [RoomService, UserService, RatingService],
 })
 export class SharedModule {
     public static forRoot(): ModuleWithProviders {

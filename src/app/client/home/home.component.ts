@@ -4,6 +4,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '../../../../node_modules/@angular/router';
 import { ElementRef, NgZone, ViewChild } from '@angular/core';
 import { MapsAPILoader } from '@agm/core';
+import { RatingService } from 'src/@http-service/rating.service';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -28,8 +30,20 @@ export class HomeComponent implements OnInit {
     ];
     isCheckLogin: Boolean = false;
     rooms = [];
+    rate = 7;
+    max = 10;
+    isReadonly = false;
+    ratingStates = [
+        {stateOn: 'glyphicon-ok-sign', stateOff: 'glyphicon-ok-circle'},
+        {stateOn: 'glyphicon-star', stateOff: 'glyphicon-star-empty'},
+        {stateOn: 'glyphicon-heart', stateOff: 'glyphicon-ban-circle'},
+        {stateOn: 'glyphicon-heart'},
+        {stateOff: 'glyphicon-off'}
+      ];
     constructor(private router: Router,
          private roomsv: RoomService,
+         private RatingService: RatingService,
+         private toastr: ToastrService,
          private userservice: UserService) { }
 
     ngOnInit() {
@@ -71,6 +85,21 @@ export class HomeComponent implements OnInit {
                 return err;
             }); 
     }
+    public ratingComponentClick(clickObj: any): void {
+        this.RatingService.UpdateRateRoom(clickObj).then((data) => {
+            this.toastr.success("Update Rate Success");
+        })
+        .catch((err) => {
+
+        })
+        // const item = this.items.find(((i: any) => i.id === clickObj.itemId));
+        // if (!!item) {
+        //   item.rating = clickObj.rating;
+        //   this.ratingClicked = clickObj.rating;
+        //   this.itemIdRatingClicked = item.company;
+        // }
+    
+      }
     login() {
         this.router.navigate(['auth/login']);
     }
