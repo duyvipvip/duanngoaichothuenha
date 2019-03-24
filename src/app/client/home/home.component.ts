@@ -34,17 +34,17 @@ export class HomeComponent implements OnInit {
     max = 10;
     isReadonly = false;
     ratingStates = [
-        {stateOn: 'glyphicon-ok-sign', stateOff: 'glyphicon-ok-circle'},
-        {stateOn: 'glyphicon-star', stateOff: 'glyphicon-star-empty'},
-        {stateOn: 'glyphicon-heart', stateOff: 'glyphicon-ban-circle'},
-        {stateOn: 'glyphicon-heart'},
-        {stateOff: 'glyphicon-off'}
-      ];
+        { stateOn: 'glyphicon-ok-sign', stateOff: 'glyphicon-ok-circle' },
+        { stateOn: 'glyphicon-star', stateOff: 'glyphicon-star-empty' },
+        { stateOn: 'glyphicon-heart', stateOff: 'glyphicon-ban-circle' },
+        { stateOn: 'glyphicon-heart' },
+        { stateOff: 'glyphicon-off' }
+    ];
     constructor(private router: Router,
-         private roomsv: RoomService,
-         private RatingService: RatingService,
-         private toastr: ToastrService,
-         private userservice: UserService) { }
+        private roomsv: RoomService,
+        private RatingService: RatingService,
+        private toastr: ToastrService,
+        private userservice: UserService) { }
 
     ngOnInit() {
         if (window.navigator && window.navigator.geolocation) {
@@ -52,13 +52,13 @@ export class HomeComponent implements OnInit {
                 position => {
                     this.latitude = position.coords.latitude;
                     this.longitude = position.coords.longitude;
-                    if(localStorage.getItem('data')) {
+                    if (localStorage.getItem('data')) {
                         const location = {
                             lat: this.latitude,
                             lng: this.longitude
                         };
-                        localStorage.setItem('location',this.latitude +' '+this.longitude)
-                        this.userservice.updateUser({location:location})
+                        localStorage.setItem('location', this.latitude + ' ' + this.longitude)
+                        this.userservice.updateUser({ location: location })
                     }
                 },
                 error => {
@@ -76,30 +76,43 @@ export class HomeComponent implements OnInit {
                 }
             );
         };
-       
+        this.GetRooms();
+    }
+
+    public GetRooms(){
         this.roomsv.getRooms()
-            .then((data: any) => {
-                this.rooms = data.Data;
-            })
-            .catch(err => {
-                return err;
-            }); 
+        .then((data: any) => {
+            this.rooms = data.Data;
+            this.tinhrate();
+        })
+        .catch(err => {
+            return err;
+        });
     }
     public ratingComponentClick(clickObj: any): void {
         this.RatingService.UpdateRateRoom(clickObj).then((data) => {
-            this.toastr.success("Update Rate Success");
+            this.GetRooms();
+            this.toastr.success("Đánh giá thành công");
         })
         .catch((err) => {
-
+            this.toastr.success("Đánh giá thất bại");
         })
-        // const item = this.items.find(((i: any) => i.id === clickObj.itemId));
-        // if (!!item) {
-        //   item.rating = clickObj.rating;
-        //   this.ratingClicked = clickObj.rating;
-        //   this.itemIdRatingClicked = item.company;
-        // }
-    
-      }
+
+    }
+
+    public tinhrate(){
+        for(let i= 0; i< this.rooms.length; i++){
+            this.rooms[i].totalRate = 0;
+            let rate = this.rooms[i].rate;
+            if(rate.length> 0){
+                for(let j =0; j< rate.length; j++){
+                    this.rooms[i].totalRate += rate[j].star;
+                }
+                this.rooms[i].totalRate /= rate.length;
+                this.rooms[i].totalRate = Math.round(this.rooms[i].totalRate);
+            }
+        }
+    }
     login() {
         this.router.navigate(['auth/login']);
     }
@@ -120,16 +133,16 @@ export class HomeComponent implements OnInit {
                 });
         }
     }
-    
-    select(){
+
+    select() {
         this.roomsv.Search(this.value)
-        .then((data: any) => {
-            this.rooms = data.Data;
-        })
-        .catch(err => {
-            return err;
-        });
-        
+            .then((data: any) => {
+                this.rooms = data.Data;
+            })
+            .catch(err => {
+                return err;
+            });
+
     }
-  
+
 }

@@ -49,7 +49,7 @@ export const APICONFIG = {
         GET_CONTACT:'/api/Contact/GetContact',
     },
     RATING: {
-        UPDATE: '/api/Room/UpDate',
+        UPDATE: (id) => `/api/Room/UpdateRoomRate/${id}`,
     }
 
 }

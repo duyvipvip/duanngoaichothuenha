@@ -18,8 +18,9 @@ export class RatingComponent implements OnInit {
     onClick(rating: number): void {
         this.rating = rating;
         this.ratingClick.emit({
+            idUser: JSON.parse(localStorage.getItem('data')).user._id,
             itemId: this.itemId,
-            rating: rating
+            star: rating
         });
     }
 

@@ -80,7 +80,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <app-rating [rating]='5' [itemId]='1' (ratingClick)='ratingComponentClick($event)'></app-rating>
+                                <app-rating [rating]='room.totalRate' [itemId]="room._id" (ratingClick)='ratingComponentClick($event)'></app-rating> <span class="rating">{{room.rate.length}} (đánh giá)</span>
                             </div>
                         </div>
                     </div>
