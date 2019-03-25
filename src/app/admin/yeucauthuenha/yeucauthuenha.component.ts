@@ -5,7 +5,7 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 @Component({
     selector: 'app-yeucauthuenha',
     templateUrl: './yeucauthuenha.component.html',
-    styleUrls: ['./yeucauthuenha.component.css']
+    styleUrls: ['./yeucauthuenha.component.scss']
 })
 export class YeucauthuenhaComponent implements OnInit {
     modalRef: BsModalRef;
@@ -44,9 +44,9 @@ export class YeucauthuenhaComponent implements OnInit {
         }
         this.roomsv.getRoomByUser()
             .then((data: any) => {
-                for(let i=0; i< data.length; i++){
-                    let soluongguiyeucau=0;
-                    for(let j = 0; j< data[i].iduserRentHouse.length; j++){
+                for (let i = 0; i < data.length; i++) {
+                    let soluongguiyeucau = 0;
+                    for (let j = 0; j < data[i].iduserRentHouse.length; j++) {
                         soluongguiyeucau++;
                         // if(data[i].iduserRentHouse[j].status == 1){
                         //     this.chapnhanthuenha['status'] = true;
@@ -61,8 +61,18 @@ export class YeucauthuenhaComponent implements OnInit {
                 return err;
             });
     }
+    laytrangthaicuangoinha(roomOne) {
+        let tempCheck = false;
+        let userRentHouse = roomOne.iduserRentHouse;
+        for (let j = 0; j < userRentHouse.length; j++) {
+            if (userRentHouse[j].status == "1") {
+                tempCheck = true;
+            }
+        }
+        return tempCheck
+    }
 
-    onChange(value, iduser){
+    onChange(value, iduser) {
         this.roomsv.changestatususer(this.idhouse, value, iduser)
             .then((data) => {
                 this.get();
@@ -72,14 +82,19 @@ export class YeucauthuenhaComponent implements OnInit {
 
             })
     }
-    
-    layuserthuenha(userRentHouse, idhouse, template: TemplateRef<any>){
-        if(userRentHouse.length > 0){
-            this.idhouse = idhouse;
-            this.listuserthuenha = userRentHouse;
-            this.modalRef = this.modalService.show(template);
+
+    layuserthuenha(room, idhouse, template: TemplateRef<any>) {
+        if(this.laytrangthaicuangoinha(room) == true){
+            this.toastr.error("Ngôi Nhà Này Đã Được Bán")
         }else{
-            this.toastr.error("Ngôi Nhà Này Chưa Có Ai Gửi Yêu Cầu Thuê Nhà")
+            let userRentHouse = room.iduserRentHouse;
+            if (userRentHouse.length > 0) {
+                this.idhouse = idhouse;
+                this.listuserthuenha = userRentHouse;
+                this.modalRef = this.modalService.show(template);
+            } else {
+                this.toastr.error("Ngôi Nhà Này Chưa Có Ai Gửi Yêu Cầu Thuê Nhà")
+            }
         }
     }
 
@@ -97,7 +112,7 @@ export class YeucauthuenhaComponent implements OnInit {
             })
     }
 
-    closeModal(template: TemplateRef<any>){
+    closeModal(template: TemplateRef<any>) {
         this.modalService.hide(0);
     }
 

@@ -1,0 +1,32 @@
+.image{
+    width: 50px;
+    height: 50px;
+}
+.soluongguiyeucau{
+    border-radius: 50% !important;
+    background: red !important;
+    color: #fff;
+}
+tbody tr{
+    cursor: pointer;
+}
+/deep/ .modal-dialog{
+   width: 1000px;
+   .modal-footer{
+       border: 0px;
+   }
+}
+.daban{
+    background: #5cb85c;
+    padding: 2px 0px;
+    color: #fff;
+    border-radius: 10px;
+    text-align: center;
+}
+.chuaban{
+    background: red;
+    padding: 2px 0px;
+    color: #fff;
+    border-radius: 10px;
+    text-align: center;
+}
