@@ -4,31 +4,37 @@
         <thead>
             <tr>
                 <th>Số TT</th>
+                <th>Id</th>
                 <th>Tên Đề Tin</th>
                 <th>Hình ảnh</th>
                 <th>Giá</th>
                 <th>Ngày Đăng Tin</th>
                 <th>Số người gửi yêu cầu thuê nhà</th>
+                <th>Trạng Thái</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let room of rooms;let i = index">
+            <tr *ngFor="let room of rooms;let i = index" (click)="layuserthuenha(room.iduserRentHouse, room._id, xemnguoiyeucauthueModal)"
+                >
                 <td>{{i}}</td>
+                <td>{{room._id}}</td>
                 <td>{{room.title}}</td>
                 <td>
                     <img class="image" src="{{room.image}}" alt="">
                 </td>
                 <td>{{room.price}} {{room.unit}}</td>
                 <td>{{room.createDate | date: 'dd/MM/yyyy'}}</td>
-                <td><button class="soluongguiyeucau" type="button" (click)="layuserthuenha(room.iduserRentHouse, room._id)" class="btn btn-warning"
-                        data-toggle="modal" data-target="#xemnguoiyeucauthueModal">{{room.soluongguiyeucau}}</button></td>
+                <td><button class="soluongguiyeucau" type="button">{{room.soluongguiyeucau}}</button>
+                </td>
+                <td>{{room.checkHouse}}</td>
             </tr>
 
         </tbody>
     </table>
 </div>
 <!-- model xóa -->
-<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -50,7 +56,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let room of rooms;let i = index">
+                    <tr *ngFor="let room of rooms;let i = index" data-toggle="modal"
+                        data-target="#xemnguoiyeucauthueModal" (click)="getRoom(room)">
                         <td>{{i}}</td>
                         <td>{{room.title}}</td>
                         <td>
@@ -59,8 +66,9 @@
                         <td>{{room.price}} {{room.unit}}</td>
                         <td>{{room.price * 0.2}}</td>
                         <td>{{room.price}} {{room.unit}}</td>
-                        <td><button class="soluongguiyeucau" type="button" (click)="getRoom(room)" class="btn btn-warning"
-                                data-toggle="modal" data-target="#xemnguoiyeucauthueModal">{{room.soluongguiyeucau}}</button></td>
+                        <!-- <td><button class="soluongguiyeucau" type="button" (click)="getRoom(room)"
+                                class="btn btn-warning" data-toggle="modal"
+                                data-target="#xemnguoiyeucauthueModal">{{room.soluongguiyeucau}}</button></td> -->
                     </tr>
 
                 </tbody>
@@ -74,48 +82,42 @@
 </div>
 
 <!-- model xóa -->
-<div class="modal fade" id="xemnguoiyeucauthueModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content xemnguoiyeucauthueModal">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Các User Yêu Cầu Thuê Nhà</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Số TT</th>
-                        <th>Email</th>
-                        <!-- <th>Hình ảnh</th> -->
-                        <th>username</th>
-                        <th>Ngày Gửi yêu cầu</th>
-                        <th>Trạng Thái</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let user of listuserthuenha;let i = index">
-                        <td>{{i}}</td>
-                        <td>{{user.iduser.email}}</td>
-                        <td>{{user.iduser.username}}</td>
-                        <td>{{user?.createdate | date: 'dd/MM/yyyy'}}</td>
-                        <td>
-                            <select [disabled]="(user.iduser._id != chapnhanthuenha.iduser && chapnhanthuenha.status)" [(ngModel)]="user.status" (ngModelChange)="onChange($event, user.iduser._id)" class="form-control" id="sel1">
-                                <option *ngFor="let item of listStatus" [value]="item.value">{{item.name}}</option>
-                            </select>
-                        </td>
-                        <!-- <td>
-                            <button type="button">
-                        </td> -->
-                    </tr>
-
-                </tbody>
-            </table>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
-            </div>
-        </div>
+<ng-template #xemnguoiyeucauthueModal>
+    <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Các User Yêu Cầu Thuê Nhà</h5>
+        <button type="button" class="close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
     </div>
-</div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Số TT</th>
+                <th>Email</th>
+                <!-- <th>Hình ảnh</th> -->
+                <th>username</th>
+                <th>Ngày Gửi yêu cầu</th>
+                <th>Trạng Thái</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of listuserthuenha;let i = index">
+                <td>{{i}}</td>
+                <td>{{user.iduser.email}}</td>
+                <td>{{user.iduser.username}}</td>
+                <td>{{user?.createdate | date: 'dd/MM/yyyy'}}</td>
+                <td>
+                    <select
+                        [disabled]="(user.iduser._id != chapnhanthuenha.iduser && chapnhanthuenha.status)"
+                        [(ngModel)]="user.status" (ngModelChange)="onChange($event, user.iduser._id)"
+                        class="form-control" id="sel1">
+                        <option *ngFor="let item of listStatus" [value]="item.value">{{item.name}}</option>
+                    </select>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
+    </div>
+</ng-template>

@@ -286,7 +286,6 @@ function changestatususer(idhouse, iduser, status, idusercreate) {
     if (status == 1) {
         return Room.update({ "_id": idhouse, "iduserRentHouse.iduser": iduser }, { $set: { "iduserRentHouse.$.status": status, "deleted": true } })
             .then((room) => {
-
                 let body = {
                     idhouse: idhouse,
                     iduser: idusercreate

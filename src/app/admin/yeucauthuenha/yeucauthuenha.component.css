@@ -3,5 +3,10 @@
     height: 50px;
 }
 .soluongguiyeucau{
-    border-radius: 50%;
+    border-radius: 50% !important;
+    background: red !important;
+    color: #fff;
+}
+tbody tr{
+    cursor: pointer;
 }

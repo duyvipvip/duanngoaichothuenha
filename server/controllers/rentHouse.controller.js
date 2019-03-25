@@ -38,17 +38,12 @@ function createRentHouse(body) {
         .then(((renthouse) => {
             if (renthouse == null) {
                 let newRentHouse = new rentHouse(body)
-                return newRentHouse.save()
-                    .then((res) => {
-                        // 
-                        return Room.findOne({ _id: body.idhouse })
-                            .then((data) => {
+                return newRentHouse.save().then((res) => {
+                        return Room.findOne({ _id: body.idhouse }).then((data) => {
                                 if (data != null) {
                                     if (data.iduserRentHouse.length == 0) {
                                         data.iduserRentHouse.push(newObjectBody);
                                     } else {
-                                        console.log(data);
-                                        //let index = data.iduserRentHouse.indexOf(newObjectBody.iduser);
                                         let index = data.iduserRentHouse.map(function (e) {
                                             return e.iduser;
                                         }).indexOf(newObjectBody.iduser)

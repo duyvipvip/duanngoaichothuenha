@@ -99,7 +99,6 @@ export class RoomService {
             iduser: iduser,
             idusercreate: idusercreate
         }
-        console.log(requestForm);
         const token :string = JSON.parse(localStorage.getItem('data')).token;
         let headers = new HttpHeaders().set('x-access-token', token);
         return this.http.post(`${APICONFIG.BASEPOINT}${APICONFIG.ROOM.CHANGESTATUSUSER}`, requestForm, { headers: headers }).toPromise();

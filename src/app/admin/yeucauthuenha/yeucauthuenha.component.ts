@@ -1,14 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { RoomService } from 'src/@http-service/room.service';
 import { ToastrService } from 'ngx-toastr';
-
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 @Component({
     selector: 'app-yeucauthuenha',
     templateUrl: './yeucauthuenha.component.html',
     styleUrls: ['./yeucauthuenha.component.css']
 })
 export class YeucauthuenhaComponent implements OnInit {
-
+    modalRef: BsModalRef;
     rooms = [];
     private selectRoom: any;
     public songuoiguiyeucauthue = 0;
@@ -32,7 +32,7 @@ export class YeucauthuenhaComponent implements OnInit {
         status: false,
         iduser: 0
     };
-    constructor(private roomsv: RoomService, private toastr: ToastrService) { }
+    constructor(private roomsv: RoomService, private toastr: ToastrService, private modalService: BsModalService) { }
 
     ngOnInit() {
         this.get();
@@ -44,21 +44,17 @@ export class YeucauthuenhaComponent implements OnInit {
         }
         this.roomsv.getRoomByUser()
             .then((data: any) => {
-                console.log(data);
                 for(let i=0; i< data.length; i++){
                     let soluongguiyeucau=0;
                     for(let j = 0; j< data[i].iduserRentHouse.length; j++){
-                        if(data[i].iduserRentHouse[j].status == 0){
-                            soluongguiyeucau++;
-                        }
-                        if(data[i].iduserRentHouse[j].status == 1){
-                            this.chapnhanthuenha['status'] = true;
-                            this.chapnhanthuenha['iduser'] = data[i].iduserRentHouse[j].iduser._id;
-                        }
+                        soluongguiyeucau++;
+                        // if(data[i].iduserRentHouse[j].status == 1){
+                        //     this.chapnhanthuenha['status'] = true;
+                        //     this.chapnhanthuenha['iduser'] = data[i].iduserRentHouse[j].iduser._id;
+                        // }
                     }
                     data[i].soluongguiyeucau = soluongguiyeucau;
                 }
-
                 this.rooms = [...data];
             })
             .catch(err => {
@@ -77,10 +73,14 @@ export class YeucauthuenhaComponent implements OnInit {
             })
     }
     
-    layuserthuenha(userRentHouse, idhouse){
-        console.log(userRentHouse);
-        this.idhouse = idhouse;
-        this.listuserthuenha = userRentHouse;
+    layuserthuenha(userRentHouse, idhouse, template: TemplateRef<any>){
+        if(userRentHouse.length > 0){
+            this.idhouse = idhouse;
+            this.listuserthuenha = userRentHouse;
+            this.modalRef = this.modalService.show(template);
+        }else{
+            this.toastr.error("Ngôi Nhà Này Chưa Có Ai Gửi Yêu Cầu Thuê Nhà")
+        }
     }
 
     getRoom(room) {
@@ -95,6 +95,10 @@ export class YeucauthuenhaComponent implements OnInit {
             .catch((err) => {
                 this.toastr.error("error")
             })
+    }
+
+    closeModal(template: TemplateRef<any>){
+        this.modalService.hide(0);
     }
 
 }
