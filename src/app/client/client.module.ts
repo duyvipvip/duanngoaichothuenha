@@ -22,6 +22,7 @@ import { RentHouseService } from 'src/@http-service/rentHouse.service';
 import { GoogleMapComponent } from './google-map/google-map.component';
 import { AgmDirectionModule } from 'agm-direction';
 import { RatingComponent } from './rating/rating.component';
+import { FacebookModule } from 'ngx-facebook';
 @NgModule({
     imports: [
         ClientRoutingModule,
@@ -31,6 +32,7 @@ import { RatingComponent } from './rating/rating.component';
             libraries: ["places"]
           }),
           AgmDirectionModule,
+          FacebookModule.forRoot(),
           ToastrModule.forRoot() // ToastrModule added
     ],
     exports: [],
