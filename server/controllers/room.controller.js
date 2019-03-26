@@ -91,27 +91,13 @@ function deleteRoom(id) {
     return Room.findOne({ _id: id })
         .then((room) => {
             if (room) {
-                return new Promise((resolve, reject) => {
-                    room.image.forEach(element => {
-                        fs.unlink(path.join(__dirname, '../public/image/' + element), (err) => {
-                            if (err) {
-                                return reject(err);
-                            }
-                        }
-                        );
-                        return Room.findByIdAndRemove({ _id: id })
-                            .then(() => {
-                                return rentHouse.remove({ idhouse: id })
-                                    .then(() => {
-                                        return resolve();
-                                    })
-                            })
-                            .catch((err) => {
-                                return reject(err);
-                            })
-                    });
+                return Room.update({ "_id": id }, { $set: { "deleted": true } })
+                .then((room) => {
+                    return resolve(room);
                 })
-
+                .catch((err) => {
+                    return reject(err);
+                })
             } else {
                 return Promise.reject({ message: "not found" })
             }
@@ -318,7 +304,13 @@ function laycacbaidangcuauser(iduser) {
     return Room.find({ "id_user": iduser })
         .populate('id_user')
         .then((data) => {
-            return Promise.resolve(data);
+            let result = [];
+            for (let i = 0; i < data.length; i++) {
+               if(!data[i].deleted){
+                result.push(data[i]);
+               }
+            }
+            return Promise.resolve(result);
         })
 }
 

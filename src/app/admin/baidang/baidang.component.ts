@@ -30,7 +30,6 @@ export class BaidangComponent implements OnInit {
         } else if (this.checksupperadmin == "supperadmin") {
             this.roomsv.getRooms()
                 .then((data: any) => {
-                    console.log(data);
                     this.rooms = data.Data;
                 })
                 .catch(err => {
@@ -42,7 +41,6 @@ export class BaidangComponent implements OnInit {
         this.selectRoom = room;
     }
     deleteRoom() {
-        console.log(this.selectRoom, 'dsd');
         this.roomsv.deleteRoom(this.selectRoom._id)
             .then((res) => {
                 this.toastr.success("success")
