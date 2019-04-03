@@ -31,6 +31,7 @@ export class PostnewsComponent implements OnInit {
     public editorValue: string = "";
     @ViewChild("search")
     public searchElementRef: ElementRef;
+    public iduserlogin: any =  JSON.parse(localStorage.getItem('data'));
     constructor(private fb: FormBuilder,
         private toastr: ToastrService,
         private roomsv: RoomService,
@@ -40,78 +41,81 @@ export class PostnewsComponent implements OnInit {
         private ngZone: NgZone) { }
 
     ngOnInit() {
-        this.gethouse()
-        this.formAddPostNew = this.fb.group({
-            // Validators.required labat buoc phai co
-            title: ['',],
-            category: ['',],
-            phone: [''],
-            price: ['',],
-            unit: [''],
-            acreage: ['',],
-            sex: [''],
-            address: [''],
-            description: [],
-        });
-        // this.formEditPostNew = this.fb.group({
-        //     title: [''],
-        //     category: [''],
-        //     phone: [''],
-        //     price: [''],
-        //     unit: [''],
-        //     acreage: [''],
-        //     sex: [''],
-        //     address: ['']
-        // });
-        //set google maps defaults
-        this.zoom = 4;
-        //create search FormControl
-        // this.searchControl = new FormControl();
-
-        //set current position
-        this.setCurrentPosition();
-
-        //load Places Autocomplete
-        this.mapsAPILoader.load().then(() => {
-            let autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement, {
-                types: ["address"]
+        if (!JSON.parse(localStorage.getItem('data'))) {
+            this.router.navigate(['auth']);
+        } else {
+            this.gethouse()
+            this.formAddPostNew = this.fb.group({
+                // Validators.required labat buoc phai co
+                title: ['',],
+                category: ['',],
+                phone: [''],
+                price: ['',],
+                unit: [''],
+                acreage: ['',],
+                sex: [''],
+                address: [''],
+                description: [],
             });
-            autocomplete.addListener("place_changed", () => {
-                this.ngZone.run(() => {
-                    //get the place result
-                    const place: google.maps.places.PlaceResult = autocomplete.getPlace();
+            // this.formEditPostNew = this.fb.group({
+            //     title: [''],
+            //     category: [''],
+            //     phone: [''],
+            //     price: [''],
+            //     unit: [''],
+            //     acreage: [''],
+            //     sex: [''],
+            //     address: ['']
+            // });
+            //set google maps defaults
+            this.zoom = 4;
+            //create search FormControl
+            // this.searchControl = new FormControl();
 
-                    //verify result
-                    if (place.geometry === undefined || place.geometry === null) {
-                        return;
-                    }
+            //set current position
+            this.setCurrentPosition();
 
-                    //set latitude, longitude and zoom
-                    this.latitude = place.geometry.location.lat();
-                    this.longitude = place.geometry.location.lng();
-                    this.zoom = 12;
-                    //add dia chia
-                    this.tempAdddrest = place.name; 
-                    this.formAddPostNew.controls['address'].setValue(place.name)
+            //load Places Autocomplete
+            this.mapsAPILoader.load().then(() => {
+                let autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement, {
+                    types: ["address"]
+                });
+                autocomplete.addListener("place_changed", () => {
+                    this.ngZone.run(() => {
+                        //get the place result
+                        const place: google.maps.places.PlaceResult = autocomplete.getPlace();
+
+                        //verify result
+                        if (place.geometry === undefined || place.geometry === null) {
+                            return;
+                        }
+
+                        //set latitude, longitude and zoom
+                        this.latitude = place.geometry.location.lat();
+                        this.longitude = place.geometry.location.lng();
+                        this.zoom = 12;
+                        //add dia chia
+                        this.tempAdddrest = place.formatted_address;
+                        this.formAddPostNew.controls['address'].setValue(place.formatted_address)
+                    });
                 });
             });
-        });
-
+        }
     }
     postRoom() {
         const location = {
             lat: this.latitude,
             lng: this.longitude
         };
-      
-        this.formAddPostNew.value.location = location;  
+
+        this.formAddPostNew.value.location = location;
         this.roomsv.createRoom(this.formAddPostNew.value, this.file)
-            .then((data)=>{
-                this.toastr.success('success','Chúc Mừng Bạn Đã Đăng Tin Thành Công')
+            .then((data) => {
+                this.toastr.success('success', 'Chúc Mừng Bạn Đã Đăng Tin Thành Công')
                 this.router.navigate(['/client']);
             })
-            .catch((err)=>{
-                this.toastr.error("Error",err.error.message);
+            .catch((err) => {
+                this.toastr.error("Error", err.error.message);
             })
     }
 
@@ -137,7 +141,7 @@ export class PostnewsComponent implements OnInit {
         const currentCity = this.tp[$selected];
         this.Quans = currentCity.states;
         this.addressCity = this.tp[$selected].name;
-        
+
     }
     selectQ($selected: any) {
         const currentWard = this.Quans[$selected];
@@ -148,10 +152,10 @@ export class PostnewsComponent implements OnInit {
     selectW($selected: any) {
         const currentStreet = this.Ward[$selected];
         this.Street = currentStreet.street;
-        this.addressWrad = this.Ward[$selected].NameWard + ',' + this.addressDitrict ;
+        this.addressWrad = this.Ward[$selected].NameWard + ',' + this.addressDitrict;
     }
     selectS($selected: any) {
-        this.formAddPostNew.value.address =this.Street[$selected].Namestreet +','+this.addressWrad ;
+        this.formAddPostNew.value.address = this.Street[$selected].Namestreet + ',' + this.addressWrad;
     }
     private setCurrentPosition() {
         if ("geolocation" in navigator) {

@@ -130,6 +130,7 @@ function updateRoom(req, res, next) {
 function getsRoom(req, res, next) {
     let page = {
         search: req.query["search"] || '',
+        tinh: req.query["tinh"] || '',
         amount: req.query["amount"] || 30,
         page: req.query["page"] || 1,
         sort: req.query["sort"] || 'name',

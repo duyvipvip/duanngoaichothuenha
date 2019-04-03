@@ -27,7 +27,7 @@
         <app-rating [rating]="getRoom.totalRate" [itemId]="getRoom._id" (ratingClick)='ratingComponentClick($event)'>
         </app-rating> <span class="rating">{{getRoom.rate.length}} (đánh giá)</span>
     </div>
-    <div class="row" *ngIf="!(iduserlogin == getRoom.id_user._id)">
+    <div class="row" *ngIf="!(iduserlogin && (iduserlogin.user._id == getRoom.id_user._id))">
         <div class="col-md-2">
             <div class="xemduong">
                 <button type="button" (click)="directAddress()" class="btn btn-success">Xem Đường</button>

@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class RentHouseService {
+    // public iduserlogin: string = JSON.parse(localStorage.getItem('data')).user._id;
     constructor(private http: HttpClient) {
 
     }
@@ -18,10 +19,10 @@ export class RentHouseService {
         return this.http.post(`${APICONFIG.BASEPOINT}${APICONFIG.RENTHOUSE.CREATE_RENTHOUSE}`, body).toPromise()
     }
 
-    public deleteRentHouse(idhouse, iduser) {
+    public deleteRentHouse(idhouse) {
         let body = {
             idhouse: idhouse,
-            iduser: iduser
+            iduser: JSON.parse(localStorage.getItem('data')).user._id
         }
         return this.http.post(`${APICONFIG.BASEPOINT}${APICONFIG.RENTHOUSE.DELETERENTHOUSE}`, body).toPromise()
     }
