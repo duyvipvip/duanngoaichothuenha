@@ -34,8 +34,8 @@ export class RoomService {
         const iduser :string = JSON.parse(localStorage.getItem('data')).user._id;
         return this.http.get(`${APICONFIG.BASEPOINT}${APICONFIG.ROOM.LAYCACBAIDANGCUAUSER(iduser)}`).toPromise()
     }
-    public Search(search?:string, tinh?:string) {
-        return this.http.get(`${APICONFIG.BASEPOINT}${APICONFIG.ROOM.GET_ROOMS}`+'?search='+search +'&tinh='+tinh).toPromise()
+    public Search(search?:string, tinh?:string, khoanggia?:string) {
+        return this.http.get(`${APICONFIG.BASEPOINT}${APICONFIG.ROOM.GET_ROOMS}`+'?search='+search +'&tinh='+tinh+'&khoanggia='+khoanggia).toPromise()
            
     }
     public getRoomByUser() {
