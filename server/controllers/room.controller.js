@@ -189,7 +189,8 @@ function getsRoom(page) {
     let Amount = parseInt(page.amount);
     let Type = parseInt(page.type);
     if (page.search == '') {
-        return Room.find({ status_room: paramater.ROOM_USE, deleted: false })
+        let result = [];
+        return Room.find({ $or: [{ address: { $regex: page.tinh} }] })
             .sort({ [page.sort]: Type })
             .skip((Page * Amount) - Amount)
             .limit(Amount)
@@ -199,11 +200,20 @@ function getsRoom(page) {
                     for (let i = 0; i < element.image.length; i++) {
                         element.image[i] = 'https://cuongpham.herokuapp.com/image/' + element.image[i];
                     }
+                    if(page.khoanggia != '' && page.khoanggia != undefined){
+                        if(Number(element.price) >= Number(page.khoanggia)){
+                            result.push(element);
+                        }
+                    }else{
+                        if(!element.deleted){
+                            result.push(element);
+                        }
+                    }
                 });
                 return Room.find()
                     .then((data) => {
                         return {
-                            Data: res,
+                            Data: result,
                             Page: Page,
                             Amount: Amount,
                             TotalPage: (Math.floor(data.length / Amount) ? Math.floor(data.length / Amount) : 1) + (data.length % Amount ? 0 : 1),
@@ -216,21 +226,31 @@ function getsRoom(page) {
                 return Promise.reject(err);
             })
     } else {
-        return Room.find({ $or: [{ title: { $regex: page.search } }, { price: { $regex: page.search } }, { address: { $regex: page.tinh } }] })
+        return Room.find({ $or: [{ title: { $regex: page.search, $options: "$i"} }] })
             .sort({ [page.sort]: Type })
             .skip((Page * Amount) - Amount)
             .limit(Amount)
             .populate('id_user')
             .then((res) => {
+                let result = [];
                 res.forEach(element => {
                     for (let i = 0; i < element.image.length; i++) {
                         element.image[i] = 'https://cuongpham.herokuapp.com/image/' + element.image[i];
+                    }
+                    if(page.khoanggia != '' && page.khoanggia != 'undefined'){
+                        if(element.price >= page.khoanggia && !element.deleted){
+                            result.push(element);
+                        }
+                    }else{
+                        if(!element.deleted){
+                            result.push(element);
+                        }
                     }
                 });
                 return Room.find()
                     .then((data) => {
                         return {
-                            Data: res,
+                            Data: result,
                             Page: Page,
                             Amount: Amount,
                             TotalPage: (Math.floor(data.length / Amount) ? Math.floor(data.length / Amount) : 1) + (data.length % Amount ? 0 : 1),

@@ -22,9 +22,8 @@ export class HomeComponent implements OnInit {
     public arrayTinh = [
         'Hồ Chí Minh','Hà Nội','Hải Phòng','Đà Nẵng','Cần Thơ','Phú Yên','Yên Bái','Vĩnh Phúc','Vĩnh Long','Tuyên Quang','Trà Vinh','Tiền Giang','Thừa Thiên Huế','Thanh Hóa','Thái Nguyên','Thái Bình','Tây Ninh','Sơn La','Sóc Trăng','Quảng Trị','Quảng Ninh','Quảng Ngãi','Quảng Nam','Quảng Bình','Phú Thọ','Ninh Thuận','Ninh Bình','Nghệ An','Nam Định','Long An','Lào Cai','Lạng Sơn','Lâm Đồng','Lai Châu','Kon Tum','Kiên Giang','Khánh Hòa','Hưng Yên','Hòa Bình','Hậu Giang','Hải Dương','Hà Tĩnh','Hà Nam','Hà Giang','Gia Lai','Đồng Tháp','Đồng Nai','Điện Biên','Đắk Nông','Đắk Lắk','Cao Bằng','Cà Mau','Bình Thuận','Bình Phước','Bình Dương','Bình Định','Bến Tre','Bắc Ninh','Bạc Liêu','Bắc Kạn','Bắc Giang','Bà Rịa - Vũng Tàu','An Giang',
      ]
-
+    public khoanggia: string;
     foods = [
-        { value: '0.5', viewValue: '500 nghàn' },
         { value: '1', viewValue: '1 triệu' },
         { value: '1.5', viewValue: '1.5 triệu' },
         { value: '2', viewValue: '2 triệu' },
@@ -153,9 +152,10 @@ export class HomeComponent implements OnInit {
     }
 
     select() {
-        // this.value = (this.value == undefined) ? '' : this.value;
-        this.tinh = (this.tinh== undefined ) ? '': this.tinh;
-        this.roomsv.Search(this.value, this.tinh)
+        this.value = (this.value == undefined) ? '' : this.value;
+        this.khoanggia = (this.khoanggia == undefined) ? '' : this.khoanggia;
+        // this.tinh = (this.tinh== undefined ) ? '': this.tinh;
+        this.roomsv.Search(this.value, this.tinh, this.khoanggia)
             .then((data: any) => {
                 this.rooms = data.Data;
             })
