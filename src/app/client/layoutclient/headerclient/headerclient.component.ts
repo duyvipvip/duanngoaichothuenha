@@ -11,7 +11,9 @@ export class HeaderclientComponent implements OnInit {
     constructor(private router: Router) { }
     user: any;
     ngOnInit() {
-        this.user = JSON.parse(localStorage.getItem('data')).user;
+        if(JSON.parse(localStorage.getItem('data'))){
+            this.user = JSON.parse(localStorage.getItem('data')).user;
+        }
     }
 
     goInfoUser(){

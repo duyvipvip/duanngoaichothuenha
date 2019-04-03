@@ -16,7 +16,6 @@ export class RoomService {
                 requestForm.append("files", tempFile[j]);
             }
           }
-          debugger;
         const token :string = JSON.parse(localStorage.getItem('data')).token;
         let headers = new HttpHeaders().set('x-access-token', token);
         return this.http.post(`${APICONFIG.BASEPOINT}${APICONFIG.ROOM.CREATE_ROOM}`, requestForm, { headers: headers }).toPromise();
@@ -35,8 +34,8 @@ export class RoomService {
         const iduser :string = JSON.parse(localStorage.getItem('data')).user._id;
         return this.http.get(`${APICONFIG.BASEPOINT}${APICONFIG.ROOM.LAYCACBAIDANGCUAUSER(iduser)}`).toPromise()
     }
-    public Search(search?:string) {
-        return this.http.get(`${APICONFIG.BASEPOINT}${APICONFIG.ROOM.GET_ROOMS}`+'?search='+search).toPromise()
+    public Search(search?:string, tinh?:string) {
+        return this.http.get(`${APICONFIG.BASEPOINT}${APICONFIG.ROOM.GET_ROOMS}`+'?search='+search +'&tinh='+tinh).toPromise()
            
     }
     public getRoomByUser() {
@@ -105,8 +104,8 @@ export class RoomService {
     }
 
     public laymangtoadolocation(){
-        const token :string = JSON.parse(localStorage.getItem('data')).token;
-        let headers = new HttpHeaders().set('x-access-token', token);
-        return this.http.get(`${APICONFIG.BASEPOINT}${APICONFIG.ROOM.LAYMANGTOADOLOCATION}`, { headers: headers }).toPromise();
+        // const token :string = JSON.parse(localStorage.getItem('data')).token;
+        // let headers = new HttpHeaders().set('x-access-token', token);
+        return this.http.get(`${APICONFIG.BASEPOINT}${APICONFIG.ROOM.LAYMANGTOADOLOCATION}`).toPromise();
     }
 }

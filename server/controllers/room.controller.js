@@ -216,7 +216,7 @@ function getsRoom(page) {
                 return Promise.reject(err);
             })
     } else {
-        return Room.find({ $or: [{ name: { $regex: page.search } }, { price: { $regex: page.search } }, { address: { $regex: page.search } }] })
+        return Room.find({ $or: [{ title: { $regex: page.search } }, { price: { $regex: page.search } }, { address: { $regex: page.tinh } }] })
             .sort({ [page.sort]: Type })
             .skip((Page * Amount) - Amount)
             .limit(Amount)

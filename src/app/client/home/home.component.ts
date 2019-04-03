@@ -6,8 +6,7 @@ import { ElementRef, NgZone, ViewChild } from '@angular/core';
 import { MapsAPILoader } from '@agm/core';
 import { RatingService } from 'src/@http-service/rating.service';
 import { ToastrService } from 'ngx-toastr';
-
-
+declare const google: any;
 @Component({
     selector: 'app-home',
     templateUrl: './home.component.html',
@@ -16,9 +15,14 @@ import { ToastrService } from 'ngx-toastr';
 export class HomeComponent implements OnInit {
     public zoom: number;
     value: any;
+    public tinh: any = '';
     search: string = "";
     public latitude: number;
     public longitude: number;
+    public arrayTinh = [
+        'Hồ Chí Minh','Hà Nội','Hải Phòng','Đà Nẵng','Cần Thơ','Phú Yên','Yên Bái','Vĩnh Phúc','Vĩnh Long','Tuyên Quang','Trà Vinh','Tiền Giang','Thừa Thiên Huế','Thanh Hóa','Thái Nguyên','Thái Bình','Tây Ninh','Sơn La','Sóc Trăng','Quảng Trị','Quảng Ninh','Quảng Ngãi','Quảng Nam','Quảng Bình','Phú Thọ','Ninh Thuận','Ninh Bình','Nghệ An','Nam Định','Long An','Lào Cai','Lạng Sơn','Lâm Đồng','Lai Châu','Kon Tum','Kiên Giang','Khánh Hòa','Hưng Yên','Hòa Bình','Hậu Giang','Hải Dương','Hà Tĩnh','Hà Nam','Hà Giang','Gia Lai','Đồng Tháp','Đồng Nai','Điện Biên','Đắk Nông','Đắk Lắk','Cao Bằng','Cà Mau','Bình Thuận','Bình Phước','Bình Dương','Bình Định','Bến Tre','Bắc Ninh','Bạc Liêu','Bắc Kạn','Bắc Giang','Bà Rịa - Vũng Tàu','An Giang',
+     ]
+
     foods = [
         { value: '0.5', viewValue: '500 nghàn' },
         { value: '1', viewValue: '1 triệu' },
@@ -44,7 +48,9 @@ export class HomeComponent implements OnInit {
         private roomsv: RoomService,
         private RatingService: RatingService,
         private toastr: ToastrService,
-        private userservice: UserService) { }
+        private userservice: UserService) {
+            
+        }
 
     ngOnInit() {
         if (window.navigator && window.navigator.geolocation) {
@@ -76,6 +82,20 @@ export class HomeComponent implements OnInit {
                 }
             );
         };
+        // this.roomsv.laymangtoadolocation()
+        // .then((data: any) => {
+        //     debugger;
+        //     this.arrCountry = [];
+        //     let geocoder = new google.maps.Geocoder;
+        //     data.forEach(item => {
+        //         let latlng = {lat: item.lat, lng: item.lng};
+        //         geocoder.geocode({'location': latlng}, (results, status) => {
+        //             this.arrCountry.push(results[0].address_components[2].short_name);
+        //             console.log(this.arrCountry);
+        //         });
+        //     });
+           
+        // })
         this.GetRooms();
     }
 
@@ -123,19 +143,19 @@ export class HomeComponent implements OnInit {
         this.router.navigate(['detailroom']);
     }
     Search() {
-        if (this.search) {
-            this.roomsv.Search(this.search)
-                .then((data: any) => {
-                    this.rooms = data.Data;
-                })
-                .catch(err => {
-                    return err;
-                });
-        }
+        this.roomsv.Search(this.search, this.tinh)
+        .then((data: any) => {
+            this.rooms = data.Data;
+        })
+        .catch(err => {
+            return err;
+        });
     }
 
     select() {
-        this.roomsv.Search(this.value)
+        // this.value = (this.value == undefined) ? '' : this.value;
+        this.tinh = (this.tinh== undefined ) ? '': this.tinh;
+        this.roomsv.Search(this.value, this.tinh)
             .then((data: any) => {
                 this.rooms = data.Data;
             })
