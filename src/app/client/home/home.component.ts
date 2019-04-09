@@ -142,7 +142,10 @@ export class HomeComponent implements OnInit {
         this.router.navigate(['detailroom']);
     }
     Search() {
-        this.roomsv.Search(this.search, this.tinh)
+        this.value = (this.value == undefined) ? '' : this.value;
+        this.khoanggia = (this.khoanggia == undefined) ? '' : this.khoanggia;
+        this.tinh = (this.tinh== undefined ) ? '': this.tinh;
+        this.roomsv.Search(this.search, this.tinh, this.khoanggia)
         .then((data: any) => {
             this.rooms = data.Data;
         })
@@ -150,19 +153,4 @@ export class HomeComponent implements OnInit {
             return err;
         });
     }
-
-    select() {
-        this.value = (this.value == undefined) ? '' : this.value;
-        this.khoanggia = (this.khoanggia == undefined) ? '' : this.khoanggia;
-        // this.tinh = (this.tinh== undefined ) ? '': this.tinh;
-        this.roomsv.Search(this.value, this.tinh, this.khoanggia)
-            .then((data: any) => {
-                this.rooms = data.Data;
-            })
-            .catch(err => {
-                return err;
-            });
-
-    }
-
 }

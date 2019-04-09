@@ -92,12 +92,12 @@ function deleteRoom(id) {
         .then((room) => {
             if (room) {
                 return Room.update({ "_id": id }, { $set: { "deleted": true } })
-                .then((room) => {
-                    return resolve(room);
-                })
-                .catch((err) => {
-                    return reject(err);
-                })
+                    .then((room) => {
+                        return resolve(room);
+                    })
+                    .catch((err) => {
+                        return reject(err);
+                    })
             } else {
                 return Promise.reject({ message: "not found" })
             }
@@ -188,81 +188,42 @@ function getsRoom(page) {
     let Page = parseInt(page.page);
     let Amount = parseInt(page.amount);
     let Type = parseInt(page.type);
-    if (page.search == '') {
-        let result = [];
-        return Room.find({ $or: [{ address: { $regex: page.tinh} }] })
-            .sort({ [page.sort]: Type })
-            .skip((Page * Amount) - Amount)
-            .limit(Amount)
-            .populate('id_user')
-            .then((res) => {
-                res.forEach(element => {
-                    for (let i = 0; i < element.image.length; i++) {
-                        element.image[i] = 'https://cuongpham.herokuapp.com/image/' + element.image[i];
+    return Room.find({
+        $and: [
+            { title: { $regex: page.search, $options: "$i" } },
+            { address: { $regex: page.tinh, $options: "$i" } },
+            { price: { $gte: page.khoanggia }},
+        ]
+
+    })
+        .sort({ [page.sort]: Type })
+        .skip((Page * Amount) - Amount)
+        .limit(Amount)
+        .populate('id_user')
+        .then((res) => {
+            let result = [];
+            res.forEach(element => {
+                for (let i = 0; i < element.image.length; i++) {
+                    element.image[i] = 'https://cuongpham.herokuapp.com/image/' + element.image[i];
+                }
+                result.push(element);
+              
+            });
+            return Room.find()
+                .then((data) => {
+                    return {
+                        Data: result,
+                        Page: Page,
+                        Amount: Amount,
+                        TotalPage: (Math.floor(data.length / Amount) ? Math.floor(data.length / Amount) : 1) + (data.length % Amount ? 0 : 1),
+                        Total: data.length,
+                        SearchText: page.search
                     }
-                    if(page.khoanggia != '' && page.khoanggia != undefined){
-                        if(Number(element.price) >= Number(page.khoanggia)){
-                            result.push(element);
-                        }
-                    }else{
-                        if(!element.deleted){
-                            result.push(element);
-                        }
-                    }
-                });
-                return Room.find()
-                    .then((data) => {
-                        return {
-                            Data: result,
-                            Page: Page,
-                            Amount: Amount,
-                            TotalPage: (Math.floor(data.length / Amount) ? Math.floor(data.length / Amount) : 1) + (data.length % Amount ? 0 : 1),
-                            Total: data.length,
-                            SearchText: page.search
-                        }
-                    })
-            })
-            .catch((err) => {
-                return Promise.reject(err);
-            })
-    } else {
-        return Room.find({ $or: [{ title: { $regex: page.search, $options: "$i"} }] })
-            .sort({ [page.sort]: Type })
-            .skip((Page * Amount) - Amount)
-            .limit(Amount)
-            .populate('id_user')
-            .then((res) => {
-                let result = [];
-                res.forEach(element => {
-                    for (let i = 0; i < element.image.length; i++) {
-                        element.image[i] = 'https://cuongpham.herokuapp.com/image/' + element.image[i];
-                    }
-                    if(page.khoanggia != '' && page.khoanggia != 'undefined'){
-                        if(element.price >= page.khoanggia && !element.deleted){
-                            result.push(element);
-                        }
-                    }else{
-                        if(!element.deleted){
-                            result.push(element);
-                        }
-                    }
-                });
-                return Room.find()
-                    .then((data) => {
-                        return {
-                            Data: result,
-                            Page: Page,
-                            Amount: Amount,
-                            TotalPage: (Math.floor(data.length / Amount) ? Math.floor(data.length / Amount) : 1) + (data.length % Amount ? 0 : 1),
-                            Total: data.length,
-                            SearchText: page.search
-                        }
-                    })
-            })
-            .catch((err) => {
-                return Promise.reject(err);
-            })
-    }
+                })
+        })
+        .catch((err) => {
+            return Promise.reject(err);
+        })
 
 }
 function createRoom(data) {
@@ -326,9 +287,9 @@ function laycacbaidangcuauser(iduser) {
         .then((data) => {
             let result = [];
             for (let i = 0; i < data.length; i++) {
-               if(!data[i].deleted){
-                result.push(data[i]);
-               }
+                if (!data[i].deleted) {
+                    result.push(data[i]);
+                }
             }
             return Promise.resolve(result);
         })

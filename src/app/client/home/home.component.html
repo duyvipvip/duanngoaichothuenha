@@ -16,7 +16,7 @@
             <div class="col-md-2">
                 <h4>Khoảng giá</h4>
                 <mat-form-field>
-                    <mat-select placeholder="Chọn giá" [(ngModel)]="khoanggia" (ngModelChange)="select()">
+                    <mat-select placeholder="Chọn giá" [(ngModel)]="khoanggia" >
                         <mat-option [value]="">
                             Chọn giá 
                         </mat-option>
@@ -33,7 +33,7 @@
                     <option  *ngFor="let item of arrayTinh"  value="item"></option>
                 </select> -->
                 <mat-form-field>
-                    <mat-select  placeholder="Chọn tỉnh" [(ngModel)]="tinh" (ngModelChange)="select()">
+                    <mat-select  placeholder="Chọn tỉnh" [(ngModel)]="tinh" >
                         <mat-option [value]="">
                             Chọn tỉnh
                         </mat-option>
@@ -79,10 +79,10 @@
 
                             <div class="space-line"></div>
                             <div class="row">
-                                <div class="col-md-5">
+                                <div class="col-md-4">
                                     <button type="button" class="btn btn-success">{{room.price}} {{room.unit}}</button>
                                 </div>
-                                <div class="col-md-7">
+                                <div class="col-md-8">
                                     <b>{{room.address}}</b>
                                 </div>
                             </div>

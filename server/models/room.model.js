@@ -21,7 +21,7 @@ var roomSchema = new Schema({
     },
     price: {
         index: true,
-        type: String,
+        type: Number,
         required: true
     },
     unit: { //don vi 
