@@ -93,7 +93,10 @@ var roomSchema = new Schema({
                 type: Number
             }
         }
-    ]
+    ],
+    category: {
+        type: String,
+    }
 
 })
 var room = mongoose.model('room', roomSchema);

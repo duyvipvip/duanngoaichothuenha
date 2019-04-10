@@ -32,6 +32,7 @@ export class PostnewsComponent implements OnInit {
     @ViewChild("search")
     public searchElementRef: ElementRef;
     public iduserlogin: any =  JSON.parse(localStorage.getItem('data'));
+    public LoaiNha: any[] = ["Nhà Nguyên Căn", "Nhà Trọ", "Nhà Chung Cư"]
     constructor(private fb: FormBuilder,
         private toastr: ToastrService,
         private roomsv: RoomService,

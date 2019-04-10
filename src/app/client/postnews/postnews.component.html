@@ -6,14 +6,18 @@
                     <h4>Thông tin cơ bản</h4>
                 </div>
                 <div class="info-enter">
-                    <form class="col-md-12" style="border: 1px solid #aaa; box-shadow: 1px 1px 50px 0 rgba(0,0,0,.29);" [formGroup]="formAddPostNew">
+                    <form class="col-md-12" style="border: 1px solid #aaa; box-shadow: 1px 1px 50px 0 rgba(0,0,0,.29);"
+                        [formGroup]="formAddPostNew">
                         <div class="form-group">
                             <label>Tiêu đề tin
                                 <span class="require"> (*)</span>
                             </label>
-                            <input type="text" formControlName="title" class="form-control" placeholder="Tiêu đề tin" id="myInput">
-                            <div *ngIf="formAddPostNew.get('title').errors  && (formAddPostNew.get('title').dirty || formAddPostNew.get('title').touched)">
-                                <p *ngIf="formAddPostNew.get('title').errors.required" class="text-danger">Tên không được bỏ trống!</p>
+                            <input type="text" formControlName="title" class="form-control" placeholder="Tiêu đề tin"
+                                id="myInput">
+                            <div
+                                *ngIf="formAddPostNew.get('title').errors  && (formAddPostNew.get('title').dirty || formAddPostNew.get('title').touched)">
+                                <p *ngIf="formAddPostNew.get('title').errors.required" class="text-danger">Tên không
+                                    được bỏ trống!</p>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -22,25 +26,31 @@
                                     <span class="require"> (*)</span>
                                 </label>
                                 <select class="form-control" formControlName="category" id="sel1">
-                                    <option value="false">Nhà thuê nguyên căn</option>
+                                    <option *ngFor="let item of LoaiNha" value="{{item}}">{{item}}</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label>Giá cho thuê
                                     <span class="require"> (*)</span>
                                 </label>
-                                <input type="number" formControlName="price" class="form-control" placeholder="Giá cho thuê" id="myInput">
-                                <div *ngIf="formAddPostNew.get('price').errors  && (formAddPostNew.get('price').dirty || formAddPostNew.get('price').touched)">
-                                    <p *ngIf="formAddPostNew.get('price').errors.required" class="text-danger">Giá không được bỏ trống!</p>
+                                <input type="number" formControlName="price" class="form-control"
+                                    placeholder="Giá cho thuê" id="myInput">
+                                <div
+                                    *ngIf="formAddPostNew.get('price').errors  && (formAddPostNew.get('price').dirty || formAddPostNew.get('price').touched)">
+                                    <p *ngIf="formAddPostNew.get('price').errors.required" class="text-danger">Giá không
+                                        được bỏ trống!</p>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label>Diện tích
                                     <span class="require"> (*)</span>
                                 </label>
-                                <input type="number" formControlName="acreage" class="form-control" placeholder="Diện tích" id="myInput">
-                                <div *ngIf="formAddPostNew.get('acreage').errors  && (formAddPostNew.get('acreage').dirty || formAddPostNew.get('acreage').touched)">
-                                    <p *ngIf="formAddPostNew.get('acreage').errors.required" class="text-danger">Diện tích không được bỏ trống!</p>
+                                <input type="number" formControlName="acreage" class="form-control"
+                                    placeholder="Diện tích" id="myInput">
+                                <div
+                                    *ngIf="formAddPostNew.get('acreage').errors  && (formAddPostNew.get('acreage').dirty || formAddPostNew.get('acreage').touched)">
+                                    <p *ngIf="formAddPostNew.get('acreage').errors.required" class="text-danger">Diện
+                                        tích không được bỏ trống!</p>
                                 </div>
                             </div>
                         </div>
@@ -49,9 +59,12 @@
                                 <label>Số điện thoại
                                     <span class="require"> (*)</span>
                                 </label>
-                                <input type="number" formControlName="phone" class="form-control" placeholder="Số Điện Thoại" id="myInput">
-                                <div *ngIf="formAddPostNew.get('phone').errors  && (formAddPostNew.get('phone').dirty || formAddPostNew.get('phone').touched)">
-                                    <p *ngIf="formAddPostNew.get('phone').errors.required" class="text-danger">Diện tích không được bỏ trống!</p>
+                                <input type="number" formControlName="phone" class="form-control"
+                                    placeholder="Số Điện Thoại" id="myInput">
+                                <div
+                                    *ngIf="formAddPostNew.get('phone').errors  && (formAddPostNew.get('phone').dirty || formAddPostNew.get('phone').touched)">
+                                    <p *ngIf="formAddPostNew.get('phone').errors.required" class="text-danger">Diện tích
+                                        không được bỏ trống!</p>
                                 </div>
                             </div>
                             <div class="clr"></div>
@@ -97,11 +110,13 @@
                         Các bạn nên điền đầy đủ thông tin vào các mục để tin đăng có hiệu quả hơn.
                     </li>
                     <li>
-                        Để tăng độ tin cậy và tin rao được nhiều người quan tâm hơn, hãy sửa vị trí tin rao của bạn trên bản đồ bằng cách kéo icon
+                        Để tăng độ tin cậy và tin rao được nhiều người quan tâm hơn, hãy sửa vị trí tin rao của bạn trên
+                        bản đồ bằng cách kéo icon
                         tới đúng vị trí của tin rao.
                     </li>
                     <li>
-                        Tin đăng có hình ảnh rõ ràng sẽ được xem và gọi gấp nhiều lần so với tin rao không có ảnh. Hãy đăng ảnh để được giao dịch
+                        Tin đăng có hình ảnh rõ ràng sẽ được xem và gọi gấp nhiều lần so với tin rao không có ảnh. Hãy
+                        đăng ảnh để được giao dịch
                         nhanh chóng!
                     </li>
                 </ul>
@@ -115,7 +130,8 @@
                     <h4>Địa chỉ</h4>
                 </div>
                 <div class="info-enter">
-                    <form class="col-md-12" style="border: 1px solid #aaa; box-shadow: 1px 1px 50px 0 rgba(0,0,0,.29);" [formGroup]="formAddPostNew">
+                    <form class="col-md-12" style="border: 1px solid #aaa; box-shadow: 1px 1px 50px 0 rgba(0,0,0,.29);"
+                        [formGroup]="formAddPostNew">
                         <!-- <div class="col-md-6">
                             <div class="form-group">
                                 <label>Tỉnh / Thành phố
@@ -140,20 +156,22 @@
                                 </select>
                             </div>
                             <!-- <div class="clr"></div> -->
-                            <!-- <div class="form-group">
+                        <!-- <div class="form-group">
                                 <label>Đường</label>
                                 <select class="form-control" *ngIf="Street" (change)="selectS($event.target.value)" id="sel4">
                                     <option *ngFor="let s of Street; let e = index" [value]="e">{{s.Namestreet}}</option>
                                 </select>
                             </div>
-                        </div> --> 
+                        </div> -->
                         <div class="form-group">
                             <label>Địa chỉ chỉnh xác
                                 <span class="require"> (*)</span>
                             </label>
-                            <input placeholder="search for location" formControlName="address" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control"
-                                #search [(ngModel)]=formAddPostNew.value.address>
-                            <small class="form-text error" *ngIf="formAddPostNew.get('address').errors?.required && formAddPostNew.get('address').touched">
+                            <input placeholder="search for location" formControlName="address" autocorrect="off"
+                                autocapitalize="off" spellcheck="off" type="text" class="form-control" #search
+                                [(ngModel)]=formAddPostNew.value.address>
+                            <small class="form-text error"
+                                *ngIf="formAddPostNew.get('address').errors?.required && formAddPostNew.get('address').touched">
                                 Nhập địa điểm
                             </small>
                         </div>
@@ -161,7 +179,8 @@
                             <label>Bản đồ
                                 <span class="require"> (*)</span>
                                 <div class="col-md-12">
-                                    <agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom">
+                                    <agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false"
+                                        [zoom]="zoom">
                                         <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
                                     </agm-map>
                                 </div>
@@ -180,9 +199,11 @@
                     <h4>Thông tin mô tả</h4>
                 </div>
 
-                <form class="col-md-12" style="border: 1px solid #aaa; box-shadow: 1px 1px 50px 0 rgba(0,0,0,.29);" [formGroup]="formAddPostNew">
+                <form class="col-md-12" style="border: 1px solid #aaa; box-shadow: 1px 1px 50px 0 rgba(0,0,0,.29);"
+                    [formGroup]="formAddPostNew">
                     <div class="show-notication">
-                        Giới thiệu mô tả về tin đăng của bạn. Ví dụ: Khu nhà có vị trí thuận lợi: Gần công viên, gần trường học ... Tổng diện tích
+                        Giới thiệu mô tả về tin đăng của bạn. Ví dụ: Khu nhà có vị trí thuận lợi: Gần công viên, gần
+                        trường học ... Tổng diện tích
                         52m2, đường đi ô tô vào tận cửa.
                     </div>
                     <div class="form-group">
@@ -190,7 +211,8 @@
                             <span class="require"> (*)</span>
                         </label>
                         <!-- <textarea formControlName="description" name="" id="" rows="5"></textarea> -->
-                        <ck-editor name="editor1" [(ngModel)]="editorValue" formControlName="description" skin="moono-lisa" language="en" [fullPage]="true"></ck-editor>
+                        <ck-editor name="editor1" [(ngModel)]="editorValue" formControlName="description"
+                            skin="moono-lisa" language="en" [fullPage]="true"></ck-editor>
                     </div>
                 </form>
             </div>
@@ -204,9 +226,11 @@
                     <h4>Hình ảnh</h4>
                 </div>
 
-                <form class="col-md-12" style="border: 1px solid #aaa; box-shadow: 1px 1px 50px 0 rgba(0,0,0,.29);" [formGroup]="formAddPostNew">
+                <form class="col-md-12" style="border: 1px solid #aaa; box-shadow: 1px 1px 50px 0 rgba(0,0,0,.29);"
+                    [formGroup]="formAddPostNew">
                     <div class="show-notication">
-                        Tin đăng có hình ảnh rõ ràng sẽ được xem và gọi gấp nhiều lần so với tin rao không có ảnh. Hãy đăng ảnh để được giao dịch
+                        Tin đăng có hình ảnh rõ ràng sẽ được xem và gọi gấp nhiều lần so với tin rao không có ảnh. Hãy
+                        đăng ảnh để được giao dịch
                         nhanh chóng!
                     </div>
                     <div class="title-image">
@@ -217,13 +241,53 @@
                     </div>
 
                     <div class="form-group">
-                            <input id="file" type="file" name="file"  (change)="selectImage($event)" class="input-file"/>
+                        <input id="file" type="file" name="file" (change)="selectImage($event)" class="input-file" />
                         <!-- <input type="file" (change)="selectImage($event)" class="input-file" id="file" data-id="1" > -->
                     </div>
                     <div *ngFor="let img of srcFileUpload" style="padding: 10px 10px; display: inline-block;">
-                        <img width="200" height="200" [src]="img" *ngIf="img" >
+                        <img width="200" height="200" [src]="img" *ngIf="img">
                     </div>
                 </form>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8" style="margin-top: 20px;">
+            <div class="info">
+                <div class="info-basic">
+                    <h4>Điều khoản</h4>
+                </div>
+
+                <div class="group"><span class="lstitle-new">GIẤY TỜ BẮT BUỘC </span>
+                    <div class="ctn-desc-new">
+                        
+                        <ul class="required">
+                            <li> <img class="img-ico" src="https://n1-cstg.mioto.vn/v4/p/m/icons/papers/cmnd.png"
+                                    alt="Mioto - Thuê xe tự lái" style="width: 20px; height: 20px;"> CMND</li>
+                            <li> <img class="img-ico" src="https://n1-cstg.mioto.vn/v4/p/m/icons/papers/hk.png"
+                                    alt="Mioto - Thuê xe tự lái" style="width: 20px; height: 20px;"> Giấy tờ nhà
+                                </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="group">
+                    <ol type="1">
+                        <li>Không được đăng ký tài khoản và khai báo những thông tin giả mạo, đặt tên tài khoản phản cảm, thô tục</li>
+                        <li>Không được phép đăng tin liên quan đến các vấn đề mà pháp luật Việt Nam không cho phép.</li>
+                        <li>Không được đăng những bài viết, thông tin có nội dung vi phạm pháp luật: đả kích, bôi nhọ, chỉ trích hay bàn luận về chính trị, tôn giáo, phản động, kỳ thị văn hóa, dân tộc, cũng như vi phạm khác liên quan đến thuần phong mỹ tục của dân tộc Việt Nam.</li>
+                        <li>Tiêu đề và nội dung của tin đăng phải dùng tiếng Việt có dấu. Không được sử dụng từ ngữ thô tục, mất văn hoá.</li>
+                        <li>Tin đăng phải có địa chỉ liên lạc cụ thể không được cho địa chỉ sai. hay dùng thông tin địa chỉ của người khác</li>
+                        <li>Các bài viết không có nội dung hoặc nội dung không liên quan đến chuyên mục. Những bài viết này sẽ bị xóa mà không cần báo trước.</li>
+                        <li>Không tạo nhiều tài khoản để đăng tin, nếu chúng tôi phát hiện sẽ xóa và ban toàn bộ nick.</li>
+                        <li>Không được đăng quá nhiều tin trong ngày và không đăng tin có tiêu đề, nội dung tương tự nhau.</li>
+                        <li>Khi phát hiện tin đăng không đúng sự thật, hay chỗ cho thuê là dịch vụ hay cò nhà trọ, bạn vui lòng thông báo cho Ban quản trị biết để chúng tôi kịp thời xử lý.</li>
+                        <li>Những trường hợp cố tình spam, vi phạm nội quy nhiều lần thì chúng tôi sẽ cấm không cho bạn đăng tin và tất cả mọi tin đăng của bạn sẽ không được hiển thị trên cuongpham.com</li>
+                        <li>Lưu ý thành viên phải chọn đúng khu vực ví dụ: Hồ Chí Minh, Hà Nội và chọn đúng chuyên mục như: Cho thuê phòng trọ hoặc cho thuê căn hộ, tìm người ở ghép..</li>
+                        <h4>Tất cả các tin đăng sai phạm quy định trên sẽ bị xóa mà không cần thông báo trước.</h4>
+                        <h4>Chúng tôi không chịu trách nhiệm về nội dung các bài đăng trên website.</h4>
+                    </ol>
+                        
+                </div>
             </div>
         </div>
     </div>

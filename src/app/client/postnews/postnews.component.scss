@@ -6,7 +6,7 @@ agm-map{
     border: 1px solid #aaa;
     border-top: 0px;
     margin-bottom: 40px;
-    .info-basic, {
+    .info-basic {
         h4{
             background: #044A84;
             text-transform: uppercase;
@@ -91,4 +91,12 @@ textarea {
      text-transform: uppercase;
      font-size: 15px;
      padding: 6px 60px;
+ }
+ .group{
+    padding: 10px;
+    ul{
+        li{
+            padding: 10px;
+        }
+    }
  }

@@ -135,7 +135,8 @@ function getsRoom(req, res, next) {
         amount: req.query["amount"] || 30,
         page: req.query["page"] || 1,
         sort: req.query["sort"] || 'name',
-        type: req.query["type"] || 1
+        type: req.query["type"] || 1,
+        loainha: req.query["loainha"] || '',
     }
 
     RoomController.getsRoom(page)

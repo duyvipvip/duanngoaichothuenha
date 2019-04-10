@@ -190,6 +190,8 @@ function getsRoom(page) {
     let Type = parseInt(page.type);
     return Room.find({
         $and: [
+            // { deleted: false},
+            { category: { $regex: page.loainha, $options: "$i" } },
             { title: { $regex: page.search, $options: "$i" } },
             { address: { $regex: page.tinh, $options: "$i" } },
             { price: { $gte: page.khoanggia }},

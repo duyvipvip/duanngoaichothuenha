@@ -12,9 +12,9 @@
             <div class="col-md-6 vitri" (clickOutside)="blurchangeInput($event)">
                 <h4>Nhập Địa Điểm</h4>
                 <!-- <input type="text" [(ngModel)]="search" class="form-control" id="usr"> -->
-                <input placeholder="search for location" autocorrect="off" autocapitalize="off" spellcheck="off" [(ngModel)]="txtsearch" (click)="changeInput()" 
-                    type="text" class="form-control" #searchLocation>
-               
+                <input placeholder="search for location" autocorrect="off" autocapitalize="off" spellcheck="off"
+                    [(ngModel)]="txtsearch" (click)="changeInput()" type="text" class="form-control" #searchLocation>
+
             </div>
             <div class="col-md-2">
                 <h4>Khoảng giá</h4>
@@ -30,6 +30,17 @@
                 </mat-form-field>
             </div>
             <div class="col-md-2">
+                <h4>Loại nhà</h4>
+                <mat-form-field>
+                    <mat-select  placeholder="Chọn Loại Nhà" [(ngModel)]="strLoaiNha" >
+                        <mat-option [value]="">
+                            Chọn Loại Nhà
+                        </mat-option>
+                        <mat-option *ngFor="let item of LoaiNha" [value]="item">
+                            {{item}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
             </div>
             <div class="col-md-2">
                 <!-- <h4>Tỉnh Thành</h4> -->
