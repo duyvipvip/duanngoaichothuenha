@@ -13,6 +13,7 @@ var HistoryRouter = require(path.join(__dirname, "/server/routers/history.router
 var ContactRouter = require(path.join(__dirname, "/server/routers/contact.router"));
 var RentHouseRouter = require(path.join(__dirname, "/server/routers/rentHouse.router.js"));
 var thanhtoanRouter = require(path.join(__dirname, "/server/routers/thanhtoan.router.js"));
+var yeucauthuenhaRouter = require(path.join(__dirname, "/server/routers/guiyeucauthuenha.router.js"));
 
 var allowCrossDomain = function (req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
@@ -47,6 +48,7 @@ app.use('/api/History',HistoryRouter);
 app.use('/api/Contact',ContactRouter);
 app.use('/api/RentHouse',RentHouseRouter);
 app.use('/api/thanhtoan', thanhtoanRouter);
+app.use('/api/guiyeucauthuenha', yeucauthuenhaRouter);
 // mongoose.connect('mongodb://localhost:27017/Broading_House',(err)=>{
 mongoose.connect('mongodb://havanduy:duy123@ds139370.mlab.com:39370/quanlythuenha',(err)=>{
     if(err){

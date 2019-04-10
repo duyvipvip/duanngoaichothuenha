@@ -23,6 +23,9 @@ import { GoogleMapComponent } from './google-map/google-map.component';
 import { AgmDirectionModule } from 'agm-direction';
 import { RatingComponent } from './rating/rating.component';
 import { FacebookModule } from 'ngx-facebook';
+import { GuiyeucauthuenhaComponent } from './detail-room/guiyeucauthuenha/guiyeucauthuenha.component';
+import { ModalModule } from 'ngx-bootstrap';
+import { TaoYeuCauThueNhaService } from 'src/@http-service/taoyeucauthuenha.service';
 @NgModule({
     imports: [
         ClientRoutingModule,
@@ -32,6 +35,7 @@ import { FacebookModule } from 'ngx-facebook';
             libraries: ["places"]
           }),
           AgmDirectionModule,
+          ModalModule.forRoot(),
           FacebookModule.forRoot(),
           ToastrModule.forRoot() // ToastrModule added
     ],
@@ -50,8 +54,10 @@ import { FacebookModule } from 'ngx-facebook';
         BaidangComponent,
         HistoryComponent,
         GoogleMapComponent,
-        RatingComponent
+        RatingComponent,
+        GuiyeucauthuenhaComponent
     ],
-    providers: [ContactService,HistoryService, RentHouseService],
+    providers: [ContactService,HistoryService, RentHouseService, TaoYeuCauThueNhaService],
+    entryComponents: [GuiyeucauthuenhaComponent]
 })
 export class ClientModule { }

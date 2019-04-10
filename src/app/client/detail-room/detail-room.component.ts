@@ -7,6 +7,9 @@ import { MapsAPILoader } from '../../../../node_modules/@agm/core';
 import { RentHouseService } from 'src/@http-service/rentHouse.service';
 import { RatingService } from 'src/@http-service/rating.service';
 import { FacebookService, InitParams } from 'ngx-facebook';
+import { ModalOptions, BsModalService } from 'ngx-bootstrap';
+import { GuiyeucauthuenhaComponent } from './guiyeucauthuenha/guiyeucauthuenha.component';
+import { TaoYeuCauThueNhaService } from 'src/@http-service/taoyeucauthuenha.service';
 declare const google: any;
 @Component({
     selector: 'app-detail-room',
@@ -26,7 +29,7 @@ export class DetailRoomComponent implements OnInit {
     public nameguiyeucauthuenha: string = "Gửi Yêu Cầu Thuê Nhà";
     public iduserlogin: any = JSON.parse(localStorage.getItem('data'));
     public idRoom: string = '';
-
+    public checkDaThueNgoiNha: boolean = false;
     public objectTrangthai = {
         status: -1,
         iduser: 0,
@@ -34,13 +37,12 @@ export class DetailRoomComponent implements OnInit {
     }
     constructor(private router: Router,
         private room: RoomService,
-        private rentHouseService: RentHouseService,
-        private mapsAPILoader: MapsAPILoader,
         private route: ActivatedRoute,
         private toastr: ToastrService,
         private RatingService: RatingService,
         private fb: FacebookService,
-        
+        private modalService: BsModalService,
+        private taoYeuCauThueNhaService: TaoYeuCauThueNhaService
     ) {
 
     }
@@ -62,8 +64,6 @@ export class DetailRoomComponent implements OnInit {
             this.idRoom = params['id'] as string;
             this.getData();
         })
-
-
     }
 
     public getData() {
@@ -92,29 +92,15 @@ export class DetailRoomComponent implements OnInit {
                     this.getRoom.totalRate = Math.round(this.getRoom.totalRate);
                 }
                 if(this.iduserlogin){
-                    // set xem da gui yeu cau thue nha trua
-                    if (data.iduserRentHouse.length != 0) {
-                        for (let i = 0; i < data.iduserRentHouse.length; i++) {
-                            if (data.iduserRentHouse[i].iduser == this.iduserlogin.user._id) {
-                                this.objectTrangthai.status = data.iduserRentHouse[i].status;
-                                break;
-                            }
-                        }
-                    }
+                   this.CheckNgoiNhaDaThue();
                 }
-                
-
-                if (this.objectTrangthai.status == 0) {
-                    this.objectTrangthai.disablebutton = true;
-                    this.classguiyeucauthuenha = "btn btn-warning";
-                    this.nameguiyeucauthuenha = "Xin Vui Lòng Đợi Xác Nhận Từ Chủ Nhà"
-                }
-                // if(this.objectTrangthai.status  != 1){
-                //     this.objectTrangthai.disablebutton = t;
-                // }
-
-
             })
+    }
+
+    public CheckNgoiNhaDaThue(){
+        this.taoYeuCauThueNhaService.CheckNgoiNhaDaThue(this.getRoom._id).then((data: boolean) => {
+            this.checkDaThueNgoiNha = data;
+        })
     }
     public ratingComponentClick(clickObj: any): void {
         this.RatingService.UpdateRateRoom(clickObj).then((data) => {
@@ -161,21 +147,18 @@ export class DetailRoomComponent implements OnInit {
     // 
     public guiyeucauthuenha() {
         if (JSON.parse(localStorage.getItem('data'))) {
-            let body = {
-                iduserRent: this.getRoom.id_user._id,
-                idhouse: this.getRoom._id,
-                iduserRented: JSON.parse(localStorage.getItem('data')).user._id,
-                price: this.getRoom.price,
-                unit: this.getRoom.unit,
-            }
-            this.rentHouseService.CreateRentHouse(body)
-                .then((data) => {
-                    this.getData();
-                    this.toastr.success('success', 'Gửi yêu cầu thuê nhà thành công')
-                })
-                .catch((err) => {
-                    this.toastr.error('error', err.error.message);
-                })
+            const modalOption: ModalOptions = {
+                class: 'custom-modal-entry-invoice',
+                initialState: {
+                    'idngoinha': this.getRoom._id
+                }
+            };
+            this.modalService.show(GuiyeucauthuenhaComponent, modalOption);
+    
+            // KHI MODAL DONG
+            this.modalService.onHidden.subscribe((reason: string) => {
+                this.getData();
+            });
         }else{
             this.router.navigate(['auth']);
         }
@@ -183,7 +166,7 @@ export class DetailRoomComponent implements OnInit {
     }
 
     public xoayeucau() {
-        this.rentHouseService.deleteRentHouse(this.idRoom)
+        this.taoYeuCauThueNhaService.xoaYeuCauThueNha(this.getRoom._id)
             .then((data) => {
                 this.getData();
                 this.toastr.success('success', 'Xoá Yêu Cầu Thuê Nhà Thành Công')

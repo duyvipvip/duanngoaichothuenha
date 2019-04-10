@@ -33,18 +33,17 @@
                 <button type="button" (click)="directAddress()" class="btn btn-success">Xem Đường</button>
             </div>
         </div>
-        <div class="col-md-3" *ngIf="objectTrangthai.disablebutton">
+        <div class="col-md-3" *ngIf="checkDaThueNgoiNha">
             <div class="guiyeucauthuenha">
                 <div class="xoa" (click)="xoayeucau()">
                     Xoá
                 </div>
-                <button type="button" (click)="guiyeucauthuenha()" class={{classguiyeucauthuenha}}
-                    [disabled]="objectTrangthai.disablebutton">
+                <button type="button" disabled class={{classguiyeucauthuenha}}>
                     {{nameguiyeucauthuenha}}
                 </button>
             </div>
         </div>
-        <div class="col-md-3" *ngIf="!objectTrangthai.disablebutton">
+        <div class="col-md-3" *ngIf="!checkDaThueNgoiNha">
             <div class="guiyeucauthuenha">
                 <button type="button" (click)="guiyeucauthuenha()" class={{classguiyeucauthuenha}}
                     [disabled]="objectTrangthai.disablebutton">

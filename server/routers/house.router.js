@@ -1,11 +1,4 @@
 var Router = require('express').Router();
-var House = require('./../models/house.model');
-var auth = require('../middle-ware/auth');
-var authadmin = require('../middle-ware/authadmin');
-var path = require('path');
-var fs = require('fs');
-var ErrorUser = require('../Error/errorUser');
-var Status = require('../constants/status');
 var HouseController = require('./../controllers/ho.controller');
 
 Router.post('/CreateHouse', CreateHouse);

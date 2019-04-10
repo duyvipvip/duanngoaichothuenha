@@ -1,0 +1,44 @@
+
+
+
+<div class="modal-content">
+    <div class="modal-body">
+        <div id="result">
+            <div class="item-result">
+                <div class="customerHeader">
+                    <h4>Thông tin</h4>
+                    <br>
+                </div>
+                <div class="row">
+                    <label for="">Số điện thoại:</label>
+                    <input type="text" placeholder="Số điện thoại" [(ngModel)]="model.sodienthoai">
+                </div>
+                <div class="row">
+                    <label for="">Tên Người gửi:</label>
+                    <input type="text" placeholder="Tên người gửi" [(ngModel)]="model.tennguoigui">
+                </div>
+                <div class="row">
+                    <label >Địa chỉ:</label>
+                    <input type="text" placeholder="Địa chỉ:" [(ngModel)]="model.diachi">
+                </div>
+                <div class="row">
+                    <label for="">Note:</label>
+                    <textarea name="" id="" cols="30" rows="5" placeholder="Note" [(ngModel)]="model.note"></textarea>
+                </div>
+                <div class="row">
+                    <label >Số chứng minh:</label>
+                    <input type="text" placeholder="Số chứng minh:" [(ngModel)]="model.chungminhthu">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="" class="btn-footer">
+        <input type="button" class="btn btn-primary" value="Gửi" (click)="Submit();">
+    </div>
+    <div class="clr"></div>
+</div>
+
+
+
+
+

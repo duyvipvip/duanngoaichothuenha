@@ -9,16 +9,19 @@
 <div class="container">
     <div class="loctinnhan">
         <div class="row">
-            <div class="col-md-6">
-                <h4>Nhập </h4>
-                <input type="text" [(ngModel)]="search" class="form-control" id="usr">
+            <div class="col-md-6 vitri" (clickOutside)="blurchangeInput($event)">
+                <h4>Nhập Địa Điểm</h4>
+                <!-- <input type="text" [(ngModel)]="search" class="form-control" id="usr"> -->
+                <input placeholder="search for location" autocorrect="off" autocapitalize="off" spellcheck="off" [(ngModel)]="txtsearch" (click)="changeInput()" 
+                    type="text" class="form-control" #searchLocation>
+               
             </div>
             <div class="col-md-2">
                 <h4>Khoảng giá</h4>
                 <mat-form-field>
-                    <mat-select placeholder="Chọn giá" [(ngModel)]="khoanggia" >
+                    <mat-select placeholder="Chọn giá" [(ngModel)]="khoanggia">
                         <mat-option [value]="">
-                            Chọn giá 
+                            Chọn giá
                         </mat-option>
                         <mat-option *ngFor="let food of foods" [value]="food.value">
                             {{food.viewValue}}
@@ -26,13 +29,14 @@
                     </mat-select>
                 </mat-form-field>
             </div>
-
             <div class="col-md-2">
-                <h4>Tỉnh Thành</h4>
+            </div>
+            <div class="col-md-2">
+                <!-- <h4>Tỉnh Thành</h4> -->
                 <!-- <select name="" id="">
                     <option  *ngFor="let item of arrayTinh"  value="item"></option>
                 </select> -->
-                <mat-form-field>
+                <!-- <mat-form-field>
                     <mat-select  placeholder="Chọn tỉnh" [(ngModel)]="tinh" >
                         <mat-option [value]="">
                             Chọn tỉnh
@@ -41,7 +45,7 @@
                             {{item}}
                         </mat-option>
                     </mat-select>
-                </mat-form-field>
+                </mat-form-field> -->
                 <button type="button" class="btn btn-warning btnloctin btn-block" (click)="Search()">Lọc tin</button>
             </div>
         </div>

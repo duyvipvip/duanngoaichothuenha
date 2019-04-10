@@ -23,6 +23,11 @@ export const APICONFIG = {
         DELETERENTHOUSE: '/api/RentHouse/deleteRentHouse',
         QUANLYHOAHONG: (id) => `/api/RentHouse/quanlyhoahong/${id}`
     },
+    TAOYEUCAUTHUENHA: {
+        TAOYEUCAUTHUENHA: '/api/guiyeucauthuenha/taoyeucauthuenha',
+        CHECK_NGOI_NHA_DA_THUE: (idngoinha, idnguoigui) =>  `/api/guiyeucauthuenha/checkngoinhadathue?idngoinha=${idngoinha}&idnguoigui=${idnguoigui}`,
+        DELETE_NHA_DA_THUE: (idngoinha, idnguoigui) =>  `/api/guiyeucauthuenha/xoangoinhadathue?idngoinha=${idngoinha}&idnguoigui=${idnguoigui}`,
+    },
     AUTH: {
       LOGIN: '/api/auth/login',
       LOGOUT: '/api/auth/logout'

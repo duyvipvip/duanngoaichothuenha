@@ -1,6 +1,6 @@
 import { UserService } from './../../../@http-service/user.service';
 import { RoomService } from './../../../@http-service/room.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Renderer2 } from '@angular/core';
 import { Router } from '../../../../node_modules/@angular/router';
 import { ElementRef, NgZone, ViewChild } from '@angular/core';
 import { MapsAPILoader } from '@agm/core';
@@ -16,12 +16,14 @@ export class HomeComponent implements OnInit {
     public zoom: number;
     value: any;
     public tinh: any = '';
-    search: string = "";
+    public txtsearch: string = "";
     public latitude: number;
     public longitude: number;
+    public checkShowLocation: boolean = false;
     public arrayTinh = [
-        'Hồ Chí Minh','Hà Nội','Hải Phòng','Đà Nẵng','Cần Thơ','Phú Yên','Yên Bái','Vĩnh Phúc','Vĩnh Long','Tuyên Quang','Trà Vinh','Tiền Giang','Thừa Thiên Huế','Thanh Hóa','Thái Nguyên','Thái Bình','Tây Ninh','Sơn La','Sóc Trăng','Quảng Trị','Quảng Ninh','Quảng Ngãi','Quảng Nam','Quảng Bình','Phú Thọ','Ninh Thuận','Ninh Bình','Nghệ An','Nam Định','Long An','Lào Cai','Lạng Sơn','Lâm Đồng','Lai Châu','Kon Tum','Kiên Giang','Khánh Hòa','Hưng Yên','Hòa Bình','Hậu Giang','Hải Dương','Hà Tĩnh','Hà Nam','Hà Giang','Gia Lai','Đồng Tháp','Đồng Nai','Điện Biên','Đắk Nông','Đắk Lắk','Cao Bằng','Cà Mau','Bình Thuận','Bình Phước','Bình Dương','Bình Định','Bến Tre','Bắc Ninh','Bạc Liêu','Bắc Kạn','Bắc Giang','Bà Rịa - Vũng Tàu','An Giang',
-     ]
+        'Hồ Chí Minh', 'Hà Nội', 'Hải Phòng', 'Đà Nẵng', 'Cần Thơ', 'Phú Yên', 'Yên Bái', 'Vĩnh Phúc', 'Vĩnh Long', 'Tuyên Quang', 'Trà Vinh', 'Tiền Giang', 'Thừa Thiên Huế', 'Thanh Hóa', 'Thái Nguyên', 'Thái Bình', 'Tây Ninh', 'Sơn La', 'Sóc Trăng', 'Quảng Trị', 'Quảng Ninh', 'Quảng Ngãi', 'Quảng Nam', 'Quảng Bình', 'Phú Thọ', 'Ninh Thuận', 'Ninh Bình', 'Nghệ An', 'Nam Định', 'Long An', 'Lào Cai', 'Lạng Sơn', 'Lâm Đồng', 'Lai Châu', 'Kon Tum', 'Kiên Giang', 'Khánh Hòa', 'Hưng Yên', 'Hòa Bình', 'Hậu Giang', 'Hải Dương', 'Hà Tĩnh', 'Hà Nam', 'Hà Giang', 'Gia Lai', 'Đồng Tháp', 'Đồng Nai', 'Điện Biên', 'Đắk Nông', 'Đắk Lắk', 'Cao Bằng', 'Cà Mau', 'Bình Thuận', 'Bình Phước', 'Bình Dương', 'Bình Định', 'Bến Tre', 'Bắc Ninh', 'Bạc Liêu', 'Bắc Kạn', 'Bắc Giang', 'Bà Rịa - Vũng Tàu', 'An Giang',
+    ];
+    public sodem = 0;
     public khoanggia: string;
     foods = [
         { value: '1', viewValue: '1 triệu' },
@@ -43,13 +45,42 @@ export class HomeComponent implements OnInit {
         { stateOn: 'glyphicon-heart' },
         { stateOff: 'glyphicon-off' }
     ];
+    @ViewChild("searchLocation")
+    public searchElementRef: ElementRef;
+    @ViewChild('toggleButton') toggleButton: ElementRef;
     constructor(private router: Router,
         private roomsv: RoomService,
+        private renderer: Renderer2,
         private RatingService: RatingService,
         private toastr: ToastrService,
+        private ngZone: NgZone,
+        private mapsAPILoader: MapsAPILoader,
         private userservice: UserService) {
-            
-        }
+        this.mapsAPILoader.load().then(() => {
+            let autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement, {
+                types: ["address"]
+            });
+            autocomplete.addListener("place_changed", () => {
+                this.ngZone.run(() => {
+                    //get the place result
+                    const place: google.maps.places.PlaceResult = autocomplete.getPlace();
+
+                    //verify result
+                    if (place.geometry === undefined || place.geometry === null) {
+                        return;
+                    }
+
+                    //set latitude, longitude and zoom
+                    this.latitude = place.geometry.location.lat();
+                    this.longitude = place.geometry.location.lng();
+                    this.zoom = 12;
+                    //add dia chia
+                    this.searchTinh(place.formatted_address);
+                });
+            });
+        });
+        // this.changeInput()
+    }
 
     ngOnInit() {
         if (window.navigator && window.navigator.geolocation) {
@@ -93,38 +124,65 @@ export class HomeComponent implements OnInit {
         //             console.log(this.arrCountry);
         //         });
         //     });
-           
+
         // })
         this.GetRooms();
     }
 
-    public GetRooms(){
+    public changeInput() {
+        if ((this.txtsearch == '' || this.txtsearch == null) && this.sodem > 0) {
+            this.checkShowLocation = true;
+        } else {
+            this.checkShowLocation = false;
+        }
+        this.sodem++;
+    }
+
+    public blurchangeInput(event) {
+        debugger;
+        this.checkShowLocation = false;
+    }
+
+    public layvitrihientai() {
+        debugger;
+    }
+
+    public searchTinh(str: string) {
+        this.tinh = '';
+        for (let i = 0; i < this.arrayTinh.length; i++) {
+            if (str.search(this.arrayTinh[i]) != -1) {
+                this.tinh = this.arrayTinh[i];
+                break;
+            }
+        }
+    }
+    public GetRooms() {
         this.roomsv.getRooms()
-        .then((data: any) => {
-            this.rooms = data.Data;
-            this.tinhrate();
-        })
-        .catch(err => {
-            return err;
-        });
+            .then((data: any) => {
+                this.rooms = data.Data;
+                this.tinhrate();
+            })
+            .catch(err => {
+                return err;
+            });
     }
     public ratingComponentClick(clickObj: any): void {
         this.RatingService.UpdateRateRoom(clickObj).then((data) => {
             this.GetRooms();
             this.toastr.success("Đánh giá thành công");
         })
-        .catch((err) => {
-            this.toastr.success("Đánh giá thất bại");
-        })
+            .catch((err) => {
+                this.toastr.success("Đánh giá thất bại");
+            })
 
     }
 
-    public tinhrate(){
-        for(let i= 0; i< this.rooms.length; i++){
+    public tinhrate() {
+        for (let i = 0; i < this.rooms.length; i++) {
             this.rooms[i].totalRate = 0;
             let rate = this.rooms[i].rate;
-            if(rate.length> 0){
-                for(let j =0; j< rate.length; j++){
+            if (rate.length > 0) {
+                for (let j = 0; j < rate.length; j++) {
                     this.rooms[i].totalRate += rate[j].star;
                 }
                 this.rooms[i].totalRate /= rate.length;
@@ -142,15 +200,14 @@ export class HomeComponent implements OnInit {
         this.router.navigate(['detailroom']);
     }
     Search() {
-        this.value = (this.value == undefined) ? '' : this.value;
         this.khoanggia = (this.khoanggia == undefined) ? '' : this.khoanggia;
-        this.tinh = (this.tinh== undefined ) ? '': this.tinh;
-        this.roomsv.Search(this.search, this.tinh, this.khoanggia)
-        .then((data: any) => {
-            this.rooms = data.Data;
-        })
-        .catch(err => {
-            return err;
-        });
+        this.tinh = (this.tinh == undefined) ? '' : this.tinh;
+        this.roomsv.Search('', this.tinh, this.khoanggia)
+            .then((data: any) => {
+                this.rooms = data.Data;
+            })
+            .catch(err => {
+                return err;
+            });
     }
 }
