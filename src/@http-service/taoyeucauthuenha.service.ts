@@ -9,9 +9,19 @@ export class TaoYeuCauThueNhaService {
     constructor(private http: HttpClient) {
 
     }
-    public taoYeuCauThueNha(model: ISendRentHouse) {
+    public taoYeuCauThueNha(model: ISendRentHouse, file: File[]) {
         model.idnguoigui = JSON.parse(localStorage.getItem('data')).user._id;
-        return this.http.post(`${APICONFIG.BASEPOINT}${APICONFIG.TAOYEUCAUTHUENHA.TAOYEUCAUTHUENHA}`, model).toPromise()
+        const requestForm = new FormData();
+        requestForm.append('data', JSON.stringify(model));
+        for (var i = 0; i < file.length; i++) { 
+            let tempFile: any = file[i];
+            for(let j = 0; j< tempFile.length; j++){
+                requestForm.append("files", tempFile[j]);
+            }
+          }
+        const token :string = JSON.parse(localStorage.getItem('data')).token;
+        let headers = new HttpHeaders().set('x-access-token', token);
+        return this.http.post(`${APICONFIG.BASEPOINT}${APICONFIG.TAOYEUCAUTHUENHA.TAOYEUCAUTHUENHA}`, requestForm, {headers: headers}).toPromise()
     }
 
     public CheckNgoiNhaDaThue(idngoinha: string ){

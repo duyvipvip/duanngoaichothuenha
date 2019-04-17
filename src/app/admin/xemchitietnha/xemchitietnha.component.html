@@ -1,0 +1,147 @@
+<div class="container" *ngIf="getRoom">
+
+  <div class="hot">
+    <img src="https://phongtro123.com/wp-content/themes/phongtro123/images/hot.gif" alt=""> {{getRoom.title}}
+  </div>
+
+  <div class="tab">
+    <ul>
+      <li>
+        <a> Thông tin chung</a>
+      </li>
+      <li>
+        <a href="#description">Mô tả chi tiết</a>
+      </li>
+      <li>
+        <a>bản đồ</a>
+      </li>
+      <li>
+        <a>Hình ảnh</a>
+      </li>
+    </ul>
+    <div class="clr"></div>
+  </div>
+  <div class="row">
+    <a style="margin-left: 16px;" [routerLink]="['/admin/kiemduyetbaidang']" class="btn btn-danger">Quay Trở lại</a>
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+      <div class="table">
+        <table>
+          <tr>
+            <th>Đia chỉ</th>
+            <td colspan="3">{{getRoom.address}}</td>
+          </tr>
+          <tr>
+            <th>Loại tin rao:</th>
+            <td>Cho thuê căn hộ</td>
+            <th>Đối tượng</th>
+            <td>{{getRoom.sex}}</td>
+          </tr>
+          <tr>
+            <th>Người đăng:</th>
+            <td>{{getRoom.id_user.username}}</td>
+            <th>Điện thoại</th>
+            <td>{{getRoom.phone}}</td>
+          </tr>
+          <tr>
+            <th>Ngày cập nhật:</th>
+            <td>{{getRoom.createDate|date: 'dd/MM/yyyy'}}</td>
+            <th>Diện tích:</th>
+            <td>35m2</td>
+          </tr>
+          <tr>
+            <th>Giá cho thuê:</th>
+            <td>{{getRoom.price}} {{getRoom.unit}}</td>
+            <th>Khoảng cách:</th>
+            <td>{{lengh|number : '1.2-2'}} km</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="col-md-4">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-8">
+      <div id="description">
+        <h4>Thông tin mô tả</h4>
+        <div [innerHTML]=getRoom.description></div>
+      </div>
+    </div>
+    <div class="col-md-4">
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+      <div class="title">
+        hình ảnh
+      </div>
+    </div>
+    <div class="col-md-4">
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-md-8">
+      <ul>
+        <li *ngFor="let item of getRoom.image" class="image">
+          <img width="100px" height="100px" src="{{item}}" alt="">
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-4">
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+      <div class="title">
+        hình ảnh giấy tờ nhà
+      </div>
+    </div>
+    <div class="col-md-4">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+      <ul>
+        <li *ngFor="let item of getRoom.hinhanhgiayto" class="image">
+          <img width="100px" height="100px" src="{{item}}" alt="">
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-4">
+
+    </div>
+  </div>
+  <div style="clear: both;"></div>
+  <div class="row">
+    <div class="col-md-8">
+      <div class="title">
+        bản đồ
+      </div>
+      <input type="text" value="{{getRoom.address}}" class="form-control" disabled>
+    </div>
+    <div class="col-md-4">
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+      <div class="title">
+        <agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom">
+          <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+          <agm-marker [latitude]="latitudeUser" [longitude]="longitudeUser"></agm-marker>
+        </agm-map>
+      </div>
+    </div>
+    <div class="col-md-4">
+
+    </div>
+  </div>
+
+</div>

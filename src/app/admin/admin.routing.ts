@@ -8,6 +8,8 @@ import { AdminComponent } from './admin.component';
 import { HomeAdminComponent } from './home-admin/home-admin.component';
 import { YeucauthuenhaComponent } from './yeucauthuenha/yeucauthuenha.component';
 import { QuanlyhoahongComponent } from './quanlyhoahong/quanlyhoahong.component';
+import { KiemduyetbaidangComponent } from './kiemduyetbaidang/kiemduyetbaidang.component';
+import { XemchitietnhaComponent } from './xemchitietnha/xemchitietnha.component';
 
 
 const routes: Routes = [
@@ -17,11 +19,12 @@ const routes: Routes = [
         children: [
             { path: 'home', component: HomeAdminComponent },
             { path: 'baidang', component: BaidangComponent},
+            { path: 'detailroom/:id', component: XemchitietnhaComponent },
             {path: 'contact', component: LienheComponent},
             {path: 'lichsu', component: LichsuComponent},
             {path: 'quanlynguoithuenha', component: YeucauthuenhaComponent},
-            {path: 'quanlyhoahong', component: QuanlyhoahongComponent}
-
+            {path: 'quanlyhoahong', component: QuanlyhoahongComponent},
+            {path: 'kiemduyetbaidang', component: KiemduyetbaidangComponent}
         ]
     }
 ];

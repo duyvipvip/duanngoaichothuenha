@@ -22,6 +22,9 @@ var GuiYeuCauThueNhaSchema = new Schema({
     diachi: {
         type: String
     },
+    hinhchungminhnhandan: [{
+        type: String
+    }]
 })
 var guiyeucauthuenha = mongoose.model('guiyeucauthuenha',GuiYeuCauThueNhaSchema);
 module.exports = guiyeucauthuenha;

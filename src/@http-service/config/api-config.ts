@@ -35,7 +35,7 @@ export const APICONFIG = {
     ROOM: {
         CREATE_ROOM:'/api/Room/CreateRoom',
         GET_ROOMS:'/api/Room/GetRoom',
-        UPDATE_ROOM:'/api/Room/UpdateRoom/',
+        UPDATE_ROOM: (id) => `/api/Room/UpdateRoom/${id}`,
         DELETE_ROOM:'/api/Room/DeleteRoom/',
         GET_ROOM_BY_USER:'/api/Room/GetRoomByUser/',
         GET_ROOM_BY_ID:'/api/Room/getRoomById',

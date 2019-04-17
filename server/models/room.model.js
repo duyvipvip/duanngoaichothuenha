@@ -31,6 +31,13 @@ var roomSchema = new Schema({
         type: String,
         default: 'unknow'
     }],
+    hinhanhgiayto: [{
+        type: String,
+    }],
+    trangthai: {
+        type: Boolean,
+        default: false
+    },
     address: {
         type: String
     },

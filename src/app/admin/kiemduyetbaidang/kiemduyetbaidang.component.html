@@ -1,0 +1,35 @@
+<div class="hehe">
+    <h3 style="text-align: center">Quản lí hoa hồng</h3>
+    <table class="table" *ngIf="rooms">
+        <thead>
+            <tr>
+                <th>Số TT</th>
+                <th>Id</th>
+                <th>Tên Đề Tin</th>
+                <th>Hình ảnh</th>
+                <th>Giá</th>
+                <th>Ngày Đăng Tin</th>
+                <th>Xem chi tiết</th>
+                <th>Trạng Thái</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let room of rooms;let i = index">
+                <td>{{i}}</td>
+                <td>{{room._id}}</td>
+                <td>{{room.title}}</td>
+                <td>
+                    <img class="image" src="{{room.image[0]}}" alt="">
+                </td>
+                <td>{{room.price}} {{room.unit}}</td>
+                <td>{{room.createDate | date: 'dd/MM/yyyy'}}</td>
+                <td><a  [routerLink]="['/admin/detailroom',room._id]"> Xem chi tiết</a></td>
+                <td style="cursor: pointer;">
+                  <img (click)="thaydoitrangthai(room)" *ngIf="!room.trangthai" src="assets/image/cancel.png" alt="">
+                  <img (click)="thaydoitrangthai(room)" *ngIf="room.trangthai" src="assets/image/tick.png" alt="">
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>

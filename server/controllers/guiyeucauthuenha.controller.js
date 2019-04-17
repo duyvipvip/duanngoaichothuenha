@@ -32,6 +32,7 @@ function taoYeuCauThueNha(body) {
         "tennguoigui": body.tennguoigui,
         "note": body.note,
         "diachi": body.diachi,
+        "hinhchungminhnhandan": body.hinhchungminhnhandan
     }
     return guiyeucauthuenha.findOne({ idnguoigui: body.idnguoigui, idngoinha: body.idngoinha  })
         .then(((renthouse) => {

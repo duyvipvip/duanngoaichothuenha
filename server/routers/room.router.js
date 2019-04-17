@@ -5,12 +5,7 @@ var path = require('path');
 const uuid = require('uuid');
 var fs = require("fs");
 var auth = require('../middle-ware/auth');
-var authadmin = require('../middle-ware/authadmin');
-var path = require('path');
-var fs = require('fs');
-var Status = require('../constants/status');
 var RoomError = require('../Error/errorRoom');
-var paramater = require('../constants/paramater');
 
 Router.put('/deleteImage/:id', deleteImage);
 Router.post('/CreateRoom', auth.auth(), creatRoom);
@@ -177,17 +172,44 @@ function creatRoom(req, res, next) {
     if (!req.files) {
         return res.status(400).send('No files were uploaded');
     }
-    let file = req.files.files;
-    data.image.push('room_' + uuid.v4() + '.png');
-    file.mv(path.join(__dirname, '../public/image/' + data.image[0]), (err) => {
-        if (err) {
-            return next(err);
+
+    // Upload hinh anh ngôi nha
+    if(data.image.length == 0 && data.hinhanhgiayto.length == 0){
+        let file = req.files;
+        for (var i = 0; i < Number(req.body.soluonghinhanh); i++) {
+            data.image.push('room_' + uuid.v4() + '.png');
+            file['files'+i].mv(path.join(__dirname, '../public/image/' + data.image[i]), (err) => {
+                if (err) {
+                    return next(err);
+                }
+            })
         }
-    })
+
+        // let filegiayto = req.hinhanhgiayto;
+        for (var i = 0; i < Number(req.body.soluonghinhanhgiayto); i++) {
+            data.hinhanhgiayto.push('room_' + uuid.v4() + '.png');
+            file['hinhanhgiayto'+i].mv(path.join(__dirname, '../public/image/' + data.hinhanhgiayto[i]), (err) => {
+                if (err) {
+                    return next(err);
+                }
+            })
+        }
+    }
+
+    // // Upload hinh anh giấy tờ
+    // let filegiayto = req.hinhanhgiayto.files;
+    // for (var i = 0; i < filegiayto.length; i++) {
+    //     data.hinhanhgiayto.push('room_' + uuid.v4() + '.png');
+    //     filegiayto.mv(path.join(__dirname, '../public/image/' + data.hinhanhgiayto[i]), (err) => {
+    //         if (err) {
+    //             return next(err);
+    //         }
+    //     })
+    // }
+
     data.rate = [];
     RoomController.createRoom(data)
         .then((data) => {
-
             return res.json({ message: 'success' });
         })
         .catch((err) => {

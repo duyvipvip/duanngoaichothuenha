@@ -29,10 +29,12 @@ export class PostnewsComponent implements OnInit {
     public zoom: number;
     public srcFileUpload: Array<any> = [];
     public editorValue: string = "";
+    public fileGiayTo: Array<File> = [];
     @ViewChild("search")
     public searchElementRef: ElementRef;
     public iduserlogin: any =  JSON.parse(localStorage.getItem('data'));
-    public LoaiNha: any[] = ["Nhà Nguyên Căn", "Nhà Trọ", "Nhà Chung Cư"]
+    public LoaiNha: any[] = ["Nhà Nguyên Căn", "Nhà Trọ", "Nhà Chung Cư"];
+    public srcFileUploadGiayTo:  Array<any> = [];
     constructor(private fb: FormBuilder,
         private toastr: ToastrService,
         private roomsv: RoomService,
@@ -110,7 +112,7 @@ export class PostnewsComponent implements OnInit {
         };
 
         this.formAddPostNew.value.location = location;
-        this.roomsv.createRoom(this.formAddPostNew.value, this.file)
+        this.roomsv.createRoom(this.formAddPostNew.value, this.file, this.fileGiayTo)
             .then((data) => {
                 this.toastr.success('success', 'Chúc Mừng Bạn Đã Đăng Tin Thành Công')
                 this.router.navigate(['/client']);
@@ -122,7 +124,6 @@ export class PostnewsComponent implements OnInit {
 
     /** THAY ĐỔI HÌNH ẢNH */
     selectImage(event: any) {
-        debugger;
         if (event.target.files && event.target.files[0]) {
             var reader = new FileReader();
             reader.readAsDataURL(event.target.files[0]); // read file as data url
@@ -132,6 +133,18 @@ export class PostnewsComponent implements OnInit {
             this.file.push([].slice.call(event.target.files));
         }
 
+    }
+
+    /** THAY ĐỔI GIẤY TỜ SỔ HỘ KHẨU */
+    public changeImageGiayTo(event: any){
+        if (event.target.files && event.target.files[0]) {
+            var reader = new FileReader();
+            reader.readAsDataURL(event.target.files[0]); // read file as data url
+            reader.onload = (event: any) => { // called once readAsDataURL is completed
+                this.srcFileUploadGiayTo.push(event.target.result);
+            }
+            this.fileGiayTo.push([].slice.call(event.target.files));
+        }
     }
     gethouse() {
         this.roomsv.getCity().then((data: any) => {

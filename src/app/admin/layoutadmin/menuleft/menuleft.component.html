@@ -22,13 +22,21 @@
                 </ul>
             </li>
             <li class="sub-menu" *ngIf="checksupperadmin == 'supperadmin'">
-                    <a [routerLink]="['home']" href="javascript:void(0);">
-                        <i class="fa fa-table"></i>
-                        <span>Quản Lý Tài Khoản</span>
-                    </a>
-                    <ul>
-                    </ul>
-                </li>
+                <a [routerLink]="['home']" href="javascript:void(0);">
+                    <i class="fa fa-table"></i>
+                    <span>Quản Lý Tài Khoản</span>
+                </a>
+                <ul>
+                </ul>
+            </li>
+            <li class="sub-menu" *ngIf="checksupperadmin == 'supperadmin'">
+                <a [routerLink]="['kiemduyetbaidang']" href="javascript:void(0);">
+                    <i class="fa fa-table"></i>
+                    <span>Kiểm Duyệt Bài Đăng</span>
+                </a>
+                <ul>
+                </ul>
+            </li>
             <li class="sub-menu" *ngIf="checksupperadmin == 'admin' || checksupperadmin == 'user'">
                 <a [routerLink]="['lichsu']" href="javascript:void(0);">
                     <i class="fa fa-table"></i>
@@ -46,13 +54,13 @@
                 </ul>
             </li>
             <li class="sub-menu">
-                    <a [routerLink]="['quanlyhoahong']" href="javascript:void(0);">
-                        <i class="fa fa-table"></i>
-                        <span>Quản lý hoa hồng</span>
-                    </a>
-                    <ul>
-                    </ul>
-                </li>
+                <a [routerLink]="['quanlyhoahong']" href="javascript:void(0);">
+                    <i class="fa fa-table"></i>
+                    <span>Quản lý hoa hồng</span>
+                </a>
+                <ul>
+                </ul>
+            </li>
             <li class="sub-menu">
                 <a [routerLink]="['contact']" href="javascript:void(0);">
                     <i class="fa fa-table"></i>

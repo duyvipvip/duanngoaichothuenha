@@ -159,9 +159,14 @@ export class HomeComponent implements OnInit {
         }
     }
     public GetRooms() {
+        this.rooms = [];
         this.roomsv.getRooms()
             .then((data: any) => {
-                this.rooms = data.Data;
+                for(let i=0; i< data.Data.length; i++){
+                    if(data.Data[i].trangthai == true){
+                        this.rooms.push(data.Data[i])
+                    }
+                }
                 this.tinhrate();
             })
             .catch(err => {

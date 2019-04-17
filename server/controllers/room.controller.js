@@ -244,6 +244,9 @@ function getRoomById(id) {
             for (let i = 0; i < room.image.length; i++) {
                 room.image[i] = 'https://cuongpham.herokuapp.com/image/' + room.image[i];
             }
+            for (let i = 0; i < room.hinhanhgiayto.length; i++) {
+                room.hinhanhgiayto[i] = 'https://cuongpham.herokuapp.com/image/' + room.hinhanhgiayto[i];
+            }
             return Promise.resolve(room);
         })
         .catch((err) => {

@@ -16,10 +16,26 @@ import { QuanlyhoahongComponent } from './quanlyhoahong/quanlyhoahong.component'
 import { RentHouseService } from 'src/@http-service/rentHouse.service';
 import { ThanhToanService } from 'src/@http-service/thanhtoan.service';
 import { StatusPipe } from 'src/@shared/pipe/pipeStatus';
+import { KiemduyetbaidangComponent } from './kiemduyetbaidang/kiemduyetbaidang.component';
+import { XemchitietnhaComponent } from './xemchitietnha/xemchitietnha.component';
+import { AgmCoreModule } from '@agm/core';
+import { AgmDirectionModule } from 'agm-direction';
+import { ModalModule } from 'ngx-bootstrap';
 
 
 @NgModule({
-    imports: [AdiminRoutingModule, SharedModule,ToastrModule.forRoot()],
+    imports: [AdiminRoutingModule,
+        SharedModule,
+        ToastrModule.forRoot(),
+        SharedModule,
+        AgmCoreModule.forRoot({
+            apiKey: 'AIzaSyBBnwLr1x3XC6YbJXlSHQAkR1xZ88jqNWE',
+            libraries: ["places"]
+          }),
+          AgmDirectionModule,
+          ModalModule.forRoot(),
+          ToastrModule.forRoot() // ToastrModule added
+    ],
     exports: [],
     declarations: [
         StatusPipe,
@@ -31,7 +47,9 @@ import { StatusPipe } from 'src/@shared/pipe/pipeStatus';
         LienheComponent,
         LichsuComponent,
         YeucauthuenhaComponent,
-        QuanlyhoahongComponent
+        QuanlyhoahongComponent,
+        KiemduyetbaidangComponent,
+        XemchitietnhaComponent
     ],
     entryComponents: [EditUserComponent],
     providers: [HistoryService,ContactService,ToastrService, RentHouseService, ThanhToanService],
