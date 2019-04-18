@@ -26,7 +26,8 @@ export class KiemduyetbaidangComponent implements OnInit {
     }
 
     thaydoitrangthai(room){
-        room.trangthai = !room.trangthai
+        room.trangthai = !room.trangthai,
+        delete room.image;
         this.roomsv.updateRoom(room)
             .then((data) => {
                 this.GetRooms();
