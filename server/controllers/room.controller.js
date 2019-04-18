@@ -242,10 +242,15 @@ function getRoomById(id) {
         .populate('id_user', { password: 0, role: 0, address: 0, avatar: 0 })
         .then((room) => {
             for (let i = 0; i < room.image.length; i++) {
-                room.image[i] = 'https://cuongpham.herokuapp.com/image/' + room.image[i];
+                if(room.image[i]){
+                    room.image[i] = 'https://cuongpham.herokuapp.com/image/' + room.image[i];
+                }
             }
             for (let i = 0; i < room.hinhanhgiayto.length; i++) {
-                room.hinhanhgiayto[i] = 'https://cuongpham.herokuapp.com/image/' + room.hinhanhgiayto[i];
+                if(room.hinhanhgiayto[i]){
+                    room.hinhanhgiayto[i] = 'https://cuongpham.herokuapp.com/image/' + room.hinhanhgiayto[i];
+                }
+               
             }
             return Promise.resolve(room);
         })
