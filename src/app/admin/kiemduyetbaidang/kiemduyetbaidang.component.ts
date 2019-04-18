@@ -26,7 +26,7 @@ export class KiemduyetbaidangComponent implements OnInit {
     }
 
     thaydoitrangthai(room){
-        this.roomsv.updateRoom({trangthai:  !room.trangthai})
+        this.roomsv.updateRoom({trangthai:  !room.trangthai, _id: room._id})
             .then((data) => {
                 this.GetRooms();
                 this.toastr.success("success", "Chỉnh sửa trang thái thành công")
