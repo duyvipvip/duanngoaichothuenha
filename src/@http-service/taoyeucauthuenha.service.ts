@@ -34,4 +34,12 @@ export class TaoYeuCauThueNhaService {
         return this.http.delete(`${APICONFIG.BASEPOINT}${APICONFIG.TAOYEUCAUTHUENHA.DELETE_NHA_DA_THUE(idngoinha, idnguoigui)}`).toPromise()
     }
 
+    public layCacYeuCauThueNhaCuaUser(){
+        return this.http.get(`${APICONFIG.BASEPOINT}${APICONFIG.TAOYEUCAUTHUENHA.LAY_YEU_CAU_THUE_NHA}`).toPromise()
+    }
+
+    public thaydoitrangthai(model){
+        return this.http.post(`${APICONFIG.BASEPOINT}${APICONFIG.TAOYEUCAUTHUENHA.THAY_DOI_TRANG_THAI}`, model).toPromise()
+    }
+
 }

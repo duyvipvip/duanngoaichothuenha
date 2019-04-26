@@ -21,6 +21,7 @@ import { XemchitietnhaComponent } from './xemchitietnha/xemchitietnha.component'
 import { AgmCoreModule } from '@agm/core';
 import { AgmDirectionModule } from 'agm-direction';
 import { ModalModule } from 'ngx-bootstrap';
+import { TaoYeuCauThueNhaService } from 'src/@http-service/taoyeucauthuenha.service';
 
 
 @NgModule({
@@ -52,6 +53,6 @@ import { ModalModule } from 'ngx-bootstrap';
         XemchitietnhaComponent
     ],
     entryComponents: [EditUserComponent],
-    providers: [HistoryService,ContactService,ToastrService, RentHouseService, ThanhToanService],
+    providers: [TaoYeuCauThueNhaService, HistoryService,ContactService,ToastrService, RentHouseService, ThanhToanService],
 })
 export class AdminModule { }

@@ -1,8 +1,11 @@
 var guiyeucauthuenha = require('../models/guiyeucauthuenha.model');
+var thanhtoan = require('../models/thanhtoan.model');
 module.exports = {
     taoYeuCauThueNha: taoYeuCauThueNha,
     CheckNgoiNhaDaThue: CheckNgoiNhaDaThue,
-    xoaYeuCauThueNha: xoaYeuCauThueNha
+    xoaYeuCauThueNha: xoaYeuCauThueNha,
+    layCacYeuCauThueNhaCuaUser: LayCacYeuCauThueNhaCuaUser,
+    thaydoitrangthai: Thaydoitrangthai
 }
 
 function xoaYeuCauThueNha(model){
@@ -56,4 +59,43 @@ function taoYeuCauThueNha(body) {
            
         }))
 
+}
+
+// lấy yêu câu thuê nhà của một tài khoản
+function LayCacYeuCauThueNhaCuaUser(model){
+    return guiyeucauthuenha.find().populate('idngoinha')
+    .then((data) => {
+        return Promise.resolve(data);
+    }).catch((err) => {
+        return Promise.reject(err);
+    })
+}
+
+// thay đổi trạng thái
+function Thaydoitrangthai(idyeucau, status, idhouse){
+    if (status == 1) {
+        return guiyeucauthuenha.update({ "_id": idyeucau }, { $set: { "trangthai": status, "deleted": true } })
+            .then((room) => {
+                let body = {
+                    idhouse: idhouse,
+                    idyeucau: idyeucau
+                }
+                console.log(body)
+                return thanhtoan.create(body)
+                    .then(() => {
+                        return Promise.resolve(room);
+                    })
+            })
+            .catch((err) => {
+
+            })
+    } else {
+        return Room.update({ "_id": idhouse}, { $set: { "trangthai": status} })
+            .then((room) => {
+                return Promise.resolve(room);
+            })
+            .catch((err) => {
+
+            })
+    }
 }

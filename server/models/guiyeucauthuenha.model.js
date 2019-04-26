@@ -5,7 +5,8 @@ var GuiYeuCauThueNhaSchema = new Schema({
         type: String
     },
     idngoinha:{
-        type: String
+        type:Schema.Types.ObjectId,
+        ref:'room'
     },
     chungminhthu: {
         type: String
@@ -24,7 +25,11 @@ var GuiYeuCauThueNhaSchema = new Schema({
     },
     hinhchungminhnhandan: [{
         type: String
-    }]
+    }],
+    trangthai: {
+        type: Number,
+        default: 0
+    }
 })
 var guiyeucauthuenha = mongoose.model('guiyeucauthuenha',GuiYeuCauThueNhaSchema);
 module.exports = guiyeucauthuenha;

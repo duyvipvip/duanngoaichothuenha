@@ -25,6 +25,8 @@ export const APICONFIG = {
     },
     TAOYEUCAUTHUENHA: {
         TAOYEUCAUTHUENHA: '/api/guiyeucauthuenha/taoyeucauthuenha',
+        THAY_DOI_TRANG_THAI: '/api/guiyeucauthuenha/thaydoitrangthai',
+        LAY_YEU_CAU_THUE_NHA: '/api/guiyeucauthuenha/layCacYeuCauThueNhaCuaUser',
         CHECK_NGOI_NHA_DA_THUE: (idngoinha, idnguoigui) =>  `/api/guiyeucauthuenha/checkngoinhadathue?idngoinha=${idngoinha}&idnguoigui=${idnguoigui}`,
         DELETE_NHA_DA_THUE: (idngoinha, idnguoigui) =>  `/api/guiyeucauthuenha/xoangoinhadathue?idngoinha=${idngoinha}&idnguoigui=${idnguoigui}`,
     },

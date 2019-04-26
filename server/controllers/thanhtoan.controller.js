@@ -25,7 +25,7 @@ function taothanhtoan(body) {
 function getallthanhtoan(){
     return thanhtoan.find()
         .populate('idhouse')
-        .populate('iduser')
+        .populate('idyeucau')
         .then((res) => {
             return Promise.resolve(res);
         })

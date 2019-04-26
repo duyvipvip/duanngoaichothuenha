@@ -7,7 +7,19 @@ var YeuCauThueNha = require('../models/guiyeucauthuenha.model');
 Router.post('/taoyeucauthuenha', taoYeuCauThueNha);
 Router.get('/checkngoinhadathue', CheckNgoiNhaDaThue);
 Router.delete('/xoangoinhadathue', xoaYeuCauThueNha);
+Router.get('/layCacYeuCauThueNhaCuaUser', layCacYeuCauThueNhaCuaUser);
+Router.post('/thaydoitrangthai', Thaydoitrangthai);
 module.exports = Router;
+
+function layCacYeuCauThueNhaCuaUser(req,res, next){
+    YeuCauThueNhaController.layCacYeuCauThueNhaCuaUser()
+    .then((data)=>{
+        return res.send(data);
+    })
+    .catch((err)=>{
+        return next(err);
+    })
+}
 function taoYeuCauThueNha(req,res, next){
     var dir = path.join(__dirname, '../public/image');
     if (!fs.existsSync(dir)) {
@@ -53,6 +65,16 @@ function xoaYeuCauThueNha(req, res, next){
         return res.send(data);
     })
     .catch((err)=>{
+        return next(err);
+    })
+}
+
+function Thaydoitrangthai(req, res, next){
+    YeuCauThueNhaController.thaydoitrangthai(req.body.idyeucau, req.body.trangthai, req.body.idhouse)
+    .then((data) => {
+        return res.json({ message: 'success' });
+    })
+    .catch((err) => {
         return next(err);
     })
 }

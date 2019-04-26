@@ -6,7 +6,6 @@
                 <th>Số TT</th>
                 <th>Tên Đề Tin</th>
                 <th>id Tin</th>
-                <th>email user</th>
                 <th>Hình ảnh</th>
                 <th>Giá</th>
                 <th>Ngày Đăng Tin</th>
@@ -18,10 +17,9 @@
             <tr *ngFor="let room of rooms;let i = index">
                 <td>{{i}}</td>
                 <td>{{room.idhouse.title}}</td>
-                <td>{{room._id}}</td>
-                <td>{{room.iduser.email}}</td>
+                <td>{{room.idhouse._id}}</td>
                 <td>
-                    <img class="image" src="{{room.image}}" alt="">
+                    <img class="image" src="{{room.idhouse.image}}" alt="">
                 </td>
                 <td>{{room.idhouse.price}} {{room.idhouse.unit}}</td>
                 <td>{{room.idhouse.createDate | date: 'dd/MM/yyyy'}}</td>

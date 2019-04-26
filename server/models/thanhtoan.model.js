@@ -6,9 +6,9 @@ var thanhtoanSchema = new Schema({
         ref:'room'
     },
 
-    iduser: {
+    idyeucau: {
         type:Schema.Types.ObjectId,
-        ref:'user'
+        ref:'guiyeucauthuenha'
     },
    
     status: { 
