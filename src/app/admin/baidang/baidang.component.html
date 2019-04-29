@@ -1,39 +1,118 @@
 <div class="hehe">
     <h3 style="text-align: center">Quản lí Bài Đăng</h3>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Số TT</th>
-                <th>Tên Đề Tin</th>
-                <th>Số Điện Thoại</th>
-                <th>Diện tích</th>
-                <th>Đối tượng cho thuê</th>
-                <th>Ngày Tạo</th>
-                <th>Email người tạo</th>
-                <th>Giá</th>
-                <th>Xóa</th>
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#home">Nhà Đang Chờ Phê Duyệt</a></li>
+        <li><a data-toggle="tab" href="#menu1">Nhà Đã Cho Thuê</a></li>
+        <li><a data-toggle="tab" href="#menu2">Nhà Đang Nhận Yêu Cầu Thuê</a></li>
+    </ul>
 
-            </tr>
-        </thead>
-        <tbody *ngIf="rooms">
-            <tr *ngFor="let room of rooms; let i = index">
-                <td>{{i}}</td>
-                <td>{{room.title}}</td>
-                <td>{{room.phone}}</td>
-                <td>{{room.acreage}} m2</td>
-                <td>{{room.sex}}</td>
-                <td>{{room.createDate | date: 'dd/mm/yyyy'}}</td>
-                <td>{{room.id_user.email}}</td>
-                <td>{{room.price}} {{room.unit}}</td>
-                <td><button type="button" (click)="getRoom(room)" class="btn btn-warning" data-toggle="modal"
-                        data-target="#deleteModal">Xóa</button></td>
-            </tr>
+    <div class="tab-content">
+        <div id="home" class="tab-pane fade in active">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Số TT</th>
+                        <th>Tên Đề Tin</th>
+                        <th>Số Điện Thoại</th>
+                        <th>Diện tích</th>
+                        <th>Đối tượng cho thuê</th>
+                        <th>Ngày Tạo</th>
+                        <th>Email người tạo</th>
+                        <th>Giá</th>
+                        <th>Xóa</th>
 
-        </tbody>
-    </table>
+                    </tr>
+                </thead>
+                <tbody *ngIf="rooms">
+                    <tr *ngFor="let room of rooms; let i = index"  >
+                        <td *ngIf="room.trangthai_baidang == 0">{{i}} duy{{room.trangthai_baidang}}</td>
+                        <td *ngIf="room.trangthai_baidang == 0">{{room.title}}</td>
+                        <td *ngIf="room.trangthai_baidang == 0">{{room.phone}}</td>
+                        <td *ngIf="room.trangthai_baidang == 0">{{room.acreage}} m2</td>
+                        <td *ngIf="room.trangthai_baidang == 0">{{room.sex}}</td>
+                        <td *ngIf="room.trangthai_baidang == 0">{{room.createDate | date: 'dd/mm/yyyy'}}</td>
+                        <td *ngIf="room.trangthai_baidang == 0">{{room.id_user.email}}</td>
+                        <td *ngIf="room.trangthai_baidang == 0"> {{room.price}} {{room.unit}}</td>
+                        <td *ngIf="room.trangthai_baidang == 0"><button type="button" (click)="getRoom(room)" class="btn btn-warning" data-toggle="modal"
+                                data-target="#deleteModal">Xóa</button></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+        <div id="menu1" class="tab-pane fade">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Số TT</th>
+                        <th>Tên Đề Tin</th>
+                        <th>Số Điện Thoại</th>
+                        <th>Diện tích</th>
+                        <th>Đối tượng cho thuê</th>
+                        <th>Ngày Tạo</th>
+                        <th>Email người tạo</th>
+                        <th>Giá</th>
+                        <th>Xóa</th>
+
+                    </tr>
+                </thead>
+                <tbody *ngIf="rooms">
+                    <tr *ngFor="let room of rooms; let i = index"  >
+                        <td *ngIf="room.trangthai_baidang == 1">{{i}} duy{{room.trangthai_baidang}}</td>
+                        <td *ngIf="room.trangthai_baidang == 1">{{room.title}}</td>
+                        <td *ngIf="room.trangthai_baidang == 1">{{room.phone}}</td>
+                        <td *ngIf="room.trangthai_baidang == 1">{{room.acreage}} m2</td>
+                        <td *ngIf="room.trangthai_baidang == 1">{{room.sex}}</td>
+                        <td *ngIf="room.trangthai_baidang == 1">{{room.createDate | date: 'dd/mm/yyyy'}}</td>
+                        <td *ngIf="room.trangthai_baidang == 1">{{room.id_user.email}}</td>
+                        <td *ngIf="room.trangthai_baidang == 1"> {{room.price}} {{room.unit}}</td>
+                        <td *ngIf="room.trangthai_baidang == 1"><button type="button" (click)="getRoom(room)" class="btn btn-warning" data-toggle="modal"
+                                data-target="#deleteModal">Xóa</button></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+        <div id="menu2" class="tab-pane fade">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Số TT</th>
+                        <th>Tên Đề Tin</th>
+                        <th>Số Điện Thoại</th>
+                        <th>Diện tích</th>
+                        <th>Đối tượng cho thuê</th>
+                        <th>Ngày Tạo</th>
+                        <th>Email người tạo</th>
+                        <th>Giá</th>
+                        <th>Xóa</th>
+
+                    </tr>
+                </thead>
+                <tbody *ngIf="rooms">
+                    <tr *ngFor="let room of rooms; let i = index"  >
+                        <td *ngIf="room.trangthai_baidang == 2">{{i}} duy{{room.trangthai_baidang}}</td>
+                        <td *ngIf="room.trangthai_baidang == 2">{{room.title}}</td>
+                        <td *ngIf="room.trangthai_baidang == 2">{{room.phone}}</td>
+                        <td *ngIf="room.trangthai_baidang == 2">{{room.acreage}} m2</td>
+                        <td *ngIf="room.trangthai_baidang == 2">{{room.sex}}</td>
+                        <td *ngIf="room.trangthai_baidang == 2">{{room.createDate | date: 'dd/mm/yyyy'}}</td>
+                        <td *ngIf="room.trangthai_baidang == 2">{{room.id_user.email}}</td>
+                        <td *ngIf="room.trangthai_baidang == 2"> {{room.price}} {{room.unit}}</td>
+                        <td *ngIf="room.trangthai_baidang == 2"><button type="button" (click)="getRoom(room)" class="btn btn-warning" data-toggle="modal"
+                                data-target="#deleteModal">Xóa</button></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
 </div>
 <!-- model xóa -->
-<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
