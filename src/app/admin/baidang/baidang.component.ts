@@ -48,14 +48,19 @@ export class BaidangComponent implements OnInit {
                 if(this.rooms[i]._id == this.listYeuCauThueNha[j].idngoinha._id){
                     if(this.listYeuCauThueNha[j].trangthai == 1){
                         trangthai_baidang = 2;
+                        break;
                     }
                 }
             }
+           
             this.rooms[i].trangthai_baidang = trangthai_baidang;
             if(this.rooms[i].trangthai == false){
                 this.rooms[i].trangthai_baidang = 0;
             }
+
         }
+        console.log(this.rooms, 'ok')
+
         
     }
     getRoom(room) {

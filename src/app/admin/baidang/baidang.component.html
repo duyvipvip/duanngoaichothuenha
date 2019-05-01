@@ -2,8 +2,8 @@
     <h3 style="text-align: center">Quản lí Bài Đăng</h3>
     <ul class="nav nav-tabs">
         <li class="active"><a data-toggle="tab" href="#home">Nhà Đang Chờ Phê Duyệt</a></li>
-        <li><a data-toggle="tab" href="#menu1">Nhà Đã Cho Thuê</a></li>
-        <li><a data-toggle="tab" href="#menu2">Nhà Đang Nhận Yêu Cầu Thuê</a></li>
+        <li><a data-toggle="tab" href="#menu1">Nhà Đang Nhận Yêu Cầu Thuê</a></li>
+        <li><a data-toggle="tab" href="#menu2">Nhà Đã Cho Thuê</a></li>
     </ul>
 
     <div class="tab-content">
@@ -25,7 +25,7 @@
                 </thead>
                 <tbody *ngIf="rooms">
                     <tr *ngFor="let room of rooms; let i = index"  >
-                        <td *ngIf="room.trangthai_baidang == 0">{{i}} duy{{room.trangthai_baidang}}</td>
+                        <td *ngIf="room.trangthai_baidang == 0">{{room.trangthai_baidang}}</td>
                         <td *ngIf="room.trangthai_baidang == 0">{{room.title}}</td>
                         <td *ngIf="room.trangthai_baidang == 0">{{room.phone}}</td>
                         <td *ngIf="room.trangthai_baidang == 0">{{room.acreage}} m2</td>
@@ -58,7 +58,7 @@
                 </thead>
                 <tbody *ngIf="rooms">
                     <tr *ngFor="let room of rooms; let i = index"  >
-                        <td *ngIf="room.trangthai_baidang == 1">{{i}} duy{{room.trangthai_baidang}}</td>
+                        <td *ngIf="room.trangthai_baidang == 1">{{room.trangthai_baidang}}</td>
                         <td *ngIf="room.trangthai_baidang == 1">{{room.title}}</td>
                         <td *ngIf="room.trangthai_baidang == 1">{{room.phone}}</td>
                         <td *ngIf="room.trangthai_baidang == 1">{{room.acreage}} m2</td>
@@ -91,7 +91,7 @@
                 </thead>
                 <tbody *ngIf="rooms">
                     <tr *ngFor="let room of rooms; let i = index"  >
-                        <td *ngIf="room.trangthai_baidang == 2">{{i}} duy{{room.trangthai_baidang}}</td>
+                        <td *ngIf="room.trangthai_baidang == 2">{{room.trangthai_baidang}}</td>
                         <td *ngIf="room.trangthai_baidang == 2">{{room.title}}</td>
                         <td *ngIf="room.trangthai_baidang == 2">{{room.phone}}</td>
                         <td *ngIf="room.trangthai_baidang == 2">{{room.acreage}} m2</td>
