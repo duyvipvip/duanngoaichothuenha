@@ -42,22 +42,55 @@ export class BaidangComponent implements OnInit {
     }
 
     laycactrangthai_Baidang(){
+        // for (let i = 0; i < this.rooms.length; i++) {
+        //     let trangthai_baidang = 1;
+        //     let yeucauthuenha = 0;
+        //     for (let j = 0; j < this.listYeuCauThueNha.length; j++) {
+        //         if(this.rooms[i]._id == this.listYeuCauThueNha[j].idngoinha._id){
+        //             if(this.listYeuCauThueNha[j].trangthai == 1){
+        //                 trangthai_baidang = 2;
+        //             }
+        //             yeucauthuenha++;
+        //         }
+        //     }
+           
+        //     this.rooms[i].trangthai_baidang = trangthai_baidang;
+        //     this.rooms[i].yeucauthuenha = yeucauthuenha;
+        //     if(this.rooms[i].trangthai == false){
+        //         this.rooms[i].trangthai_baidang = 0;
+        //     }
+        //     // chờ người thue
+        //     if(this.rooms[i].trangthai_baidang != 2 && yeucauthuenha == 0){
+        //         this.rooms[i].trangthai_baidang = 3;
+        //     }
+
+        // }
         for (let i = 0; i < this.rooms.length; i++) {
-            let trangthai_baidang = 1;
+            let soluongguiyeucau = 0;
             for (let j = 0; j < this.listYeuCauThueNha.length; j++) {
                 if(this.rooms[i]._id == this.listYeuCauThueNha[j].idngoinha._id){
+                    soluongguiyeucau++;
+
                     if(this.listYeuCauThueNha[j].trangthai == 1){
-                        trangthai_baidang = 2;
+                        soluongguiyeucau = -1;
                         break;
                     }
                 }
+               
             }
-           
-            this.rooms[i].trangthai_baidang = trangthai_baidang;
+            console.log(soluongguiyeucau);
+            if(soluongguiyeucau == -1){
+                this.rooms[i].trangthai_baidang = 2;
+            }
+            if(soluongguiyeucau == 0){
+                this.rooms[i].trangthai_baidang = 3;
+            }
+            if(soluongguiyeucau > 0){
+                this.rooms[i].trangthai_baidang = 1;
+            }
             if(this.rooms[i].trangthai == false){
                 this.rooms[i].trangthai_baidang = 0;
             }
-
         }
         console.log(this.rooms, 'ok')
 
