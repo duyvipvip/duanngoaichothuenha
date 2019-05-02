@@ -1,5 +1,6 @@
 var guiyeucauthuenha = require('../models/guiyeucauthuenha.model');
 var thanhtoan = require('../models/thanhtoan.model');
+var Room = require('../models/room.model');
 module.exports = {
     taoYeuCauThueNha: taoYeuCauThueNha,
     CheckNgoiNhaDaThue: CheckNgoiNhaDaThue,
@@ -74,17 +75,22 @@ function LayCacYeuCauThueNhaCuaUser(model){
 // thay đổi trạng thái
 function Thaydoitrangthai(idyeucau, status, idhouse){
     if (status == 1) {
-        return guiyeucauthuenha.update({ "_id": idyeucau }, { $set: { "trangthai": status, "deleted": true } })
+        return guiyeucauthuenha.update({ "_id": idyeucau }, { $set: { "trangthai": status } })
             .then((room) => {
-                let body = {
-                    idhouse: idhouse,
-                    idyeucau: idyeucau
-                }
-                console.log(body)
-                return thanhtoan.create(body)
-                    .then(() => {
-                        return Promise.resolve(room);
-                    })
+                return Room.update({ "_id": idhouse }, { $set: { "deleted": true } })
+                .then(() => {
+                    let body = {
+                        idhouse: idhouse,
+                        idyeucau: idyeucau
+                    }
+                    console.log(body)
+                    return thanhtoan.create(body)
+                        .then(() => {
+                            return Promise.resolve(room);
+                        })
+                });
+                
+               
             })
             .catch((err) => {
 
