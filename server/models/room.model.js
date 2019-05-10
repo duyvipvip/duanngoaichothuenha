@@ -103,7 +103,11 @@ var roomSchema = new Schema({
     ],
     category: {
         type: String,
-    }
+    },
+    trangthaidathue: {
+        type: Boolean,
+        default: false
+    },
 
 })
 var room = mongoose.model('room', roomSchema);

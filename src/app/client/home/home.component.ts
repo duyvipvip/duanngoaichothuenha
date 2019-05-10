@@ -163,7 +163,7 @@ export class HomeComponent implements OnInit {
         this.roomsv.getRooms()
             .then((data: any) => {
                 for(let i=0; i< data.Data.length; i++){
-                    if(data.Data[i].trangthai == true){
+                    if(data.Data[i].trangthai == true && data.Data[i].trangthaidathue == false){
                         this.rooms.push(data.Data[i])
                     }
                 }

@@ -71,30 +71,26 @@ export class BaidangComponent implements OnInit {
                 if(this.rooms[i]._id == this.listYeuCauThueNha[j].idngoinha._id){
                     soluongguiyeucau++;
 
-                    if(this.listYeuCauThueNha[j].trangthai == 1){
-                        soluongguiyeucau = -1;
-                        break;
-                    }
+                    // if(this.listYeuCauThueNha[j].trangthai == 1){
+                    //     soluongguiyeucau = -1;
+                    //     break;
+                    // }
                 }
                
             }
-            console.log(soluongguiyeucau);
-            if(soluongguiyeucau == -1){
+            if(this.rooms[i].trangthaidathue == true){
                 this.rooms[i].trangthai_baidang = 2;
             }
             if(soluongguiyeucau == 0){
                 this.rooms[i].trangthai_baidang = 3;
             }
-            if(soluongguiyeucau > 0){
+            if(soluongguiyeucau > 0 && this.rooms[i].trangthaidathue == false){
                 this.rooms[i].trangthai_baidang = 1;
             }
             if(this.rooms[i].trangthai == false){
                 this.rooms[i].trangthai_baidang = 0;
             }
         }
-        console.log(this.rooms, 'ok')
-
-        
     }
     getRoom(room) {
         this.selectRoom = room;

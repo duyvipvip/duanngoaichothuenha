@@ -77,7 +77,7 @@ function Thaydoitrangthai(idyeucau, status, idhouse){
     if (status == 1) {
         return guiyeucauthuenha.update({ "_id": idyeucau }, { $set: { "trangthai": status } })
             .then((room) => {
-                return Room.update({ "_id": idhouse }, { $set: { "deleted": true } })
+                return Room.update({ "_id": idhouse }, { $set: { "trangthaidathue": true } })
                 .then(() => {
                     let body = {
                         idhouse: idhouse,
